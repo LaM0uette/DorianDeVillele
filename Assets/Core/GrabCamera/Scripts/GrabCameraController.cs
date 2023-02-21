@@ -26,7 +26,7 @@ namespace Core.GrabCamera.Scripts
         public Texture2D cursorEye;
         private Vector2 _hotSpot = new (32, 32);
         private ECursor _eCursor;
-    
+
         private enum ECursor
         {
             Hand,
@@ -140,7 +140,7 @@ namespace Core.GrabCamera.Scripts
                 if (!_eCursor.Equals(ECursor.Hand)) SetHandCursor(cursorHand);
             }
 
-            float zoomAmount = Input.GetAxis("Mouse ScrollWheel") * zoomForce;
+            var zoomAmount = Input.GetAxis("Mouse ScrollWheel") * zoomForce;
             if (Mathf.Abs(zoomAmount) > 0.01f)
             {
                 Zoom(zoomAmount);
