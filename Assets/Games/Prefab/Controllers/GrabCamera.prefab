@@ -43,7 +43,7 @@ Camera:
   m_GameObject: {fileID: 2002763784292409180}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -67,7 +67,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 48.9
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -108,9 +108,9 @@ MonoBehaviour:
   rotationSpeed: 150
   clampMin: 15
   clampMax: 50
-  zoomForce: 30
-  zoomMin: 2
-  zoomMax: 8
+  zoomForce: 80
+  zoomMin: 10
+  zoomMax: 80
   cursorHand: {fileID: 2800000, guid: ee2be97240cf5494683a7139d552c3aa, type: 3}
-  cursorHandClosed: {fileID: 2800000, guid: ee2be97240cf5494683a7139d552c3aa, type: 3}
+  cursorHandClosed: {fileID: 2800000, guid: 876774cb73847ef4b8dfb045846b43d2, type: 3}
   cursorEye: {fileID: 2800000, guid: 339048d62bc8987419351a40b6fddd42, type: 3}
