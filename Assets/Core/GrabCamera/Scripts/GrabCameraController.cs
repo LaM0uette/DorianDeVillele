@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Core.GrabCamera.Scripts
 {
@@ -25,13 +24,14 @@ namespace Core.GrabCamera.Scripts
         public Texture2D cursorHand;
         public Texture2D cursorGrab;
         public Texture2D cursorEye;
-        private Vector2 _hotSpot = new (32, 32);
-        private ECursor _eCursor;
+        public Vector2 _hotSpot = new (32, 32);
+        public static ECursor _eCursor;
 
-        private enum ECursor
+        public enum ECursor
         {
             Hand,
-            HandClosed,
+            Grab,
+            Clic,
             Eye
         }
     
@@ -95,7 +95,7 @@ namespace Core.GrabCamera.Scripts
             if (transform.position.y >= zoomMax) transform.position = new Vector3(pos.x, zoomMax, pos.z);
         }
     
-        private Vector3 GetRayIntersectionWithYPlane(Ray ray, float y)
+        private static Vector3 GetRayIntersectionWithYPlane(Ray ray, float y)
         {
             if (ray.direction.y == 0)
             {
@@ -105,7 +105,7 @@ namespace Core.GrabCamera.Scripts
             float t = (y - ray.origin.y) / ray.direction.y;
             return ray.GetPoint(t);
         }
-    
+
         private void SetHandCursor(Texture2D texture2D, ECursor eCursor = ECursor.Hand)
         {
             Cursor.SetCursor(texture2D, _hotSpot, CursorMode.Auto);
@@ -120,6 +120,8 @@ namespace Core.GrabCamera.Scripts
 
         private void Update()
         {
+            if (_eCursor.Equals(ECursor.Clic)) return;
+            
             if (Input.GetMouseButtonDown(0))
             {
                 _mouseRay = _camera.ScreenPointToRay(Input.mousePosition);
@@ -128,7 +130,7 @@ namespace Core.GrabCamera.Scripts
 
             if (Input.GetMouseButton(0))
             {
-                if (!_eCursor.Equals(ECursor.HandClosed)) SetHandCursor(cursorGrab, ECursor.HandClosed);
+                if (!_eCursor.Equals(ECursor.Grab)) SetHandCursor(cursorGrab, ECursor.Grab);
                 Pan();
             }
             else if (Input.GetMouseButton(1))
