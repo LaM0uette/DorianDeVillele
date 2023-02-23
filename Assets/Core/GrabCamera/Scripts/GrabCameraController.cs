@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core.GrabCamera.Scripts
 {
@@ -22,7 +23,7 @@ namespace Core.GrabCamera.Scripts
     
         //Cursor
         public Texture2D cursorHand;
-        public Texture2D cursorHandClosed;
+        public Texture2D cursorGrab;
         public Texture2D cursorEye;
         private Vector2 _hotSpot = new (32, 32);
         private ECursor _eCursor;
@@ -127,7 +128,7 @@ namespace Core.GrabCamera.Scripts
 
             if (Input.GetMouseButton(0))
             {
-                if (!_eCursor.Equals(ECursor.HandClosed)) SetHandCursor(cursorHandClosed, ECursor.HandClosed);
+                if (!_eCursor.Equals(ECursor.HandClosed)) SetHandCursor(cursorGrab, ECursor.HandClosed);
                 Pan();
             }
             else if (Input.GetMouseButton(1))
