@@ -4431,8 +4431,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089251061}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 404.91, y: 26.23, z: 201.67}
-  m_LocalScale: {x: 2.096, y: 2.096, z: 2.096}
+  m_LocalPosition: {x: 395.7, y: 27.4, z: 206}
+  m_LocalScale: {x: 4.078187, y: 4.078187, z: 4.078187}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -6798,13 +6798,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6619663545812166267, guid: 0f7afa46d4678714bbd07cf72c78e364, type: 3}
+      propertyPath: cursorEye
+      value: 
+      objectReference: {fileID: 2800000, guid: 4959f63030db17e40a707dd6511967fc, type: 3}
+    - target: {fileID: 6619663545812166267, guid: 0f7afa46d4678714bbd07cf72c78e364, type: 3}
+      propertyPath: cursorGrab
+      value: 
+      objectReference: {fileID: 2800000, guid: fd9dd19d764441c4e91a2f3806ffdc6a, type: 3}
+    - target: {fileID: 6619663545812166267, guid: 0f7afa46d4678714bbd07cf72c78e364, type: 3}
       propertyPath: cursorHand
       value: 
-      objectReference: {fileID: 2800000, guid: 455fc90523bd4c745880fa5b01d98f70, type: 3}
+      objectReference: {fileID: 2800000, guid: e7e4db9fa0d7c0d4ab25eba0146e2677, type: 3}
     - target: {fileID: 6619663545812166267, guid: 0f7afa46d4678714bbd07cf72c78e364, type: 3}
       propertyPath: cursorHandClosed
       value: 
-      objectReference: {fileID: 2800000, guid: e0cf7369b064d8248aef7c95c1bcbde2, type: 3}
+      objectReference: {fileID: 2800000, guid: 51eb3860907d20842b2c50d95a1ec6ec, type: 3}
     - target: {fileID: 6660945101160363396, guid: 0f7afa46d4678714bbd07cf72c78e364, type: 3}
       propertyPath: m_ClearFlags
       value: 2
