@@ -47,7 +47,9 @@ namespace Core.Test.Scripts
 
         private void OnMouseUp()
         {
-            if (_cameraWorldPosition.Equals(_camera.transform.position)) Debug.Log("MouseUp");
+            if (!_cameraWorldPosition.Equals(_camera.transform.position)) return;
+            
+            Debug.Log("MouseUp");
         }
     }
 }
