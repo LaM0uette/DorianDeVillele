@@ -19,7 +19,8 @@ namespace Core.Test.Scripts
         
         private void OnMouseEnter()
         {
-            if (GrabCameraController._eCursor.Equals(GrabCameraController.ECursor.Grab)) return;
+            if (GrabCameraController._eCursor.Equals(GrabCameraController.ECursor.Grab) ||
+                GrabCameraController._eCursor.Equals(GrabCameraController.ECursor.Eye)) return;
             
             Cursor.SetCursor(cursorClic, hotSpot, CursorMode.Auto);
             GrabCameraController._eCursor = GrabCameraController.ECursor.Clic;
