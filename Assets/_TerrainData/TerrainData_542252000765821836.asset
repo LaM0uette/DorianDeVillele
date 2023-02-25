@@ -31,6 +31,21 @@ MonoBehaviour:
   smoothNormal: 0
   useSmoothNormalMask: 0
   mergeUv: 0
+--- !u!114 &-7157575850418852898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba2bd1d74124a54d8737ba971cd7633, type: 3}
+  m_Name: Mask
+  m_EditorClassIdentifier: 
+  terrainData: {fileID: 11400000}
+  maskMapResolution: 256
+  maskMap: {fileID: 0}
 --- !u!28 &-563464800686641896
 Texture2D:
   m_ObjectHideFlags: 0
@@ -144,7 +159,7 @@ MonoBehaviour:
   shading: {fileID: 8956877473648001302}
   rendering: {fileID: 3201646025415235222}
   foliage: {fileID: 3857889982650866153}
-  mask: {fileID: 0}
+  mask: {fileID: -7157575850418852898}
   geometryData: {fileID: 11400000, guid: a5857c96541f08146bd4926e6c173052, type: 2}
 --- !u!114 &3201646025415235222
 MonoBehaviour:

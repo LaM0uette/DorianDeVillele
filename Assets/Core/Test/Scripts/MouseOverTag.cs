@@ -14,7 +14,7 @@ namespace Core.Test.Scripts
         
         private void Start()
         {
-            _outlinable = GetComponent<Outlinable>();
+            //_outlinable = GetComponent<Outlinable>();
         }
         
         private void OnMouseEnter()
@@ -25,7 +25,7 @@ namespace Core.Test.Scripts
             Cursor.SetCursor(cursorClic, hotSpot, CursorMode.Auto);
             GrabCameraController._eCursor = GrabCameraController.ECursor.Clic;
             
-            _outlinable.OutlineParameters.Enabled = true;
+            //_outlinable.OutlineParameters.Enabled = true;
         }
 
         private void OnMouseExit()
@@ -33,7 +33,7 @@ namespace Core.Test.Scripts
             Cursor.SetCursor(cursorHand, hotSpot, CursorMode.Auto);
             GrabCameraController._eCursor = GrabCameraController.ECursor.Hand;
             
-            _outlinable.OutlineParameters.Enabled = false;
+            //_outlinable.OutlineParameters.Enabled = false;
         }
     }
 }
