@@ -6,29 +6,25 @@ namespace Core.Test.Scripts
     {
         private Camera mainCamera;
 
-        void Start()
+        private void Awake()
         {
             mainCamera = Camera.main;
         }
 
-        void LateUpdate()
+        private void LateUpdate()
         {
-            // Récupérer la position de la caméra et du canvas
-            Vector3 cameraPosition = mainCamera.transform.position;
-            Vector3 canvasPosition = transform.position;
+            var cameraPosition = mainCamera.transform.position;
+            var canvasPosition = transform.position;
+            var direction = cameraPosition - canvasPosition;
 
-            // Créer un vecteur direction entre la caméra et le canvas
-            Vector3 direction = cameraPosition - canvasPosition;
-
-            // Calculer la nouvelle rotation du canvas en utilisant la direction entre la caméra et le canvas
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            var targetRotation = Quaternion.LookRotation(direction);
+            
             targetRotation.eulerAngles = new Vector3(0f, targetRotation.eulerAngles.y, 0f);
-
-            // Appliquer la rotation au canvas
-            transform.rotation = targetRotation;
+            var transform1 = transform;
+            transform1.rotation = targetRotation;
             
             // Corriger l'orientation à 180 degrés
-            Quaternion currentRotation = transform.rotation;
+            var currentRotation = transform1.rotation;
             transform.rotation = currentRotation * Quaternion.Euler(0f, 180f, 0f);
         }
     }

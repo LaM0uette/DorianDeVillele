@@ -13,7 +13,8 @@ namespace Core.Test.Scripts
 
         private void LateUpdate()
         {
-            transform.LookAt(transform.position + Camera.main!.transform.rotation * Vector3.forward, cameraMain.transform.rotation * Vector3.up);
+            var rotation = cameraMain.transform.rotation;
+            transform.LookAt(transform.position + rotation * Vector3.forward, rotation * Vector3.up);
         }
     }
 }
