@@ -138,7 +138,7 @@ namespace Core.GrabCamera.Scripts
             }
             else
             {
-                if (!_eCursor.Equals(ECursor.Hand)) SetHandCursor(cursorHand);
+                if (!_eCursor.Equals(ECursor.Hand) && !_eCursor.Equals(ECursor.Clic)) SetHandCursor(cursorHand);
             }
 
             var zoomAmount = Input.GetAxis("Mouse ScrollWheel") * zoomForce;

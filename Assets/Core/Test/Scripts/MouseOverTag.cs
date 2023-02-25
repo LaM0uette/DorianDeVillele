@@ -51,5 +51,14 @@ namespace Core.Test.Scripts
             
             Debug.Log("MouseUp");
         }
+
+        private void OnMouseOver()
+        {
+            if (GrabCameraController._eCursor.Equals(GrabCameraController.ECursor.Grab) || 
+                GrabCameraController._eCursor.Equals(GrabCameraController.ECursor.Clic)) return;
+            
+            Cursor.SetCursor(cursorClic, hotSpot, CursorMode.Auto);
+            GrabCameraController._eCursor = GrabCameraController.ECursor.Clic;
+        }
     }
 }
