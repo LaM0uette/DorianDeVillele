@@ -120,8 +120,6 @@ namespace Core.GrabCamera.Scripts
 
         private void Update()
         {
-            if (_eCursor.Equals(ECursor.Clic)) return;
-            
             if (Input.GetMouseButtonDown(0))
             {
                 _mouseRay = _camera.ScreenPointToRay(Input.mousePosition);

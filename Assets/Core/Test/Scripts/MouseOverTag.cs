@@ -1,3 +1,4 @@
+using System;
 using Core.GrabCamera.Scripts;
 using EPOOutline;
 using UnityEngine;
@@ -11,12 +12,15 @@ namespace Core.Test.Scripts
         public Vector2 hotSpot = new (32, 32);
         
         private Outlinable _outlinable;
+        private Camera _camera;
+        private Vector3 _cameraWorldPosition;
         
-        private void Start()
+        private void Awake()
         {
+            _camera = Camera.main;
             //_outlinable = GetComponent<Outlinable>();
         }
-        
+
         private void OnMouseEnter()
         {
             if (GrabCameraController._eCursor.Equals(GrabCameraController.ECursor.Grab) ||
@@ -34,6 +38,16 @@ namespace Core.Test.Scripts
             GrabCameraController._eCursor = GrabCameraController.ECursor.Hand;
             
             //_outlinable.OutlineParameters.Enabled = false;
+        }
+
+        private void OnMouseDown()
+        {
+            _cameraWorldPosition = _camera.transform.position;
+        }
+
+        private void OnMouseUp()
+        {
+            if (_cameraWorldPosition.Equals(_camera.transform.position)) Debug.Log("MouseUp");
         }
     }
 }
