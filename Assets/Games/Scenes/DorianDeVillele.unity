@@ -318,8 +318,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.38
-  m_fontSizeBase: 2.38
+  m_fontSize: 1.84
+  m_fontSizeBase: 1.84
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -657,23 +657,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e32969c5dcfdf3478485f8beed2c681, type: 3}
       propertyPath: m_LocalScale.x
-      value: 183.0899
+      value: 226.79347
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e32969c5dcfdf3478485f8beed2c681, type: 3}
       propertyPath: m_LocalScale.y
-      value: 183.08997
+      value: 226.79355
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e32969c5dcfdf3478485f8beed2c681, type: 3}
       propertyPath: m_LocalScale.z
-      value: 183.08994
+      value: 226.7935
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e32969c5dcfdf3478485f8beed2c681, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59.199997
+      value: 58.537
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e32969c5dcfdf3478485f8beed2c681, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.56
+      value: 8.46
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e32969c5dcfdf3478485f8beed2c681, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1927,8 +1927,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287390781
-  m_fontColor: {r: 0.24003202, g: 0.39082515, b: 0.5471698, a: 1}
+    rgba: 4293388263
+  m_fontColor: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2405,27 +2405,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3a4bf7bcbc590740b70f44f8e6fc01c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 155.68994
+      value: 221.91122
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3a4bf7bcbc590740b70f44f8e6fc01c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 155.68999
+      value: 221.91129
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3a4bf7bcbc590740b70f44f8e6fc01c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 155.68997
+      value: 221.91125
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3a4bf7bcbc590740b70f44f8e6fc01c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 80.57001
+      value: 79.04
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3a4bf7bcbc590740b70f44f8e6fc01c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.44
+      value: 7.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3a4bf7bcbc590740b70f44f8e6fc01c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.470001
+      value: 11.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3a4bf7bcbc590740b70f44f8e6fc01c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2787,8 +2787,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.38
-  m_fontSizeBase: 2.38
+  m_fontSize: 1.84
+  m_fontSizeBase: 1.84
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5175,8 +5175,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287390781
-  m_fontColor: {r: 0.24003202, g: 0.39082515, b: 0.5471698, a: 1}
+    rgba: 4293388263
+  m_fontColor: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5565,23 +5565,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88b1547b6db71194ebca411daa1fa814, type: 3}
       propertyPath: m_LocalScale.x
-      value: 199.56932
+      value: 264.8285
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88b1547b6db71194ebca411daa1fa814, type: 3}
       propertyPath: m_LocalScale.y
-      value: 199.5693
+      value: 264.82846
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88b1547b6db71194ebca411daa1fa814, type: 3}
       propertyPath: m_LocalScale.z
-      value: 199.56932
+      value: 264.8285
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88b1547b6db71194ebca411daa1fa814, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 60.14
+      value: 59.542
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88b1547b6db71194ebca411daa1fa814, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.57
+      value: 8.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88b1547b6db71194ebca411daa1fa814, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12450,8 +12450,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287390781
-  m_fontColor: {r: 0.24003202, g: 0.39082515, b: 0.5471698, a: 1}
+    rgba: 4293848814
+  m_fontColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13080,8 +13080,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287390781
-  m_fontColor: {r: 0.24003202, g: 0.39082515, b: 0.5471698, a: 1}
+    rgba: 4293848814
+  m_fontColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13592,23 +13592,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3a4bf7bcbc590740b70f44f8e6fc01c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 155.68994
+      value: 180.46022
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3a4bf7bcbc590740b70f44f8e6fc01c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 155.68999
+      value: 180.46027
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3a4bf7bcbc590740b70f44f8e6fc01c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 155.68997
+      value: 180.46025
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3a4bf7bcbc590740b70f44f8e6fc01c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 80.56999
+      value: 79.998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3a4bf7bcbc590740b70f44f8e6fc01c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.611
+      value: 8.63
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3a4bf7bcbc590740b70f44f8e6fc01c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15773,8 +15773,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287390781
-  m_fontColor: {r: 0.24003202, g: 0.39082515, b: 0.5471698, a: 1}
+    rgba: 4293848814
+  m_fontColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -21021,8 +21021,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.38
-  m_fontSizeBase: 2.38
+  m_fontSize: 1.84
+  m_fontSizeBase: 1.84
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -23014,8 +23014,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287390781
-  m_fontColor: {r: 0.24003202, g: 0.39082515, b: 0.5471698, a: 1}
+    rgba: 4293388263
+  m_fontColor: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -23096,27 +23096,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e32969c5dcfdf3478485f8beed2c681, type: 3}
       propertyPath: m_LocalScale.x
-      value: 183.0899
+      value: 261.03235
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e32969c5dcfdf3478485f8beed2c681, type: 3}
       propertyPath: m_LocalScale.y
-      value: 183.08997
+      value: 261.03244
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e32969c5dcfdf3478485f8beed2c681, type: 3}
       propertyPath: m_LocalScale.z
-      value: 183.08994
+      value: 261.0324
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e32969c5dcfdf3478485f8beed2c681, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59.200012
+      value: 58.018
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e32969c5dcfdf3478485f8beed2c681, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.56
+      value: 7.261
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e32969c5dcfdf3478485f8beed2c681, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.269997
+      value: -9.7956
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e32969c5dcfdf3478485f8beed2c681, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24957,27 +24957,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88b1547b6db71194ebca411daa1fa814, type: 3}
       propertyPath: m_LocalScale.x
-      value: 199.56932
+      value: 372.9154
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88b1547b6db71194ebca411daa1fa814, type: 3}
       propertyPath: m_LocalScale.y
-      value: 199.5693
+      value: 372.91537
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88b1547b6db71194ebca411daa1fa814, type: 3}
       propertyPath: m_LocalScale.z
-      value: 199.56932
+      value: 372.9154
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88b1547b6db71194ebca411daa1fa814, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 60.140015
+      value: 58.552
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88b1547b6db71194ebca411daa1fa814, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.59
+      value: 7.13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88b1547b6db71194ebca411daa1fa814, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.720001
+      value: 10.94
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88b1547b6db71194ebca411daa1fa814, type: 3}
       propertyPath: m_LocalRotation.w
