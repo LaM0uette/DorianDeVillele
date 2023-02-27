@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6660945101160363396}
   - component: {fileID: 2776702389370085370}
   - component: {fileID: 6619663545812166267}
-  - component: {fileID: 8900288780590252780}
   m_Layer: 0
   m_Name: GrabCamera
   m_TagString: MainCamera
@@ -106,38 +105,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a64d9b91832c848b8d5c07cc912eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 180
+  rotationSpeed: 130
   clampMin: 15
   clampMax: 50
-  zoomForce: 60
+  zoomForce: 80
   zoomMin: 10
   zoomMax: 60
   cursorHand: {fileID: 2800000, guid: e7e4db9fa0d7c0d4ab25eba0146e2677, type: 3}
   cursorGrab: {fileID: 2800000, guid: fd9dd19d764441c4e91a2f3806ffdc6a, type: 3}
   cursorEye: {fileID: 2800000, guid: 4959f63030db17e40a707dd6511967fc, type: 3}
   _hotSpot: {x: 32, y: 32}
---- !u!114 &8900288780590252780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2002763784292409180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bb42831ee5422f409e7f24f9e7488ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stage: 1
-  renderingStrategy: 0
-  renderingMode: 0
-  outlineLayerMask: -1
-  primaryBufferSizeMode: 0
-  primaryRendererScale: 0.548
-  primarySizeReference: 800
-  blurShift: 0.86
-  dilateShift: 1.03
-  dilateIterations: 1
-  dilateQuality: 2
-  blurIterations: 1
-  blurType: 0
