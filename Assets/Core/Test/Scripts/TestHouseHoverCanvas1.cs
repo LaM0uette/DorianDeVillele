@@ -9,12 +9,12 @@ namespace Core.Test.Scripts
     
         private void OnMouseEnter()
         {
-            textMp.color = new Color(72, 221, 32, 1f);
+            textMp.color = new Color32(72, 221, 32, 255);
         }
 
         private void OnMouseExit()
         {
-            textMp.color = new Color(197, 197, 197, 1f);
+            textMp.color = new Color32(197, 197, 197, 255);
         }
     }
 }

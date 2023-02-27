@@ -28,7 +28,7 @@ namespace Core.Test.Scripts
             Cursor.SetCursor(cursorClic, hotSpot, CursorMode.Auto);
             GrabCameraController._eCursor = GrabCameraController.ECursor.Clic;
             
-            _outline.OutlineMode = Outline.Mode.OutlineVisible;
+            _outline.OutlineMode = Outline.Mode.OutlineAll;
         }
 
         private void OnMouseExit()
