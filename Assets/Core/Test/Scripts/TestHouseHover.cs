@@ -3,23 +3,15 @@ using UnityEngine;
 
 namespace Core.Test.Scripts
 {
-    public class MouseOverTag : MonoBehaviour
+    public class TestHouseHover : MonoBehaviour
     {
         public Texture2D cursorHand;
         public Texture2D cursorClic;
         public Vector2 hotSpot = new (32, 32);
-        
-        private Camera _camera;
-        private Vector3 _cameraWorldPosition;
-        
-        private Outline _outline;
-
-        private void Awake()
-        {
-            _camera = Camera.main;
-            _outline = GetComponent<Outline>();
-        }
-
+    
+        public GameObject test1;
+        public GameObject test2;
+    
         private void OnMouseEnter()
         {
             if (GrabCameraController._eCursor.Equals(GrabCameraController.ECursor.Grab) ||
@@ -27,30 +19,20 @@ namespace Core.Test.Scripts
             
             Cursor.SetCursor(cursorClic, hotSpot, CursorMode.Auto);
             GrabCameraController._eCursor = GrabCameraController.ECursor.Clic;
-            
-            _outline.OutlineMode = Outline.Mode.OutlineVisible;
+        
+            test1.SetActive(false);
+            test2.SetActive(true);
         }
 
         private void OnMouseExit()
         {
             Cursor.SetCursor(cursorHand, hotSpot, CursorMode.Auto);
             GrabCameraController._eCursor = GrabCameraController.ECursor.Hand;
-            
-            _outline.OutlineMode = Outline.Mode.OutlineHidden;
+        
+            test2.SetActive(false);
+            test1.SetActive(true);
         }
-
-        private void OnMouseDown()
-        {
-            _cameraWorldPosition = _camera.transform.position;
-        }
-
-        private void OnMouseUp()
-        {
-            if (!_cameraWorldPosition.Equals(_camera.transform.position)) return;
-            
-            Debug.Log("MouseUp");
-        }
-
+    
         private void OnMouseOver()
         {
             if (GrabCameraController._eCursor.Equals(GrabCameraController.ECursor.Grab) || 
