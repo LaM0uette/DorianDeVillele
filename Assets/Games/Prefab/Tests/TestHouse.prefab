@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 849750727829287634}
   - component: {fileID: 4180793549554343262}
   - component: {fileID: 1464913827025652848}
+  - component: {fileID: 5334389197543547287}
   m_Layer: 0
   m_Name: SM_Bld_House_Preset_06
   m_TagString: Untagged
@@ -266,6 +267,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 14.890903, y: 6.937668, z: 17.539158}
   m_Center: {x: 0.026733374, y: 3.1505127, z: -0.33515742}
+--- !u!114 &5334389197543547287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836852760238898212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2426f5cd663f141a1af5af07526ee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMp: {fileID: 6425619889198191976}
 --- !u!1 &1175597914736728633
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,8 +355,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294177005
-  m_fontColor: {r: 0.9303578, g: 0.9414518, b: 0.9528302, a: 1}
+    rgba: 4291217094
+  m_fontColor: {r: 0.7764706, g: 0.7764706, b: 0.7764706, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
