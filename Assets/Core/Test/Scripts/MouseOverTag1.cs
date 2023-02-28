@@ -1,9 +1,10 @@
 using Core.GrabCamera.Scripts;
+using EPOOutline;
 using UnityEngine;
 
 namespace Core.Test.Scripts
 {
-    public class MouseOverTag : MonoBehaviour
+    public class MouseOverTag1 : MonoBehaviour
     {
         public Texture2D cursorHand;
         public Texture2D cursorClic;
@@ -12,12 +13,12 @@ namespace Core.Test.Scripts
         private Camera _camera;
         private Vector3 _cameraWorldPosition;
         
-        private Outline _outline;
+        private Outlinable _outline;
 
         private void Awake()
         {
             _camera = Camera.main;
-            _outline = GetComponent<Outline>();
+            _outline = GetComponent<Outlinable>();
         }
 
         private void OnMouseEnter()
@@ -28,7 +29,7 @@ namespace Core.Test.Scripts
             Cursor.SetCursor(cursorClic, hotSpot, CursorMode.Auto);
             GrabCameraController._eCursor = GrabCameraController.ECursor.Clic;
             
-            _outline.OutlineMode = Outline.Mode.OutlineAll;
+            _outline.enabled = true;
         }
 
         private void OnMouseExit()
@@ -36,7 +37,7 @@ namespace Core.Test.Scripts
             Cursor.SetCursor(cursorHand, hotSpot, CursorMode.Auto);
             GrabCameraController._eCursor = GrabCameraController.ECursor.Hand;
             
-            _outline.OutlineMode = Outline.Mode.OutlineHidden;
+            _outline.enabled = false;
         }
 
         private void OnMouseDown()
