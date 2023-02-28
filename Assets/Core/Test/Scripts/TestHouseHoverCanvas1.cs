@@ -1,3 +1,4 @@
+using Core.GrabCamera.Scripts;
 using TMPro;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ namespace Core.Test.Scripts
     
         private void OnMouseEnter()
         {
+            if (GrabCameraController._eCursor.Equals(GrabCameraController.ECursor.Grab) ||
+                GrabCameraController._eCursor.Equals(GrabCameraController.ECursor.Eye)) return;
+            
             textMp.color = new Color32(72, 221, 32, 255);
         }
 
