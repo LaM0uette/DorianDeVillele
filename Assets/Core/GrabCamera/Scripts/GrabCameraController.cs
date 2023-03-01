@@ -20,18 +20,7 @@ namespace Core.GrabCamera.Scripts
         private Camera _camera;
         private Ray _mouseRay;
         private Vector3 _mouseWorldPositionStart;
-    
-        //Cursor
-        public static ECursor _eCursor;
 
-        public enum ECursor
-        {
-            Hand,
-            Grab,
-            Clic,
-            Eye
-        }
-    
         private void Awake()
         {
             _camera = Camera.main;
