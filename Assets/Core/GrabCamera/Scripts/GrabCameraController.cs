@@ -108,18 +108,25 @@ namespace Core.GrabCamera.Scripts
 
             if (Input.GetMouseButton(0))
             {
-                if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Grab)) GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorGrab, GlobalCursors.ECursor.Grab);
+                if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Grab)) 
+                    GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorGrab, GlobalCursors.ECursor.Grab);
+                
                 Pan();
             }
             else if (Input.GetMouseButton(1))
             {
-                if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Eye)) GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorEye, GlobalCursors.ECursor.Eye);
+                if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Eye)) 
+                    GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorEye, GlobalCursors.ECursor.Eye);
+                
                 CamOrbit();
             }
             else
             {
-                if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Hand) && 
-                    !GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Clic)) GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorHand);
+                if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Hand) &&
+                    !GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Clic))
+                {
+                    GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorHand);
+                }
             }
 
             var zoomAmount = Input.GetAxis("Mouse ScrollWheel") * zoomForce;

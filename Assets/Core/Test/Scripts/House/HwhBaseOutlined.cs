@@ -1,19 +1,35 @@
-using System;
 using Core.Globals;
+using EPOOutline;
 using UnityEngine;
 
-namespace Core.House
+namespace Core.Test.Scripts.House
 {
-    public class HouseWorldHover : MonoBehaviour
+    public class HwhBaseOutlined : MonoBehaviour
     {
         #region Statements
 
         private Camera _camera;
         private Vector3 _cameraWorldPosition;
+        private Outlinable _outlinable;
         
         private void Awake()
         {
             _camera = Camera.main;
+            _outlinable = transform.Find("Model").GetComponent<Outlinable>();
+        }
+
+        #endregion
+
+        //
+
+        #region Functions
+
+        private void CheckOutlinableIsEnabled()
+        {
+            if (_outlinable.enabled || !GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Clic)) 
+                return;
+            
+            _outlinable.enabled = true;
         }
 
         #endregion
@@ -25,10 +41,13 @@ namespace Core.House
         private void OnMouseExit()
         {
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorHand);
+            _outlinable.enabled = false;
         }
 
         private void OnMouseOver()
         {
+            CheckOutlinableIsEnabled();
+                
             if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Hand)) return;
             
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClic, GlobalCursors.ECursor.Clic);
