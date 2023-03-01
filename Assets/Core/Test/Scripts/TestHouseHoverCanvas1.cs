@@ -11,8 +11,8 @@ namespace Core.Test.Scripts
     
         private void OnMouseEnter()
         {
-            if (Constants.Instance.Ecursor.Equals(Constants.ECursor.Grab) ||
-                Constants.Instance.Ecursor.Equals(Constants.ECursor.Eye)) return;
+            if (GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Grab) ||
+                GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Eye)) return;
             
             textMp.color = new Color32(72, 221, 32, 255);
         }

@@ -3,9 +3,11 @@ using UnityEngine;
 
 namespace Core.Globals
 {
-    public class Constants : MonoBehaviour
+    public class GlobalCursors : MonoBehaviour
     {
-        public static Constants Instance;
+        #region Statements
+
+        public static GlobalCursors Instance;
 
         public Texture2D CursorHand;
         public Texture2D CursorGrab;
@@ -34,5 +36,19 @@ namespace Core.Globals
                 Destroy(gameObject);
             }
         }
+
+        #endregion
+
+        //
+
+        #region Functions
+
+        public static void SetHandCursor(Texture2D texture2D, ECursor eCursor = ECursor.Hand)
+        {
+            Cursor.SetCursor(texture2D, Instance.HotSpot, CursorMode.Auto);
+            Instance.Ecursor = eCursor;
+        }
+
+        #endregion
     }
 }
