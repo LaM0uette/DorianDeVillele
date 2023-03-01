@@ -1,10 +1,11 @@
 using Core.Globals;
+using EPOOutline;
 using TMPro;
 using UnityEngine;
 
 namespace Core.Test.Scripts.House
 {
-    public class HwhBase2 : MonoBehaviour
+    public class HwhBase2Outlined : MonoBehaviour
     {
         #region Statements
 
@@ -14,10 +15,12 @@ namespace Core.Test.Scripts.House
         
         private Camera _camera;
         private Vector3 _cameraWorldPosition;
+        private Outlinable _outlinable;
 
         private void Awake()
         {
             _camera = Camera.main;
+            _outlinable = transform.Find("Model").GetComponent<Outlinable>();
         }
 
         #endregion
@@ -35,6 +38,8 @@ namespace Core.Test.Scripts.House
             CadreVert.SetActive(true);
             
             textMp.color = new Color32(72, 221, 32, 255);
+            
+            _outlinable.enabled = true;
         }
 
         #endregion
@@ -51,6 +56,8 @@ namespace Core.Test.Scripts.House
             CadreVert.SetActive(false);
             
             textMp.color = new Color32(197, 197, 197, 255);
+            
+            _outlinable.enabled = false;
         }
 
         private void OnMouseOver()
