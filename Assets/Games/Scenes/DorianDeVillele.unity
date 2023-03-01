@@ -3801,7 +3801,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1239824965422734, guid: eac406a61aaed8d448c9491a41fc4c32, type: 3}
       propertyPath: m_Name
-      value: SM_Bld_House_Preset_09
+      value: House
       objectReference: {fileID: 0}
     - target: {fileID: 4046202349130672, guid: eac406a61aaed8d448c9491a41fc4c32, type: 3}
       propertyPath: m_RootOrder
@@ -3809,11 +3809,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4046202349130672, guid: eac406a61aaed8d448c9491a41fc4c32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4373779
+      value: 2.11
       objectReference: {fileID: 0}
     - target: {fileID: 4046202349130672, guid: eac406a61aaed8d448c9491a41fc4c32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.044083
+      value: 19.03
       objectReference: {fileID: 0}
     - target: {fileID: 4046202349130672, guid: eac406a61aaed8d448c9491a41fc4c32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13653,7 +13653,6 @@ MonoBehaviour:
   CursorGrab: {fileID: 2800000, guid: fd9dd19d764441c4e91a2f3806ffdc6a, type: 3}
   CursorEye: {fileID: 2800000, guid: 4959f63030db17e40a707dd6511967fc, type: 3}
   CursorClic: {fileID: 2800000, guid: 8f295d41d9102d745996cfc386063678, type: 3}
-  Ecursor: 0
 --- !u!4 &2089033577
 Transform:
   m_ObjectHideFlags: 0

@@ -6,10 +6,6 @@ namespace Core.Test.Scripts
 {
     public class MouseOverTag1 : MonoBehaviour
     {
-        public Texture2D cursorHand;
-        public Texture2D cursorClic;
-        public Vector2 hotSpot = new (32, 32);
-        
         private Camera _camera;
         private Vector3 _cameraWorldPosition;
         
@@ -26,7 +22,7 @@ namespace Core.Test.Scripts
             if (Constants.Instance.Ecursor.Equals(Constants.ECursor.Grab) ||
                 Constants.Instance.Ecursor.Equals(Constants.ECursor.Eye)) return;
             
-            Cursor.SetCursor(cursorClic, hotSpot, CursorMode.Auto);
+            Cursor.SetCursor(Constants.Instance.CursorClic, Constants.Instance.HotSpot, CursorMode.Auto);
             Constants.Instance.Ecursor = Constants.ECursor.Clic;
             
             _outline.enabled = true;
@@ -34,7 +30,7 @@ namespace Core.Test.Scripts
 
         private void OnMouseExit()
         {
-            Cursor.SetCursor(cursorHand, hotSpot, CursorMode.Auto);
+            Cursor.SetCursor(Constants.Instance.CursorHand, Constants.Instance.HotSpot, CursorMode.Auto);
             Constants.Instance.Ecursor = Constants.ECursor.Hand;
             
             _outline.enabled = false;
@@ -57,7 +53,7 @@ namespace Core.Test.Scripts
             if (Constants.Instance.Ecursor.Equals(Constants.ECursor.Grab) || 
                 Constants.Instance.Ecursor.Equals(Constants.ECursor.Clic)) return;
             
-            Cursor.SetCursor(cursorClic, hotSpot, CursorMode.Auto);
+            Cursor.SetCursor(Constants.Instance.CursorClic, Constants.Instance.HotSpot, CursorMode.Auto);
             Constants.Instance.Ecursor = Constants.ECursor.Clic;
         }
     }
