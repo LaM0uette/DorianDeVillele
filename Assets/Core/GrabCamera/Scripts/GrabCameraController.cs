@@ -22,10 +22,6 @@ namespace Core.GrabCamera.Scripts
         private Vector3 _mouseWorldPositionStart;
     
         //Cursor
-        public Texture2D cursorHand;
-        public Texture2D cursorGrab;
-        public Texture2D cursorEye;
-        public Vector2 _hotSpot = new (32, 32);
         public static ECursor _eCursor;
 
         public enum ECursor
@@ -43,7 +39,7 @@ namespace Core.GrabCamera.Scripts
 
         private void Start()
         {
-            SetHandCursor(Constants.instance.CursorHand);
+            SetHandCursor(Constants.Instance.CursorHand);
         }
 
         #endregion
@@ -107,9 +103,9 @@ namespace Core.GrabCamera.Scripts
             return ray.GetPoint(t);
         }
 
-        private void SetHandCursor(Texture2D texture2D, ECursor eCursor = ECursor.Hand)
+        private static void SetHandCursor(Texture2D texture2D, ECursor eCursor = ECursor.Hand)
         {
-            Cursor.SetCursor(texture2D, _hotSpot, CursorMode.Auto);
+            Cursor.SetCursor(texture2D, Constants.Instance.HotSpot, CursorMode.Auto);
             _eCursor = eCursor;
         }
 
@@ -129,17 +125,17 @@ namespace Core.GrabCamera.Scripts
 
             if (Input.GetMouseButton(0))
             {
-                if (!_eCursor.Equals(ECursor.Grab)) SetHandCursor(cursorGrab, ECursor.Grab);
+                if (!_eCursor.Equals(ECursor.Grab)) SetHandCursor(Constants.Instance.CursorGrab, ECursor.Grab);
                 Pan();
             }
             else if (Input.GetMouseButton(1))
             {
-                if (!_eCursor.Equals(ECursor.Eye)) SetHandCursor(cursorEye, ECursor.Eye);
+                if (!_eCursor.Equals(ECursor.Eye)) SetHandCursor(Constants.Instance.CursorEye, ECursor.Eye);
                 CamOrbit();
             }
             else
             {
-                if (!_eCursor.Equals(ECursor.Hand) && !_eCursor.Equals(ECursor.Clic)) SetHandCursor(Constants.instance.CursorHand);
+                if (!_eCursor.Equals(ECursor.Hand) && !_eCursor.Equals(ECursor.Clic)) SetHandCursor(Constants.Instance.CursorHand);
             }
 
             var zoomAmount = Input.GetAxis("Mouse ScrollWheel") * zoomForce;

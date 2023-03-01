@@ -1,22 +1,23 @@
+using System;
 using UnityEngine;
 
 namespace Core.Globals
 {
     public class Constants : MonoBehaviour
     {
-        public static Constants instance;
+        public static Constants Instance;
 
         public Texture2D CursorHand;
         public Texture2D CursorGrab;
         public Texture2D CursorEye;
         public Texture2D CursorClic;
-        public static Vector2 HotSpot = new (32, 32);
+        [NonSerialized] public Vector2 HotSpot = new (32, 32);
 
         private void Awake()
         {
-            if (instance is null)
+            if (Instance is null)
             {
-                instance = this;
+                Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
             else
