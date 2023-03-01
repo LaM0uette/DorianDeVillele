@@ -12,6 +12,16 @@ namespace Core.Globals
         public Texture2D CursorEye;
         public Texture2D CursorClic;
         [NonSerialized] public Vector2 HotSpot = new (32, 32);
+        
+        public ECursor Ecursor;
+
+        public enum ECursor
+        {
+            Hand,
+            Grab,
+            Clic,
+            Eye
+        }
 
         private void Awake()
         {
