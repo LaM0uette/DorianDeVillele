@@ -1,3 +1,4 @@
+using Core.Globals;
 using UnityEngine;
 
 namespace Core.GrabCamera.Scripts
@@ -42,7 +43,7 @@ namespace Core.GrabCamera.Scripts
 
         private void Start()
         {
-            SetHandCursor(cursorHand);
+            SetHandCursor(Constants.instance.CursorHand);
         }
 
         #endregion
@@ -138,7 +139,7 @@ namespace Core.GrabCamera.Scripts
             }
             else
             {
-                if (!_eCursor.Equals(ECursor.Hand) && !_eCursor.Equals(ECursor.Clic)) SetHandCursor(cursorHand);
+                if (!_eCursor.Equals(ECursor.Hand) && !_eCursor.Equals(ECursor.Clic)) SetHandCursor(Constants.instance.CursorHand);
             }
 
             var zoomAmount = Input.GetAxis("Mouse ScrollWheel") * zoomForce;
