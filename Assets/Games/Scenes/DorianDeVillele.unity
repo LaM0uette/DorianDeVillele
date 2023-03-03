@@ -21086,11 +21086,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3520d825c402b56448bb19672410b52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CursorHand: {fileID: 2800000, guid: e7e4db9fa0d7c0d4ab25eba0146e2677, type: 3}
-  CursorGrab: {fileID: 2800000, guid: fd9dd19d764441c4e91a2f3806ffdc6a, type: 3}
-  CursorEye: {fileID: 2800000, guid: 4959f63030db17e40a707dd6511967fc, type: 3}
-  CursorClic: {fileID: 2800000, guid: 8f295d41d9102d745996cfc386063678, type: 3}
-  CursorClicHouse: {fileID: 2800000, guid: a15377e2c13208543b3969a85e12799c, type: 3}
+  CursorHand: {fileID: 2800000, guid: 2351e5165742043479c963fbd1c98f9d, type: 3}
+  CursorGrab: {fileID: 2800000, guid: 0d727103fd086164e90e415f338afefc, type: 3}
+  CursorEye: {fileID: 2800000, guid: daa7ce04364370745b8a4f3cf83b2a80, type: 3}
+  CursorClic: {fileID: 2800000, guid: 86494752a4cdf8a4eb8704ddc41004eb, type: 3}
+  CursorClicHouse: {fileID: 2800000, guid: 84a081b4247eea542b72ac56e2c6b42d, type: 3}
 --- !u!4 &2089033577
 Transform:
   m_ObjectHideFlags: 0
