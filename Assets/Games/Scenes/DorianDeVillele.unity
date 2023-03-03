@@ -11324,6 +11324,11 @@ PrefabInstance:
       addedObject: {fileID: 2050952764}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b278061741a10b547b541cf69d5dcaa6, type: 3}
+--- !u!23 &1158933333 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5210361159809677618, guid: b278061741a10b547b541cf69d5dcaa6, type: 3}
+  m_PrefabInstance: {fileID: 1144543944}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1166199675
 GameObject:
   m_ObjectHideFlags: 0
@@ -21867,6 +21872,7 @@ MonoBehaviour:
   CursorGrab: {fileID: 2800000, guid: fd9dd19d764441c4e91a2f3806ffdc6a, type: 3}
   CursorEye: {fileID: 2800000, guid: 4959f63030db17e40a707dd6511967fc, type: 3}
   CursorClic: {fileID: 2800000, guid: 8f295d41d9102d745996cfc386063678, type: 3}
+  CursorClicHouse: {fileID: 2800000, guid: a15377e2c13208543b3969a85e12799c, type: 3}
 --- !u!4 &2089033577
 Transform:
   m_ObjectHideFlags: 0
@@ -22513,7 +22519,7 @@ PrefabInstance:
       objectReference: {fileID: 12800000, guid: b2b515182a7b7bc4b84ad38b15329e78, type: 3}
     - target: {fileID: 3562304095699389213, guid: 04c696db977ecf343b730ef91b07bae4, type: 3}
       propertyPath: fontSize
-      value: 14
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3562304095699389213, guid: 04c696db977ecf343b730ef91b07bae4, type: 3}
       propertyPath: fontColor.b
@@ -24077,6 +24083,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 600953617583043773, guid: f6863a4b4b69c964880c6855b78dbc0c, type: 3}
+      propertyPath: tooltipRenderer
+      value: 
+      objectReference: {fileID: 1158933333}
     - target: {fileID: 2921830145370768246, guid: f6863a4b4b69c964880c6855b78dbc0c, type: 3}
       propertyPath: m_Name
       value: HHBase

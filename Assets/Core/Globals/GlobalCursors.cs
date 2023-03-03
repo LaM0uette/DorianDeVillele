@@ -13,6 +13,7 @@ namespace Core.Globals
         public Texture2D CursorGrab;
         public Texture2D CursorEye;
         public Texture2D CursorClic;
+        public Texture2D CursorClicHouse;
         [NonSerialized] public Vector2 HotSpot = new (32, 32);
         [NonSerialized] public ECursor Ecursor;
 
@@ -21,6 +22,7 @@ namespace Core.Globals
             Hand,
             Grab,
             Clic,
+            ClicHouse,
             Eye
         }
 

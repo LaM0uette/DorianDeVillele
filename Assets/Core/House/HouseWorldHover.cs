@@ -29,7 +29,10 @@ namespace Core.House
         private void OnMouseOver()
         {
             if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Hand)) return;
-            GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClic, GlobalCursors.ECursor.Clic);
+            
+            Debug.Log("test");
+            
+            GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClicHouse, GlobalCursors.ECursor.Clic);
         }
         
         private void OnMouseDown()

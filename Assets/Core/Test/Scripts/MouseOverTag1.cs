@@ -22,8 +22,7 @@ namespace Core.Test.Scripts
             if (GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Grab) ||
                 GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Eye)) return;
             
-            Cursor.SetCursor(GlobalCursors.Instance.CursorClic, GlobalCursors.Instance.HotSpot, CursorMode.Auto);
-            GlobalCursors.Instance.Ecursor = GlobalCursors.ECursor.Clic;
+            GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClicHouse, GlobalCursors.ECursor.Clic);
             
             _outline.enabled = true;
         }
@@ -53,8 +52,7 @@ namespace Core.Test.Scripts
             if (GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Grab) || 
                 GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Clic)) return;
             
-            Cursor.SetCursor(GlobalCursors.Instance.CursorClic, GlobalCursors.Instance.HotSpot, CursorMode.Auto);
-            GlobalCursors.Instance.Ecursor = GlobalCursors.ECursor.Clic;
+            GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClicHouse, GlobalCursors.ECursor.Clic);
         }
     }
 }
