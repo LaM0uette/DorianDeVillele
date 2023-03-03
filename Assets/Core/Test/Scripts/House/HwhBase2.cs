@@ -1,3 +1,4 @@
+using System;
 using Core.Globals;
 using TMPro;
 using UnityEngine;
@@ -33,8 +34,15 @@ namespace Core.Test.Scripts.House
             
             CadreGris.SetActive(false);
             CadreVert.SetActive(true);
-            
-            textMp.color = new Color32(72, 221, 32, 255);
+
+            try
+            {
+                textMp.color = new Color32(72, 221, 32, 255);
+            }
+            catch (Exception e)
+            {
+                //
+            }
         }
 
         #endregion
@@ -49,8 +57,15 @@ namespace Core.Test.Scripts.House
             
             CadreGris.SetActive(true);
             CadreVert.SetActive(false);
-            
-            textMp.color = new Color32(197, 197, 197, 255);
+
+            try
+            {
+                textMp.color = new Color32(197, 197, 197, 255);
+            }
+            catch (Exception e)
+            {
+                //
+            }
         }
 
         private void OnMouseOver()
