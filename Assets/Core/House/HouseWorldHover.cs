@@ -1,4 +1,3 @@
-using System;
 using Core.Globals;
 using UnityEngine;
 
@@ -30,7 +29,6 @@ namespace Core.House
         private void OnMouseOver()
         {
             if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Hand)) return;
-            
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClic, GlobalCursors.ECursor.Clic);
         }
         
