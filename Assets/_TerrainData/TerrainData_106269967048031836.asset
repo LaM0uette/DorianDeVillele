@@ -3047,9 +3047,9 @@ MonoBehaviour:
   terrainData: {fileID: 11400000}
   shadingSystem: 0
   customMaterial: {fileID: 2100000, guid: 375a1ecd11234ac4cbb1f13786c1219f, type: 2}
-  albedoMapResolution: 512
+  albedoMapResolution: 2048
   albedoMap: {fileID: 0}
-  metallicMapResolution: 512
+  metallicMapResolution: 2048
   metallicMap: {fileID: 0}
   albedoMapPropertyName: _MainTex
   metallicMapPropertyName: _MetallicGlossMap
@@ -3146,7 +3146,8 @@ MonoBehaviour:
   colorBlendMap: {fileID: -7710213388586032217}
   splats: {fileID: 11400000, guid: a3cfde07cd0a9f4488f10294d27e360e, type: 2}
   splatControlResolution: 512
-  splatControls: []
+  splatControls:
+  - {fileID: 0}
   splatControlMapPropertyName: _Control
   splatMapPropertyName: _Splat
   splatNormalPropertyName: _Normal
