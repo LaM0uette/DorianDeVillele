@@ -7,7 +7,7 @@ namespace Core.Test.Scripts
     {
         private void OnMouseEnter()
         {
-            SaveCameraPosition.LoadNewScene("DorianDeVillele");
+            SceneLoader.LoadNewScene("DorianDeVillele");
         }
     }
 }
