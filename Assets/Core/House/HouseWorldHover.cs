@@ -13,12 +13,9 @@ namespace Core.House
         private Vector3 _cameraWorldPosition;
         
         //
-        public static Vector3 savedCameraPosition;
-
-        public void LoadScene()
+        private void LoadScene()
         {
-            savedCameraPosition = _camera.transform.position;
-            SceneManager.LoadScene("Test1");
+            SaveCameraPosition.LoadNewScene(_camera.transform, "Test1");
         }
         //
 
