@@ -1,5 +1,7 @@
 using Core.Globals;
+using Core.GrabCamera.Scripts;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Core.House
 {
@@ -10,6 +12,16 @@ namespace Core.House
         private Camera _camera;
         private Vector3 _cameraWorldPosition;
         
+        //
+        public static Vector3 savedCameraPosition;
+
+        public void LoadScene()
+        {
+            savedCameraPosition = _camera.transform.position;
+            SceneManager.LoadScene("Test1");
+        }
+        //
+
         private void Awake()
         {
             _camera = Camera.main;
@@ -45,6 +57,7 @@ namespace Core.House
             if (!_cameraWorldPosition.Equals(_camera.transform.position)) return;
             
             Debug.Log("MouseUp");
+            LoadScene();
         }
 
         #endregion
