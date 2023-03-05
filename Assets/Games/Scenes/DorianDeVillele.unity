@@ -22309,6 +22309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3ffc25c32bfb547ab4bf7a24924b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scene: {fileID: 102900000, guid: c38efcb7864331d47833a506fb4157b1, type: 3}
+  _xPosition: 0
 --- !u!1001 &7506677129643819731
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -26,8 +26,6 @@ namespace Core.Test.Scripts.House
 
         #endregion
 
-        //
-
         #region Functions
 
         private void CheckCadreIsEnabled()
@@ -42,7 +40,7 @@ namespace Core.Test.Scripts.House
             {
                 textMp.color = new Color32(72, 221, 32, 255);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //
             }
@@ -51,8 +49,6 @@ namespace Core.Test.Scripts.House
         }
 
         #endregion
-
-        //
 
         #region Actions
 
@@ -67,7 +63,7 @@ namespace Core.Test.Scripts.House
             {
                 textMp.color = new Color32(197, 197, 197, 255);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //
             }

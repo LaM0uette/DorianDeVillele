@@ -33,8 +33,6 @@ namespace Core.GrabCamera.Scripts
 
         #endregion
 
-        //
-
         #region Functions
 
         private void Pan()
@@ -93,8 +91,6 @@ namespace Core.GrabCamera.Scripts
         }
 
         #endregion
-
-        //
 
         #region Events
 

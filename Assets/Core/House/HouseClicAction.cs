@@ -1,4 +1,5 @@
 using Core.GrabCamera.Scripts;
+using UnityEditor;
 using UnityEngine;
 
 namespace Core.House
@@ -6,6 +7,9 @@ namespace Core.House
     public class HouseClicAction : MonoBehaviour
     {
         #region Statements
+        
+        [SerializeField] private SceneAsset _scene;
+        [SerializeField] private int _xPosition;
 
         private Camera _camera;
         private Vector3 _cameraWorldPosition;
@@ -17,18 +21,14 @@ namespace Core.House
 
         #endregion
 
-        //
-
         #region Functions
 
         private void LoadScene()
         {
-            SceneLoader.LoadNewScene(_camera.transform, "Test1");
+            SceneLoader.LoadNewScene(_camera.transform, _scene.name, _xPosition);
         }
 
         #endregion
-
-        //
 
         #region Events
 

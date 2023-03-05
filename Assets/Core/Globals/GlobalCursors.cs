@@ -33,8 +33,6 @@ namespace Core.Globals
 
         #endregion
 
-        //
-
         #region Functions
 
         public static void SetHandCursor(Texture2D texture2D, ECursor eCursor = ECursor.Hand)

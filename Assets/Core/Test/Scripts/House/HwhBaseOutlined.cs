@@ -20,8 +20,6 @@ namespace Core.Test.Scripts.House
 
         #endregion
 
-        //
-
         #region Functions
 
         private void CheckOutlinableIsEnabled()
@@ -33,8 +31,6 @@ namespace Core.Test.Scripts.House
         }
 
         #endregion
-
-        //
 
         #region Actions
 
