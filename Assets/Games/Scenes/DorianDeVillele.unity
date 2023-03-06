@@ -4655,7 +4655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3ffc25c32bfb547ab4bf7a24924b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scene: {fileID: 102900000, guid: e15f62f346264cd45ab50e0bdd7fc062, type: 3}
+  Scene: House
   _xPosition: 0
 --- !u!1001 &542947441
 PrefabInstance:
@@ -22521,7 +22521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3ffc25c32bfb547ab4bf7a24924b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scene: {fileID: 102900000, guid: c38efcb7864331d47833a506fb4157b1, type: 3}
+  Scene: House
   _xPosition: 0
 --- !u!1001 &7506677129643819731
 PrefabInstance:

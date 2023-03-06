@@ -1,6 +1,6 @@
 using Core.GrabCamera.Scripts;
-using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core.House
 {
@@ -8,7 +8,7 @@ namespace Core.House
     {
         #region Statements
         
-        [SerializeField] private SceneAsset _scene;
+        [SerializeField] private string SceneName = "House";
         [SerializeField] private int _xPosition;
 
         private Camera _camera;
@@ -25,7 +25,7 @@ namespace Core.House
 
         private void LoadScene()
         {
-            SceneLoader.LoadNewScene(_camera.transform, _scene.name, _xPosition);
+            SceneLoader.LoadNewScene(_camera.transform, SceneName, _xPosition);
         }
 
         #endregion

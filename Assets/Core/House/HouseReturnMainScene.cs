@@ -16,7 +16,7 @@ namespace Core.House
 
         private void Start()
         {
-            _camera.transform.position = new Vector3(SceneLoader.Xposition, 0, 0);
+            _camera.transform.position = new Vector3(SceneLoader.Xposition, 2.5f, 1);
         }
 
         #endregion

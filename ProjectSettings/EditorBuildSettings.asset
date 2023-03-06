@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Games/Scenes/DorianDeVillele.unity
     guid: c4dffe102f4c76c41b4689d006d6f68a
   - enabled: 1
-    path: Assets/Games/Scenes/Test1.unity
-    guid: c38efcb7864331d47833a506fb4157b1
+    path: Assets/Games/Scenes/House/House.unity
+    guid: e15f62f346264cd45ab50e0bdd7fc062
   m_configObjects: {}
