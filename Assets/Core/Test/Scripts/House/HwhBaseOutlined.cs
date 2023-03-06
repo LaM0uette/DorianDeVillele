@@ -8,13 +8,11 @@ namespace Core.Test.Scripts.House
     {
         #region Statements
 
-        private Camera _camera;
         private Vector3 _cameraWorldPosition;
         private Outlinable _outlinable;
         
         private void Awake()
         {
-            _camera = Camera.main;
             _outlinable = transform.Find("Model").GetComponent<Outlinable>();
         }
 
@@ -47,18 +45,6 @@ namespace Core.Test.Scripts.House
             if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Hand)) return;
             
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClicHouse, GlobalCursors.ECursor.Clic);
-        }
-        
-        private void OnMouseDown()
-        {
-            _cameraWorldPosition = _camera.transform.position;
-        }
-
-        private void OnMouseUp()
-        {
-            if (!_cameraWorldPosition.Equals(_camera.transform.position)) return;
-            
-            Debug.Log("MouseUp");
         }
 
         #endregion
