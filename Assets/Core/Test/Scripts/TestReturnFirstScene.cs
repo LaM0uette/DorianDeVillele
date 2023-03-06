@@ -5,25 +5,9 @@ namespace Core.Test.Scripts
 {
     public class TestReturnFirstScene : MonoBehaviour
     {
-        #region Statements
-
-        private Camera _camera;
-        
-        private void Awake()
-        {
-            _camera = Camera.main;
-        }
-
-        private void Start()
-        {
-            _camera.transform.position = new Vector3(0, 0, 0);
-        }
-
-        #endregion
-
         #region Events
 
-        private void OnMouseEnter()
+        private void OnMouseDown()
         {
             SceneLoader.LoadNewScene("DorianDeVillele");
         }
