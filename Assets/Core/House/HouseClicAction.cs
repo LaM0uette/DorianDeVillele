@@ -1,6 +1,5 @@
 using Core.GrabCamera.Scripts;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Core.House
 {
