@@ -6,7 +6,7 @@ namespace Core.Test.Scripts
     public class TestReturnFirstScene : MonoBehaviour
     {
         #region Statements
-        
+
         private Camera _camera;
         
         private void Awake()
@@ -16,7 +16,7 @@ namespace Core.Test.Scripts
 
         private void Start()
         {
-            _camera.transform.position = new Vector3(SceneLoader.Xposition, 0, 0);
+            _camera.transform.position = new Vector3(0, 0, 0);
         }
 
         #endregion

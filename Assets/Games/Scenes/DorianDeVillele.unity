@@ -4657,6 +4657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName: House
   _xPosition: 0
+  CamPositionName: DorianHouse
 --- !u!1001 &542947441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22523,6 +22524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName: House
   _xPosition: 0
+  CamPositionName: 
 --- !u!1001 &7506677129643819731
 PrefabInstance:
   m_ObjectHideFlags: 0

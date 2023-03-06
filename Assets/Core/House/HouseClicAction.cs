@@ -8,7 +8,7 @@ namespace Core.House
         #region Statements
         
         [SerializeField] private string SceneName = "House";
-        [SerializeField] private int _xPosition;
+        [SerializeField] private string CamPositionName;
 
         private Camera _camera;
         private Vector3 _cameraWorldPosition;
@@ -24,7 +24,7 @@ namespace Core.House
 
         private void LoadScene()
         {
-            SceneLoader.LoadNewScene(_camera.transform, SceneName, _xPosition);
+            SceneLoader.LoadNewScene(_camera.transform, SceneName, CamPositionName);
         }
 
         #endregion

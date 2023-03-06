@@ -7,7 +7,7 @@ namespace Core.GrabCamera.Scripts
     {
         #region Statements
         
-        public static int Xposition { get; private set; }
+        public static string CamPositionName { get; private set; }
 
         private static Vector3 _cameraPosition = Vector3.zero;
         private static Quaternion _cameraRotation;
@@ -32,17 +32,17 @@ namespace Core.GrabCamera.Scripts
             cameraTransform.position = _cameraPosition;
             cameraTransform.rotation = _cameraRotation;
         }
-        
-        private static void SetXposition(int xPosition) => Xposition = xPosition;
+
+        private static void SetCamPositionName(string camPositionName) => CamPositionName = camPositionName;
         
         public static void LoadNewScene(string scene)
         {
             SceneManager.LoadScene(scene);
         }
 
-        public static void LoadNewScene(Transform transform, string scene, int xPosition = 0)
+        public static void LoadNewScene(Transform transform, string scene, string camPositionName = "")
         {
-            SetXposition(xPosition);
+            SetCamPositionName(camPositionName);
                 
             _cameraPosition = transform.position;
             _cameraRotation = transform.rotation;

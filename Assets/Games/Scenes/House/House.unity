@@ -8211,6 +8211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3cf162e37c5d3a4a906aa1741deb803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DorianHouse: {fileID: 1190665148}
 --- !u!1001 &1785207961
 PrefabInstance:
   m_ObjectHideFlags: 0
