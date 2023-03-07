@@ -35,6 +35,12 @@ namespace Core.GrabCamera.Scripts
 
         private static void SetCamPositionName(string camPositionName) => CamPositionName = camPositionName;
         
+        private static void SetTransform(Transform transform)
+        {
+            _cameraPosition = transform.position;
+            _cameraRotation = transform.rotation;
+        }
+
         public static void LoadNewScene(string scene)
         {
             SceneManager.LoadScene(scene);
@@ -43,13 +49,11 @@ namespace Core.GrabCamera.Scripts
         public static void LoadNewScene(Transform transform, string scene, string camPositionName = "")
         {
             SetCamPositionName(camPositionName);
-                
-            _cameraPosition = transform.position;
-            _cameraRotation = transform.rotation;
-            
-            SceneManager.LoadScene(scene);
+            SetTransform(transform);
+
+            LoadNewScene(scene);
         }
-        
+
         #endregion
 
         #region Events
