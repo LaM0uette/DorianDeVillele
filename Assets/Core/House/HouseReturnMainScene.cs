@@ -7,7 +7,7 @@ namespace Core.House
     {
         #region Events
 
-        private void OnMouseDown()
+        private void OnMouseUp()
         {
             SceneLoader.LoadNewScene("DorianDeVillele");
         }
