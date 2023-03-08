@@ -112,10 +112,10 @@ namespace Core.GrabCamera.Scripts
             }
             else if (Input.GetMouseButton(1))
             {
-                if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Eye)) 
-                    GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorEye, GlobalCursors.ECursor.Eye);
-                
-                CamOrbit();
+                // if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Eye)) 
+                //     GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorEye, GlobalCursors.ECursor.Eye);
+                //
+                // CamOrbit();
             }
             else
             {
