@@ -10,11 +10,14 @@ namespace Core.Canvas.Icons
     {
         #region Statements
 
-        private Image img;
+        private Image _img;
+        private Vector3 _localScale;
+        private const float _scale = 0.0022f;
 
         private void Awake()
         {
-            img = GetComponent<Image>();
+            _img = GetComponent<Image>();
+            _localScale = transform.localScale;
         }
 
         #endregion
@@ -25,14 +28,16 @@ namespace Core.Canvas.Icons
         {
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClic, GlobalCursors.ECursor.Clic);
             
-            img.color = new Color32(72, 221, 32, 255);
+            _img.color = new Color32(72, 221, 32, 255);
+            transform.localScale = new Vector3(_scale, _scale, _scale);
         }
 
         private void OnMouseExit()
         {
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorHand);
             
-            img.color = new Color32(197, 197, 197, 255);
+            _img.color = new Color32(197, 197, 197, 255);
+            transform.localScale = _localScale;
         }
 
         #endregion
