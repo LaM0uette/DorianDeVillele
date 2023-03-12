@@ -2293,7 +2293,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2089033577}
-  - {fileID: 1744949556}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16934,37 +16933,6 @@ Transform:
   m_Father: {fileID: 799818344}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1744949555
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1744949556}
-  m_Layer: 0
-  m_Name: Positions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1744949556
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1744949555}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 280904653}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1746003922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21160,6 +21128,7 @@ MonoBehaviour:
   CursorHand: {fileID: 2800000, guid: 2351e5165742043479c963fbd1c98f9d, type: 3}
   CursorGrab: {fileID: 2800000, guid: 0d727103fd086164e90e415f338afefc, type: 3}
   CursorEye: {fileID: 2800000, guid: daa7ce04364370745b8a4f3cf83b2a80, type: 3}
+  CursorClic: {fileID: 2800000, guid: 86494752a4cdf8a4eb8704ddc41004eb, type: 3}
   CursorClicHouse: {fileID: 2800000, guid: 84a081b4247eea542b72ac56e2c6b42d, type: 3}
 --- !u!4 &2089033577
 Transform:

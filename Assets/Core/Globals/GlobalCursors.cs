@@ -22,7 +22,7 @@ namespace Core.Globals
             Hand,
             Grab,
             Clic,
-            //ClicHouse,
+            ClicHouse,
             Eye
         }
 
