@@ -7258,6 +7258,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow: 1
   textMp: {fileID: 1107080979}
+  cameraController: {fileID: 1778273081}
+  Programmation: {fileID: 1930785864}
+  Logiciels: {fileID: 1328319029}
+  Divers: {fileID: 1235967653}
 --- !u!1001 &940384546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7606,6 +7610,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow: 0
   textMp: {fileID: 1107080979}
+  cameraController: {fileID: 1778273081}
+  Programmation: {fileID: 1930785864}
+  Logiciels: {fileID: 1328319029}
+  Divers: {fileID: 1235967653}
 --- !u!1001 &948818857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14624,6 +14632,7 @@ GameObject:
   - component: {fileID: 1778273078}
   - component: {fileID: 1778273080}
   - component: {fileID: 1778273079}
+  - component: {fileID: 1778273081}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14800,6 +14809,88 @@ MonoBehaviour:
   - assemblyQualifiedName: Pinwheel.Poseidon.FX.PostProcessing.PWetLens, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_AfterStackBundles: []
+--- !u!114 &1778273081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778273074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6696faec639b7c94683acda929be19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.7975333
+      outSlope: 2.7975333
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3578287
+      value: 1.0010377
+      inSlope: 0.0043941755
+      outSlope: 0.0043941755
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.35794294
+    - serializedVersion: 3
+      time: 0.48256364
+      value: 0.999537
+      inSlope: -0.030707043
+      outSlope: -0.030707043
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.47226316
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.59783506
+      value: 0.99146324
+      inSlope: -0.017497482
+      outSlope: -0.017497482
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.3878991
+    - serializedVersion: 3
+      time: 0.75181353
+      value: 1.0085857
+      inSlope: 0.0089235185
+      outSlope: 0.0089235185
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3714148
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.91828305
+      value: 0.9902376
+      inSlope: 0.04371887
+      outSlope: 0.04371887
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3229835
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.99890137
+      value: 1
+      inSlope: 0.4795897
+      outSlope: 0.4795897
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.6265856
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  animationDuration: 0.2
 --- !u!1001 &1785207961
 PrefabInstance:
   m_ObjectHideFlags: 0

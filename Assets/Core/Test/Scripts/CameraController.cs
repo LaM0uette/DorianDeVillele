@@ -5,7 +5,7 @@ namespace Core.Test.Scripts
     public class CameraController : MonoBehaviour
     {
         public AnimationCurve animationCurve; // La courbe d'interpolation pour la vitesse
-        public float animationDuration = 5.0f; // La durée de l'animation en secondes
+        public float animationDuration = 1.0f; // La durée de l'animation en secondes
 
         private float animationProgress = 0.0f; // La progression actuelle de l'animation
         private float animationSpeed = 0.0f; // La vitesse de l'animation
