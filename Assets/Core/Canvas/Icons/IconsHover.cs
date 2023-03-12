@@ -4,14 +4,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Core.Test.Scripts
+namespace Core.Canvas.Icons
 {
     public class IconsHover : MonoBehaviour
     {
         #region Statements
-
-        [SerializeField] private CanvasChangeGroup.ArrowSide arrow;
-        [SerializeField] private TextMeshProUGUI textMp;
 
         private Image img;
 
@@ -22,24 +19,6 @@ namespace Core.Test.Scripts
 
         #endregion
 
-        #region Functions
-
-        private void SetCurrentTitle()
-        {
-            IncreaseCurrentTitle();
-            textMp.text = CanvasChangeGroup.GetTitle();
-        }
-        
-        private void IncreaseCurrentTitle()
-        {
-            if (arrow.Equals(CanvasChangeGroup.ArrowSide.Left))
-                CanvasChangeGroup.CurrentTitle--;
-            else
-                CanvasChangeGroup.CurrentTitle++;
-        }
-
-        #endregion
-        
         #region Events
 
         private void OnMouseEnter()
@@ -54,11 +33,6 @@ namespace Core.Test.Scripts
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorHand);
             
             img.color = new Color32(197, 197, 197, 255);
-        }
-        
-        private void OnMouseDown()
-        {
-            SetCurrentTitle();
         }
 
         #endregion
