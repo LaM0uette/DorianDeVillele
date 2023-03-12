@@ -1,8 +1,8 @@
 using Core.Globals.Canvas;
-using Core.Globals.Cursors;
+using Core.Test.Scripts;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Core.Canvas.Icons
 {
@@ -12,6 +12,12 @@ namespace Core.Canvas.Icons
 
         [SerializeField] private CanvasChangeGroup.ArrowSide arrow;
         [SerializeField] private TextMeshProUGUI textMp;
+        
+        public CameraController cameraController;
+        
+        [SerializeField] private GameObject Programmation;
+        [SerializeField] private GameObject Logiciels;
+        [SerializeField] private GameObject Divers;
 
         #endregion
 
@@ -31,13 +37,30 @@ namespace Core.Canvas.Icons
                 CanvasChangeGroup.CurrentTitle++;
         }
 
+        private void ChangeGameObject()
+        {
+            Programmation.SetActive(false);
+            Logiciels.SetActive(false); 
+            Divers.SetActive(false);
+            
+            switch (CanvasChangeGroup.CurrentTitle)
+            {
+                case 0: Programmation.SetActive(true); break;
+                case 1: Logiciels.SetActive(true); break;
+                case 2: Divers.SetActive(true); break;
+            }
+        }
+
         #endregion
         
         #region Events
 
         private void OnMouseDown()
         {
+            cameraController.StartAnimation();
+            
             SetCurrentTitle();
+            ChangeGameObject();
         }
 
         #endregion
