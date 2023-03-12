@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Core.CameraFix
 {
-    public class CameraRotationController : MonoBehaviour
+    public class CameraShakeRotationController : MonoBehaviour
     {
         #region Statements
 

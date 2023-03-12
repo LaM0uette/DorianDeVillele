@@ -17,12 +17,12 @@ namespace Core.Canvas.Icons
         [SerializeField] private GameObject Divers;
 
         private Camera _camera;
-        private CameraRotationController cameraRotationController;
+        private CameraShakeRotationController cameraShakeRotationController;
         
         private void Start()
         {
             _camera = Camera.main;
-            if (_camera is not null) cameraRotationController = _camera.GetComponent<CameraRotationController>();
+            if (_camera is not null) cameraShakeRotationController = _camera.GetComponent<CameraShakeRotationController>();
         }
 
         #endregion
@@ -63,7 +63,7 @@ namespace Core.Canvas.Icons
 
         private void OnMouseDown()
         {
-            cameraRotationController.StartAnimation();
+            cameraShakeRotationController.StartAnimation();
             
             SetCurrentTitle();
             ChangeGameObject();
