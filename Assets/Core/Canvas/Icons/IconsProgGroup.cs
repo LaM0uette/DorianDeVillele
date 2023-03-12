@@ -1,7 +1,6 @@
+using Core.CameraFix;
 using Core.Globals.Canvas;
-using Core.Test.Scripts;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 
 namespace Core.Canvas.Icons
@@ -12,12 +11,19 @@ namespace Core.Canvas.Icons
 
         [SerializeField] private CanvasChangeGroup.ArrowSide arrow;
         [SerializeField] private TextMeshProUGUI textMp;
-        
-        public CameraController cameraController;
-        
+
         [SerializeField] private GameObject Programmation;
         [SerializeField] private GameObject Logiciels;
         [SerializeField] private GameObject Divers;
+
+        private Camera _camera;
+        private CameraRotationController cameraRotationController;
+        
+        private void Start()
+        {
+            _camera = Camera.main;
+            if (_camera is not null) cameraRotationController = _camera.GetComponent<CameraRotationController>();
+        }
 
         #endregion
 
@@ -57,7 +63,7 @@ namespace Core.Canvas.Icons
 
         private void OnMouseDown()
         {
-            cameraController.StartAnimation();
+            cameraRotationController.StartAnimation();
             
             SetCurrentTitle();
             ChangeGameObject();
