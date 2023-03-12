@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Core.Canvas
+namespace Core.Globals.Canvas
 {
     public static class CanvasChangeGroup
     {

@@ -1,4 +1,4 @@
-using Core.Globals;
+using Core.Globals.Cursors;
 using EPOOutline;
 using UnityEngine;
 

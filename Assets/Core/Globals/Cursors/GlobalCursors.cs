@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Core.Globals
+namespace Core.Globals.Cursors
 {
     public class GlobalCursors : MonoBehaviour
     {

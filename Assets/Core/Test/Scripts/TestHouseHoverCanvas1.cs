@@ -1,4 +1,4 @@
-using Core.Globals;
+using Core.Globals.Cursors;
 using Core.GrabCamera.Scripts;
 using TMPro;
 using UnityEngine;
