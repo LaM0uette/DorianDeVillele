@@ -1,6 +1,4 @@
-using Core.Globals.Canvas;
 using Core.Globals.Cursors;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 

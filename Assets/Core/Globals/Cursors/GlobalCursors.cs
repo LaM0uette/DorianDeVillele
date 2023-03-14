@@ -30,6 +30,11 @@ namespace Core.Globals.Cursors
         {
             Instance ??= this;
         }
+        
+        private void Start()
+        {
+            SetHandCursor(Instance.CursorHand);
+        }
 
         #endregion
 

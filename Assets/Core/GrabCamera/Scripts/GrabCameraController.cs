@@ -26,11 +26,6 @@ namespace Core.GrabCamera.Scripts
             _camera = Camera.main;
         }
 
-        private void Start()
-        {
-            GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorHand);
-        }
-
         #endregion
 
         #region Functions
