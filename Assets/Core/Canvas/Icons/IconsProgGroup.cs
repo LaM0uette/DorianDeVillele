@@ -12,9 +12,10 @@ namespace Core.Canvas.Icons
         [SerializeField] private CanvasChangeGroup.ArrowSide arrow;
         [SerializeField] private TextMeshProUGUI textMp;
 
-        [SerializeField] private GameObject Programmation;
-        [SerializeField] private GameObject Logiciels;
-        [SerializeField] private GameObject Divers;
+        [SerializeField] private GameObject Logos;
+        private GameObject Programmation;
+        private GameObject Logiciels;
+        private GameObject Divers;
 
         private Camera _camera;
         private CameraShakeRotationController cameraShakeRotationController;
@@ -22,6 +23,11 @@ namespace Core.Canvas.Icons
         private void Start()
         {
             _camera = Camera.main;
+
+            Programmation = Logos.transform.Find("Programmation").gameObject;
+            Logiciels = Logos.transform.Find("Logiciels").gameObject;
+            Divers = Logos.transform.Find("Divers").gameObject;
+            
             if (_camera is not null) cameraShakeRotationController = _camera.GetComponent<CameraShakeRotationController>();
         }
 
