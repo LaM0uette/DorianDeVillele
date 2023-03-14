@@ -13,7 +13,9 @@ namespace Core.Canvas.Icons
         [SerializeField] private TextMeshProUGUI textMp;
 
         [SerializeField] private GameObject Logos;
+        
         private GameObject Programmation;
+        private GameObject Sgbd;
         private GameObject Logiciels;
         private GameObject Divers;
 
@@ -25,6 +27,7 @@ namespace Core.Canvas.Icons
             _camera = Camera.main;
 
             Programmation = Logos.transform.Find("Programmation").gameObject;
+            Sgbd = Logos.transform.Find("Sgbd").gameObject;
             Logiciels = Logos.transform.Find("Logiciels").gameObject;
             Divers = Logos.transform.Find("Divers").gameObject;
             
@@ -52,14 +55,16 @@ namespace Core.Canvas.Icons
         private void ChangeGameObject()
         {
             Programmation.SetActive(false);
+            Sgbd.SetActive(false);
             Logiciels.SetActive(false); 
             Divers.SetActive(false);
             
             switch (CanvasChangeGroup.CurrentTitle)
             {
                 case 0: Programmation.SetActive(true); break;
-                case 1: Logiciels.SetActive(true); break;
-                case 2: Divers.SetActive(true); break;
+                case 1: Sgbd.SetActive(true); break;
+                case 2: Logiciels.SetActive(true); break;
+                case 3: Divers.SetActive(true); break;
             }
         }
 

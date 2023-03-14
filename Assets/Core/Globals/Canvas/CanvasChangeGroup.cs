@@ -17,8 +17,9 @@ namespace Core.Globals.Canvas
         private static readonly Dictionary<int, string> _DICT_GROUP = new()
         {
             {0, "Programmation"},
-            {1, "Logiciels"},
-            {2, "Divers"}
+            {1, "SGBD"},
+            {2, "Logiciels"},
+            {3, "Divers"}
         };
 
         #endregion
