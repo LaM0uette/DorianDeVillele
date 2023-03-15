@@ -253,7 +253,7 @@ QualitySettings:
     shadowResolution: 2
     shadowProjection: 1
     shadowCascades: 4
-    shadowDistance: 80
+    shadowDistance: 120
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.045782145, y: 0.16191643, z: 0.36101562}
@@ -305,7 +305,7 @@ QualitySettings:
     Server: 0
     Stadia: 5
     Standalone: 5
-    WebGL: 2
+    WebGL: 3
     Windows Store Apps: 5
     XboxOne: 5
     iPhone: 2
