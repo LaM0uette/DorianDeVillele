@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8707877727256258977
+--- !u!114 &-5828457888123770333
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17,7 +17,7 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   gradingMode:
-    overrideState: 1
+    overrideState: 0
     value: 1
   externalLut:
     overrideState: 0
@@ -25,13 +25,13 @@ MonoBehaviour:
     defaultState: 1
   tonemapper:
     overrideState: 1
-    value: 2
+    value: 3
   toneCurveToeStrength:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.1
   toneCurveToeLength:
-    overrideState: 0
-    value: 0.5
+    overrideState: 1
+    value: 0.3
   toneCurveShoulderStrength:
     overrideState: 0
     value: 0
@@ -39,11 +39,11 @@ MonoBehaviour:
     overrideState: 0
     value: 0.5
   toneCurveShoulderAngle:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.53
   toneCurveGamma:
     overrideState: 0
-    value: 1
+    value: 0.94
   ldrLut:
     overrideState: 0
     value: {fileID: 0}
@@ -53,28 +53,28 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 2.97
+    value: 10
   tint:
     overrideState: 1
-    value: 1.21
+    value: -4
   colorFilter:
-    overrideState: 1
-    value: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
+    overrideState: 0
+    value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
     overrideState: 0
     value: 0
   saturation:
     overrideState: 0
-    value: 0
+    value: -11
   brightness:
     overrideState: 0
     value: 0
   postExposure:
     overrideState: 1
-    value: 0.62
+    value: 0.11
   contrast:
-    overrideState: 1
-    value: 2
+    overrideState: 0
+    value: -2
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
@@ -104,13 +104,13 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 1, y: 0.9890606, z: 0.91665226, w: 0.1459854}
+    value: {x: 1, y: 1, z: 1, w: 0.026178014}
   gamma:
     overrideState: 1
-    value: {x: 0.9705081, y: 1, z: 0.81263083, w: 0.07299271}
+    value: {x: 0.96720684, y: 1, z: 0.94490176, w: -0.052356023}
   gain:
     overrideState: 1
-    value: {x: 0.88267624, y: 0.8656087, z: 1, w: -0.24087618}
+    value: {x: 0.90070844, y: 1, z: 0.98950773, w: 0.18324605}
   masterCurve:
     overrideState: 0
     value:
@@ -1324,7 +1324,7 @@ MonoBehaviour:
   m_Name: PPTest
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: -8707877727256258977}
+  - {fileID: -5828457888123770333}
   - {fileID: 5663756765714158946}
   - {fileID: 7029793035674740917}
 --- !u!114 &5663756765714158946
