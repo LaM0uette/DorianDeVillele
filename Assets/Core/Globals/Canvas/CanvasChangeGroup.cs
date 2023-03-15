@@ -18,8 +18,9 @@ namespace Core.Globals.Canvas
         {
             {0, "Programmation"},
             {1, "SGBD"},
-            {2, "Logiciels"},
-            {3, "Divers"}
+            {2, "Adobe"},
+            {3, "Logiciels"},
+            {4, "Divers"}
         };
 
         #endregion

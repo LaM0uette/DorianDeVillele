@@ -16,6 +16,7 @@ namespace Core.Canvas.Icons
         
         private GameObject Programmation;
         private GameObject Sgbd;
+        private GameObject Adobe;
         private GameObject Logiciels;
         private GameObject Divers;
 
@@ -28,6 +29,7 @@ namespace Core.Canvas.Icons
 
             Programmation = Logos.transform.Find("Programmation").gameObject;
             Sgbd = Logos.transform.Find("Sgbd").gameObject;
+            Adobe = Logos.transform.Find("Adobe").gameObject;
             Logiciels = Logos.transform.Find("Logiciels").gameObject;
             Divers = Logos.transform.Find("Divers").gameObject;
             
@@ -56,6 +58,7 @@ namespace Core.Canvas.Icons
         {
             Programmation.SetActive(false);
             Sgbd.SetActive(false);
+            Adobe.SetActive(false);
             Logiciels.SetActive(false); 
             Divers.SetActive(false);
             
@@ -63,8 +66,9 @@ namespace Core.Canvas.Icons
             {
                 case 0: Programmation.SetActive(true); break;
                 case 1: Sgbd.SetActive(true); break;
-                case 2: Logiciels.SetActive(true); break;
-                case 3: Divers.SetActive(true); break;
+                case 2: Adobe.SetActive(true); break;
+                case 3: Logiciels.SetActive(true); break;
+                case 4: Divers.SetActive(true); break;
             }
         }
 
