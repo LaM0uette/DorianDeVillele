@@ -3232,6 +3232,10 @@ PrefabInstance:
       propertyPath: zoomForce
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6660945101160363396, guid: 0f7afa46d4678714bbd07cf72c78e364, type: 3}
+      propertyPath: far clip plane
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 8474267974042329568, guid: 0f7afa46d4678714bbd07cf72c78e364, type: 3}
       propertyPath: stage
       value: 1
