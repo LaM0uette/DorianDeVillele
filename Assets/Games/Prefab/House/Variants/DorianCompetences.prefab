@@ -68,6 +68,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1610784020217747417}
   m_SourcePrefab: {fileID: 100100000, guid: facb89cf187493649838350bdbfaccb5, type: 3}
+--- !u!23 &1521714870828933062 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23464850384201512, guid: facb89cf187493649838350bdbfaccb5, type: 3}
+  m_PrefabInstance: {fileID: 1535000373136963822}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1532251101659669928 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4166010362633542, guid: facb89cf187493649838350bdbfaccb5, type: 3}
@@ -99,7 +104,7 @@ MonoBehaviour:
     edgeDilateAmount: 5
     frontEdgeDilateAmount: 5
     backEdgeDilateAmount: 5
-    renderer: {fileID: 0}
+    renderer: {fileID: 1521714870828933062}
     SubmeshIndex: 0
     BoundsMode: 0
     Bounds:
@@ -115,7 +120,7 @@ MonoBehaviour:
     edgeDilateAmount: 5
     frontEdgeDilateAmount: 5
     backEdgeDilateAmount: 5
-    renderer: {fileID: 0}
+    renderer: {fileID: 1521714870828933062}
     SubmeshIndex: 1
     BoundsMode: 0
     Bounds:
@@ -131,7 +136,7 @@ MonoBehaviour:
     edgeDilateAmount: 5
     frontEdgeDilateAmount: 5
     backEdgeDilateAmount: 5
-    renderer: {fileID: 0}
+    renderer: {fileID: 1521714870828933062}
     SubmeshIndex: 2
     BoundsMode: 0
     Bounds:
@@ -145,7 +150,7 @@ MonoBehaviour:
   renderStyle: 1
   outlineParameters:
     enabled: 1
-    color: {r: 0, g: 0.54540837, b: 0.6509434, a: 1}
+    color: {r: 1, g: 1, b: 1, a: 1}
     dilateShift: 1
     blurShift: 0
     fillPass:
@@ -153,7 +158,7 @@ MonoBehaviour:
       serializedProperties:
       - PropertyName: _PublicColor
         Property:
-          ColorValue: {r: 0, g: 0.54509807, b: 0.6509804, a: 0.7019608}
+          ColorValue: {r: 1, g: 1, b: 1, a: 0.27450982}
           FloatValue: 0
           VectorValue: {x: 0, y: 0, z: 0, w: 0}
           PropertyType: 0

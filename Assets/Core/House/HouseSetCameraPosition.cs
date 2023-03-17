@@ -3,12 +3,13 @@ using UnityEngine;
 
 namespace Core.House
 {
-    public class HouseSetDefaultCamera : MonoBehaviour
+    public class HouseSetCameraPosition : MonoBehaviour
     {
         #region Statements
 
         [SerializeField ] private GameObject DorianHouse;
         [SerializeField ] private GameObject DorianCompetences;
+        [SerializeField ] private GameObject DorianContacts;
         
         private void Start()
         {
@@ -29,6 +30,7 @@ namespace Core.House
             {
                 "DorianHouse" => DorianHouse,
                 "DorianCompetences" => DorianCompetences,
+                "DorianContacts" => DorianContacts,
                 _ => DorianHouse
             };
         }
