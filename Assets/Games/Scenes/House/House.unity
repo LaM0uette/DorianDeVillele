@@ -5190,7 +5190,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1268946585}
+    m_TransformParent: {fileID: 1160666747}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3ec7a3c5b4c50594f8c291d34aa2c332, type: 3}
       propertyPath: m_RootOrder
@@ -5198,27 +5198,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ec7a3c5b4c50594f8c291d34aa2c332, type: 3}
       propertyPath: m_LocalScale.x
-      value: 441.2708
+      value: 316.46176
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ec7a3c5b4c50594f8c291d34aa2c332, type: 3}
       propertyPath: m_LocalScale.y
-      value: 441.2708
+      value: 316.46176
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ec7a3c5b4c50594f8c291d34aa2c332, type: 3}
       propertyPath: m_LocalScale.z
-      value: 441.2708
+      value: 316.46176
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ec7a3c5b4c50594f8c291d34aa2c332, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.6365967
+      value: -1.621
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ec7a3c5b4c50594f8c291d34aa2c332, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.073
+      value: -0.169
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ec7a3c5b4c50594f8c291d34aa2c332, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.117
+      value: 0.018
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ec7a3c5b4c50594f8c291d34aa2c332, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11839,14 +11839,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1714408601}
   m_Father: {fileID: 1769802483}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4.185502, y: -1.339}
-  m_SizeDelta: {x: 4.8115, y: 0.2342}
+  m_AnchoredPosition: {x: 3.606, y: -1.046}
+  m_SizeDelta: {x: 1.975, y: 0.2342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1111760407
 MonoBehaviour:
@@ -11868,7 +11869,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: https://www.linkedin.com/in/dorian-de-villele
+  m_text: dorian-de-villele
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -11895,8 +11896,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.2
-  m_fontSizeBase: 0.2
+  m_fontSize: 0.23
+  m_fontSizeBase: 0.23
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12539,14 +12540,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 514266509}
   m_Father: {fileID: 1769802483}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2.95, y: -0.589}
-  m_SizeDelta: {x: 2.3406, y: 0.2342}
+  m_AnchoredPosition: {x: 4.149, y: -0.494}
+  m_SizeDelta: {x: 2.6615, y: 0.2342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1160666748
 MonoBehaviour:
@@ -12595,8 +12597,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.2
-  m_fontSizeBase: 0.2
+  m_fontSize: 0.23
+  m_fontSizeBase: 0.23
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12820,7 +12822,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1268946585}
+    m_TransformParent: {fileID: 2084735776}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8759de0bd9c5bc442893b0b70a668019, type: 3}
       propertyPath: m_RootOrder
@@ -12828,27 +12830,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8759de0bd9c5bc442893b0b70a668019, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2050.887
+      value: 1541.6526
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8759de0bd9c5bc442893b0b70a668019, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2050.887
+      value: 1541.6526
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8759de0bd9c5bc442893b0b70a668019, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2050.887
+      value: 1541.6526
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8759de0bd9c5bc442893b0b70a668019, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.6225967
+      value: -0.923
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8759de0bd9c5bc442893b0b70a668019, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.518
+      value: -0.193
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8759de0bd9c5bc442893b0b70a668019, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.118
+      value: 0.021
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8759de0bd9c5bc442893b0b70a668019, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13823,40 +13825,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 6.59
   m_ShadowAngle: 0
---- !u!1 &1268946584
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1268946585}
-  m_Layer: 0
-  m_Name: Logos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1268946585
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268946584}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1714408601}
-  - {fileID: 514266509}
-  - {fileID: 1189919473}
-  m_Father: {fileID: 2034904743}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1269202256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18982,7 +18950,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1268946585}
+    m_TransformParent: {fileID: 1111760406}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 69e8c0d3bc27bd5409ceb273e4d9a4c1, type: 3}
       propertyPath: m_RootOrder
@@ -18990,27 +18958,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 69e8c0d3bc27bd5409ceb273e4d9a4c1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1736.8668
+      value: 1426.6984
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 69e8c0d3bc27bd5409ceb273e4d9a4c1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1736.8668
+      value: 1426.6984
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 69e8c0d3bc27bd5409ceb273e4d9a4c1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1736.8668
+      value: 1426.6984
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 69e8c0d3bc27bd5409ceb273e4d9a4c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.6155968
+      value: 1.266
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 69e8c0d3bc27bd5409ceb273e4d9a4c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.285
+      value: -0.209
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 69e8c0d3bc27bd5409ceb273e4d9a4c1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.111
+      value: 0.016
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 69e8c0d3bc27bd5409ceb273e4d9a4c1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22930,8 +22898,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1268946585}
+  m_Children: []
   m_Father: {fileID: 719875748}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23484,14 +23451,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1189919473}
   m_Father: {fileID: 1769802483}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 3.363002, y: -2.089}
-  m_SizeDelta: {x: 3.1666, y: 0.2342}
+  m_AnchoredPosition: {x: 4.17, y: -1.598}
+  m_SizeDelta: {x: 1.2754, y: 0.2342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2084735777
 MonoBehaviour:
@@ -23513,7 +23481,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: https://github.com/LaM0uette
+  m_text: LaM0uette
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -23540,8 +23508,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.2
-  m_fontSizeBase: 0.2
+  m_fontSize: 0.23
+  m_fontSizeBase: 0.23
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
