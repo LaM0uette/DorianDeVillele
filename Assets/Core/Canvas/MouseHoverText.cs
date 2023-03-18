@@ -23,7 +23,7 @@ namespace Core.Canvas
         private void OnMouseEnter()
         {
             _text.color = new Color32(72, 221, 32, 255);
-            GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClicHouse, GlobalCursors.ECursor.Clic);
+            GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClic, GlobalCursors.ECursor.Clic);
         }
 
         private void OnMouseExit()

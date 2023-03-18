@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using UnityEngine;
 
 namespace Core.Canvas
@@ -15,7 +14,7 @@ namespace Core.Canvas
 
         private void OnMouseDown()
         {
-            Process.Start(_url);
+            Application.OpenURL(_url);
         }
 
         #endregion
