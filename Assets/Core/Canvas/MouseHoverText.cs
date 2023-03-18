@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Core.Globals.Cursors;
 using TMPro;
 using UnityEngine;
@@ -32,13 +31,7 @@ namespace Core.Canvas
             _text.color = new Color32(197, 197, 197, 255);
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorHand);
         }
-    
-        private void OnMouseDown()
-        {
-            Process.Start("https://www.example.com");
-        }
 
         #endregion
-    
     }
 }
