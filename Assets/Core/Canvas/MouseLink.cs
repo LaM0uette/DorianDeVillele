@@ -1,3 +1,4 @@
+using Core.Globals.Tasks;
 using UnityEngine;
 
 namespace Core.Canvas
@@ -14,7 +15,12 @@ namespace Core.Canvas
 
         private void OnMouseDown()
         {
-            Application.OpenURL(_url);
+            UrlTasks.OpenUrl(_url);
+        }
+        
+        private void Update()
+        {
+            if (Input.GetMouseButton(2)) UrlTasks.OpenUrl(_url);
         }
 
         #endregion

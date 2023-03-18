@@ -1,4 +1,5 @@
 using System;
+using Core.Globals.Tasks;
 using UnityEngine;
 
 namespace Core.Canvas
@@ -8,6 +9,12 @@ namespace Core.Canvas
         #region Statements
 
         [SerializeField] private string _mail;
+        private Uri _mailtoLink;
+
+        private void Start()
+        {
+            _mailtoLink= new Uri($"mailto:{_mail}");
+        }
 
         #endregion
         
@@ -15,9 +22,12 @@ namespace Core.Canvas
 
         private void OnMouseDown()
         {
-            var mailtoLink = new Uri($"mailto:{_mail}");
+            UrlTasks.OpenUrl(_mailtoLink.AbsoluteUri);
+        }
 
-            System.Diagnostics.Process.Start(mailtoLink.AbsoluteUri);
+        private void Update()
+        {
+            if (Input.GetMouseButton(2)) UrlTasks.OpenUrl(_mailtoLink.AbsoluteUri);
         }
 
         #endregion
