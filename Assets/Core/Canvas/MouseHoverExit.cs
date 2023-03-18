@@ -17,6 +17,8 @@ public class MouseHoverExit : MonoBehaviour
         _img = transform.Find("Img").GetComponent<Image>();
     }
 
+    #endregion
+
     #region Events
 
     private void OnMouseEnter()
@@ -37,8 +39,6 @@ public class MouseHoverExit : MonoBehaviour
     {
         SceneLoader.LoadNewScene("DorianDeVillele");
     }
-
-    #endregion
 
     #endregion
 }
