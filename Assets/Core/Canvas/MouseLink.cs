@@ -11,16 +11,25 @@ namespace Core.Canvas
 
         #endregion
         
+        #region Functions
+
+        private void OpenLink()
+        {
+            UrlTasks.OpenUrl(_url);
+        }
+
+        #endregion
+        
         #region Events
 
         private void OnMouseDown()
         {
-            UrlTasks.OpenUrl(_url);
+            OpenLink();
         }
         
         private void Update()
         {
-            if (Input.GetMouseButton(2)) UrlTasks.OpenUrl(_url);
+            if (Input.GetMouseButton(2)) OpenLink();
         }
 
         #endregion

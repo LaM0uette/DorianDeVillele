@@ -17,17 +17,26 @@ namespace Core.Canvas
         }
 
         #endregion
+
+        #region Functions
+
+        private void OpenMail()
+        {
+            UrlTasks.OpenUrl(_mailtoLink.AbsoluteUri);
+        }
+
+        #endregion
         
         #region Events
 
         private void OnMouseDown()
         {
-            UrlTasks.OpenUrl(_mailtoLink.AbsoluteUri);
+            OpenMail();
         }
 
         private void Update()
         {
-            if (Input.GetMouseButton(2)) UrlTasks.OpenUrl(_mailtoLink.AbsoluteUri);
+            if (Input.GetMouseButton(2)) OpenMail();
         }
 
         #endregion
