@@ -2,13 +2,12 @@ using Core.Globals.Cursors;
 using EPOOutline;
 using UnityEngine;
 
-namespace Core.Test.Scripts.House
+namespace Core.House.Hover
 {
-    public class HwhBaseOutlined : MonoBehaviour
+    public class HoverOutlinedModel : MonoBehaviour
     {
         #region Statements
 
-        private Vector3 _cameraWorldPosition;
         private Outlinable _outlinable;
         
         private void Awake()
