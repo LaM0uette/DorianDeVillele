@@ -5,31 +5,66 @@ namespace Core.Light
 {
     public class LightTimeRotation : MonoBehaviour
     {
-        public float latitude = 46.6f;
-
         private UnityEngine.Light directionalLight;
 
         private void Start()
         {
             directionalLight = GetComponent<UnityEngine.Light>();
+            SetLight();
         }
 
-        private void Update()
+        private void SetLight()
         {
-            if (directionalLight == null || directionalLight.type != LightType.Directional) return;
+            var currentTime = DateTime.Now;
+            var hour = currentTime.Hour;
 
-            DateTime currentTime = DateTime.Now;
-            float hours = currentTime.Hour + currentTime.Minute / 60f;
+            Vector3 rotation;
 
-            // Calculer l'angle de rotation en fonction de l'heure actuelle (0-360 degrés)
-            float hourAngle = Mathf.Lerp(-180, 180, hours / 24f);
+            switch (hour)
+            {
+                case 4:
+                case 5:
+                    directionalLight.enabled = false;
+                    return;
+                case 6:
+                case 7:
+                    rotation = new Vector3(20, -60, 0);
+                    break;
+                case 8:
+                case 9:
+                    rotation = new Vector3(40, -75, 0);
+                    break;
+                case 10:
+                case 11:
+                    rotation = new Vector3(50, -40, 0);
+                    break;
+                case 12:
+                case 13:
+                    rotation = new Vector3(60, -20, 0);
+                    break;
+                case 14:
+                case 15:
+                    rotation = new Vector3(50, 0, 0);
+                    break;
+                case 16:
+                case 17:
+                    rotation = new Vector3(40, 30, 0);
+                    break;
+                case 18:
+                case 19:
+                    rotation = new Vector3(20, 60, 0);
+                    break;
+                case 20:
+                case 21:
+                    rotation = new Vector3(10, 115, 0);
+                    break;
+                default:
+                    directionalLight.enabled = false;
+                    return;
+            }
 
-            // Calculer la hauteur du soleil en fonction de la latitude et de l'heure actuelle (-90 à 90 degrés)
-            float sunHeightAngle = Mathf.Lerp(-90, 90, Mathf.InverseLerp(0, 24, Mathf.Abs(hours - 12))) + latitude;
-
-            // Appliquer la rotation de la lumière directionnelle
-            Quaternion rotation = Quaternion.Euler(new Vector3(sunHeightAngle, hourAngle, 0f));
-            directionalLight.transform.rotation = rotation;
+            directionalLight.enabled = true;
+            directionalLight.transform.rotation = Quaternion.Euler(rotation);
         }
     }
 }
