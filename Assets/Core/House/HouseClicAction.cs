@@ -1,7 +1,5 @@
 using Core.GrabCamera.Scripts;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using System.Collections;
 
 namespace Core.House
 {
@@ -26,7 +24,7 @@ namespace Core.House
 
         private void LoadScene()
         {
-            SceneLoader.LoadNewScene(_camera.transform, SceneName, CamPositionName);
+            SceneLoader.Instance.LoadNewScene(SceneName, CamPositionName);
         }
 
         #endregion

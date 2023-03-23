@@ -45,7 +45,7 @@ namespace Core.Test.Scripts
 
         private void OnMouseDown()
         {
-            SceneLoader.LoadNewScene(_camera.transform, SceneName, CamPositionName);
+            SceneLoader.Instance.LoadNewScene(SceneName, CamPositionName);
         }
     }
 }

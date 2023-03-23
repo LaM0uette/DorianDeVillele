@@ -4,41 +4,44 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MouseHoverExit : MonoBehaviour
+namespace Core.Canvas
 {
-    #region Statements
+    public class MouseHoverExit : MonoBehaviour
+    {
+        #region Statements
 
-    private TextMeshProUGUI _text;
-    private Image _img;
+        private TextMeshProUGUI _text;
+        private Image _img;
     
-    private void Start()
-    {
-        _text = transform.Find("Text").GetComponent<TextMeshProUGUI>();
-        _img = transform.Find("Img").GetComponent<Image>();
-    }
+        private void Start()
+        {
+            _text = transform.Find("Text").GetComponent<TextMeshProUGUI>();
+            _img = transform.Find("Img").GetComponent<Image>();
+        }
 
-    #endregion
+        #endregion
 
-    #region Events
+        #region Events
 
-    private void OnMouseEnter()
-    {
-        _text.color = new Color32(72, 221, 32, 255);
-        _img.color = new Color32(72, 221, 32, 255);
-        GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClicHouse, GlobalCursors.ECursor.Clic);
-    }
+        private void OnMouseEnter()
+        {
+            _text.color = new Color32(72, 221, 32, 255);
+            _img.color = new Color32(72, 221, 32, 255);
+            GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClicHouse, GlobalCursors.ECursor.Clic);
+        }
 
-    private void OnMouseExit()
-    {
-        _text.color = new Color32(197, 197, 197, 255);
-        _img.color = new Color32(197, 197, 197, 255);
-        GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorHand);
-    }
+        private void OnMouseExit()
+        {
+            _text.color = new Color32(197, 197, 197, 255);
+            _img.color = new Color32(197, 197, 197, 255);
+            GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorHand);
+        }
     
-    private void OnMouseUp()
-    {
-        SceneLoader.LoadNewScene("DorianDeVillele");
-    }
+        private void OnMouseUp()
+        {
+            SceneLoader.Instance.LoadNewScene("DorianDeVillele");
+        }
 
-    #endregion
+        #endregion
+    }
 }

@@ -20,12 +20,19 @@ namespace Core.GrabCamera.Scripts
         private Camera _camera;
         private Ray _mouseRay;
         private Vector3 _mouseWorldPositionStart;
+        private static Vector3 _cameraPosition = Vector3.zero;
+        private static Quaternion _cameraRotation;
 
         private void Awake()
         {
             _camera = Camera.main;
         }
 
+        private void Start()
+        {
+            if (!CheckCameraPositionEqualZero()) SetCameraTransform();
+        }
+        
         #endregion
 
         #region Functions
@@ -84,6 +91,23 @@ namespace Core.GrabCamera.Scripts
             float t = (y - ray.origin.y) / ray.direction.y;
             return ray.GetPoint(t);
         }
+        
+        private static bool CheckCameraPositionEqualZero() => _cameraPosition.Equals(Vector3.zero);
+
+        private void SetCameraTransform()
+        {
+            var cameraTransform = _camera.transform;
+            
+            cameraTransform.position = _cameraPosition;
+            cameraTransform.rotation = _cameraRotation;
+        }
+        
+        private void SetTransform()
+        {
+            var trs = _camera.transform;
+            _cameraPosition = trs.position;
+            _cameraRotation = trs.rotation;
+        }
 
         #endregion
 
@@ -125,6 +149,11 @@ namespace Core.GrabCamera.Scripts
             {
                 Zoom(zoomAmount);
             }
+        }
+        
+        private void OnDestroy()
+        {
+            SetTransform();
         }
 
         #endregion

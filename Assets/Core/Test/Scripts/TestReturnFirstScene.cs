@@ -9,7 +9,7 @@ namespace Core.Test.Scripts
 
         private void OnMouseDown()
         {
-            SceneLoader.LoadNewScene("DorianDeVillele");
+            SceneLoader.Instance.LoadNewScene("DorianDeVillele");
         }
 
         #endregion

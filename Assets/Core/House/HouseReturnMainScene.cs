@@ -9,7 +9,7 @@ namespace Core.House
 
         private void OnMouseUp()
         {
-            SceneLoader.LoadNewScene("DorianDeVillele");
+            SceneLoader.Instance.LoadNewScene("DorianDeVillele");
         }
 
         #endregion

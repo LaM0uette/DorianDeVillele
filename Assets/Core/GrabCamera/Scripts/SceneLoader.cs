@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Core.GrabCamera.Scripts
 {
@@ -7,58 +9,63 @@ namespace Core.GrabCamera.Scripts
     {
         #region Statements
         
+        public static SceneLoader Instance { get; private set; }
         public static string CamPositionName { get; private set; }
 
-        private static Vector3 _cameraPosition = Vector3.zero;
-        private static Quaternion _cameraRotation;
+        private static readonly int START = Animator.StringToHash("Start");
+        private static readonly int END = Animator.StringToHash("End");
+        
+        private Animator _animator;
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
         
         private void Start()
         {
-            if (CheckCameraPositionEqualZero()) return;
-
-            SetCameraTransform();
+            _animator = transform.Find("CanvasTransitions").Find("Image").GetComponent<Animator>();
         }
 
         #endregion
 
         #region Functions
-        
-        private static bool CheckCameraPositionEqualZero() => _cameraPosition.Equals(Vector3.zero);
-        
-        private void SetCameraTransform()
-        {
-            var cameraTransform = transform;
-            
-            cameraTransform.position = _cameraPosition;
-            cameraTransform.rotation = _cameraRotation;
-        }
 
         private static void SetCamPositionName(string camPositionName) => CamPositionName = camPositionName;
-        
-        private static void SetTransform(Transform transform)
+
+        public void LoadNewScene(string scene)
         {
-            _cameraPosition = transform.position;
-            _cameraRotation = transform.rotation;
+            StartCoroutine(LoadScene(scene));
         }
 
-        public static void LoadNewScene(string scene)
-        {
-            SceneManager.LoadScene(scene);
-        }
-
-        public static void LoadNewScene(Transform transform, string scene, string camPositionName = "")
+        public void LoadNewScene(string scene, string camPositionName)
         {
             SetCamPositionName(camPositionName);
-            SetTransform(transform);
-
             LoadNewScene(scene);
         }
 
         #endregion
 
-        #region Events
+        #region Coroutines
 
-        private void OnApplicationQuit() => _cameraPosition = transform.position;
+        private IEnumerator LoadScene(string scene)
+        {
+            _animator.SetTrigger(START);
+            
+            yield return new WaitForSeconds(0.8f);
+            
+            _animator.SetTrigger(END);
+            
+            SceneManager.LoadScene(scene);
+        }
 
         #endregion
     }

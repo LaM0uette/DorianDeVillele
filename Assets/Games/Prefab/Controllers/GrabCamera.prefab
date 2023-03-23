@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6660945101160363396}
   - component: {fileID: 2776702389370085370}
   - component: {fileID: 6619663545812166267}
-  - component: {fileID: 3880826354715040056}
   - component: {fileID: 8474267974042329568}
   - component: {fileID: 4600402666310237997}
   - component: {fileID: 6038974535787699443}
@@ -69,8 +68,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 500
+  near clip plane: 5
+  far clip plane: 700
   field of view: 50
   orthographic: 0
   orthographic size: 5
@@ -112,21 +111,9 @@ MonoBehaviour:
   rotationSpeed: 130
   clampMin: 15
   clampMax: 50
-  zoomForce: 100
-  zoomMin: 0
-  zoomMax: 500
---- !u!114 &3880826354715040056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2002763784292409180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0114155487533e740a8b9ae5a8ce295c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  zoomForce: 60
+  zoomMin: 15
+  zoomMax: 300
 --- !u!114 &8474267974042329568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +157,7 @@ MonoBehaviour:
     m_Bits: 64
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 3
+  antialiasingMode: 0
   temporalAntialiasing:
     jitterSpread: 0.68
     sharpness: 0.14
