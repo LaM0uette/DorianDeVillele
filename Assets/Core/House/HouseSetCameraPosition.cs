@@ -7,6 +7,7 @@ namespace Core.House
     {
         #region Statements
 
+        [SerializeField ] private GameObject DorianTemporaire;
         [SerializeField ] private GameObject DorianHouse;
         [SerializeField ] private GameObject DorianCompetences;
         [SerializeField ] private GameObject DorianContacts;
@@ -28,10 +29,11 @@ namespace Core.House
         {
             return goName switch
             {
+                "DorianTemporaire" => DorianTemporaire,
                 "DorianHouse" => DorianHouse,
                 "DorianCompetences" => DorianCompetences,
                 "DorianContacts" => DorianContacts,
-                _ => DorianHouse
+                _ => DorianTemporaire
             };
         }
 

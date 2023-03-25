@@ -7723,6 +7723,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6498374610145969438, guid: 90e27e2791eb87d47a640a683f9e06ad, type: 3}
   m_PrefabInstance: {fileID: 702769536}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &708936357
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1036313044}
+    m_Modifications:
+    - target: {fileID: 537163994928523239, guid: 16504bdd8994c064d97f27f9bf87077e, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 537163994928523239, guid: 16504bdd8994c064d97f27f9bf87077e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537163994928523239, guid: 16504bdd8994c064d97f27f9bf87077e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537163994928523239, guid: 16504bdd8994c064d97f27f9bf87077e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537163994928523239, guid: 16504bdd8994c064d97f27f9bf87077e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 537163994928523239, guid: 16504bdd8994c064d97f27f9bf87077e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537163994928523239, guid: 16504bdd8994c064d97f27f9bf87077e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537163994928523239, guid: 16504bdd8994c064d97f27f9bf87077e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537163994928523239, guid: 16504bdd8994c064d97f27f9bf87077e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537163994928523239, guid: 16504bdd8994c064d97f27f9bf87077e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537163994928523239, guid: 16504bdd8994c064d97f27f9bf87077e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911011306510157080, guid: 16504bdd8994c064d97f27f9bf87077e, type: 3}
+      propertyPath: m_Name
+      value: CarpetExitOutlined
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 16504bdd8994c064d97f27f9bf87077e, type: 3}
+--- !u!4 &708936358 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 537163994928523239, guid: 16504bdd8994c064d97f27f9bf87077e, type: 3}
+  m_PrefabInstance: {fileID: 708936357}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &709240371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12443,6 +12509,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3961425850198801113, guid: eb907d37a83db4142a5d1a3e2255ebf2, type: 3}
   m_PrefabInstance: {fileID: 1028212587}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1035181556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1035181557}
+  m_Layer: 0
+  m_Name: DorianTemporaire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1035181557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035181556}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: -20, y: 4.129, z: 0.49}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2056469030}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
 --- !u!1001 &1035701065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12509,6 +12606,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5560767404251990374, guid: 8000f6f35addbbb448e8181bc97eaa2d, type: 3}
   m_PrefabInstance: {fileID: 1035701065}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1036313043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1036313044}
+  m_Layer: 0
+  m_Name: DorianTemporaire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1036313044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036313043}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 708936358}
+  m_Father: {fileID: 1261741577}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1037775933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15692,6 +15821,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1036313044}
   - {fileID: 45827304}
   - {fileID: 1523634432}
   - {fileID: 1401626825}
@@ -26093,6 +26223,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1035181557}
   - {fileID: 1190665149}
   - {fileID: 367883366}
   - {fileID: 450185806}
@@ -27348,6 +27479,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 450185805}
     - target: {fileID: 289178622929507955, guid: 83cedabd15e8f7345a4060bb488c1479, type: 3}
+      propertyPath: DorianTemporaire
+      value: 
+      objectReference: {fileID: 1035181556}
+    - target: {fileID: 289178622929507955, guid: 83cedabd15e8f7345a4060bb488c1479, type: 3}
       propertyPath: DorianCompetences
       value: 
       objectReference: {fileID: 367883365}
@@ -27557,6 +27692,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4056713966078813507, guid: 83cedabd15e8f7345a4060bb488c1479, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7282158624997637311, guid: 83cedabd15e8f7345a4060bb488c1479, type: 3}
+      propertyPath: antialiasingMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
