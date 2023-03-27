@@ -112,7 +112,7 @@ QualitySettings:
     shadowDistance: 90
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.61328435
-    shadowCascade4Split: {x: 0.25217026, y: 0.33636352, z: 0.4506958}
+    shadowCascade4Split: {x: 0.26568368, y: 0.33636352, z: 0.4506958}
     shadowmaskMode: 0
     skinWeights: 2
     globalTextureMipmapLimit: 0
@@ -124,7 +124,7 @@ QualitySettings:
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
     useLegacyDetailDistribution: 1
-    vSyncCount: 1
+    vSyncCount: 0
     lodBias: 0.7
     maximumLODLevel: 0
     enableLODCrossFade: 1
