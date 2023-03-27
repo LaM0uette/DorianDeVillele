@@ -57,13 +57,20 @@ namespace Core.GrabCamera.Scripts
 
         private IEnumerator LoadScene(string scene)
         {
+            var currentScene = SceneManager.GetActiveScene().name;
+            
             _animator.SetTrigger(START);
+            yield return new WaitForSeconds(0.35f);
             
-            yield return new WaitForSeconds(0.8f);
+            SceneManager.LoadSceneAsync(scene);
+
+            while ($"{SceneManager.GetActiveScene().name}".Equals($"{currentScene}"))
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
             
+            yield return new WaitForSeconds(0.1f);
             _animator.SetTrigger(END);
-            
-            SceneManager.LoadScene(scene);
         }
 
         #endregion
