@@ -30,7 +30,7 @@ namespace Core.Test.Scripts.House
 
         private void CheckCadreIsEnabled()
         {
-            if (CadreVert.activeInHierarchy || !GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Clic)) 
+            if (CadreVert.activeInHierarchy || !GlobalCursors.Ecursor.Equals(GlobalCursors.ECursor.Clic)) 
                 return;
             
             CadreGris.SetActive(false);
@@ -75,7 +75,7 @@ namespace Core.Test.Scripts.House
         {
             CheckCadreIsEnabled();
             
-            if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Hand)) return;
+            if (!GlobalCursors.Ecursor.Equals(GlobalCursors.ECursor.Hand)) return;
             
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClicHouse, GlobalCursors.ECursor.Clic);
         }

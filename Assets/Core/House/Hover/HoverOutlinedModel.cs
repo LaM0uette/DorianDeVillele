@@ -21,7 +21,7 @@ namespace Core.House.Hover
 
         private void CheckOutlinableIsEnabled()
         {
-            if (_outlinable.enabled || !GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Clic)) 
+            if (_outlinable.enabled || !GlobalCursors.Ecursor.Equals(GlobalCursors.ECursor.Clic)) 
                 return;
             
             _outlinable.enabled = true;
@@ -41,7 +41,7 @@ namespace Core.House.Hover
         {
             CheckOutlinableIsEnabled();
                 
-            if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Hand)) return;
+            if (!GlobalCursors.Ecursor.Equals(GlobalCursors.ECursor.Hand)) return;
             
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClicHouse, GlobalCursors.ECursor.Clic);
         }

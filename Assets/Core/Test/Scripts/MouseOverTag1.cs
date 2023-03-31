@@ -19,7 +19,7 @@ namespace Core.Test.Scripts
 
         private void OnMouseEnter()
         {
-            if (GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Grab)) return;
+            if (GlobalCursors.Ecursor.Equals(GlobalCursors.ECursor.Grab)) return;
             
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClicHouse, GlobalCursors.ECursor.Clic);
             
@@ -28,8 +28,8 @@ namespace Core.Test.Scripts
 
         private void OnMouseExit()
         {
-            Cursor.SetCursor(GlobalCursors.Instance.CursorHand, GlobalCursors.Instance.HotSpot, CursorMode.Auto);
-            GlobalCursors.Instance.Ecursor = GlobalCursors.ECursor.Hand;
+            Cursor.SetCursor(GlobalCursors.Instance.CursorHand, GlobalCursors.HotSpot, CursorMode.Auto);
+            GlobalCursors.Ecursor = GlobalCursors.ECursor.Hand;
             
             _outline.enabled = false;
         }
@@ -48,8 +48,8 @@ namespace Core.Test.Scripts
 
         private void OnMouseOver()
         {
-            if (GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Grab) || 
-                GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Clic)) return;
+            if (GlobalCursors.Ecursor.Equals(GlobalCursors.ECursor.Grab) || 
+                GlobalCursors.Ecursor.Equals(GlobalCursors.ECursor.Clic)) return;
             
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClicHouse, GlobalCursors.ECursor.Clic);
         }

@@ -38,7 +38,7 @@ namespace Core.Test.Scripts
 
         private void OnMouseOver()
         {
-            if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Hand)) return;
+            if (!GlobalCursors.Ecursor.Equals(GlobalCursors.ECursor.Hand)) return;
             
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClicHouse, GlobalCursors.ECursor.Clic);
         }

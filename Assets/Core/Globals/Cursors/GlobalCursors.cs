@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Core.Globals.Cursors
@@ -8,13 +7,13 @@ namespace Core.Globals.Cursors
         #region Statements
 
         public static GlobalCursors Instance;
-
+        public static readonly Vector2 HotSpot = new (32, 32);
+        public static ECursor Ecursor;
+        
         public Texture2D CursorHand;
         public Texture2D CursorGrab;
         public Texture2D CursorClic;
         public Texture2D CursorClicHouse;
-        [NonSerialized] public Vector2 HotSpot = new (32, 32);
-        [NonSerialized] public ECursor Ecursor;
 
         public enum ECursor
         {
@@ -39,8 +38,8 @@ namespace Core.Globals.Cursors
 
         public static void SetHandCursor(Texture2D texture2D, ECursor eCursor = ECursor.Hand)
         {
-            Cursor.SetCursor(texture2D, Instance.HotSpot, CursorMode.Auto);
-            Instance.Ecursor = eCursor;
+            Cursor.SetCursor(texture2D, HotSpot, CursorMode.Auto);
+            Ecursor = eCursor;
         }
 
         #endregion
