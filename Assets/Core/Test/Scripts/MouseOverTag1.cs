@@ -19,8 +19,7 @@ namespace Core.Test.Scripts
 
         private void OnMouseEnter()
         {
-            if (GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Grab) ||
-                GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Eye)) return;
+            if (GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Grab)) return;
             
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClicHouse, GlobalCursors.ECursor.Clic);
             

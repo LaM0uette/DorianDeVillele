@@ -7,21 +7,19 @@ namespace Core.GrabCamera.Scripts
     {
         #region Statements
 
-        // Modifiers
-        [SerializeField] private float rotationSpeed = 150f;
-        [SerializeField] private float clampMin = 15f;
-        [SerializeField] private float clampMax = 50f;
-    
+        [Header("Zoom")]
         [SerializeField] private float zoomForce = 30f;
         [SerializeField] private float zoomMin = 2f;
         [SerializeField] private float zoomMax = 8f;
 
+        // Camera
+        private static Vector3 _cameraPosition = Vector3.zero;
+        private static Quaternion _cameraRotation;
+        
         // World
         private Camera _camera;
         private Ray _mouseRay;
         private Vector3 _mouseWorldPositionStart;
-        private static Vector3 _cameraPosition = Vector3.zero;
-        private static Quaternion _cameraRotation;
 
         private void Awake()
         {
@@ -36,8 +34,39 @@ namespace Core.GrabCamera.Scripts
         #endregion
 
         #region Functions
+        
+        private static bool CheckCameraPositionEqualZero() => _cameraPosition.Equals(Vector3.zero);
+        
+        private void SetCameraTransform()
+        {
+            var cameraTransform = _camera.transform;
+            cameraTransform.position = _cameraPosition;
+            cameraTransform.rotation = _cameraRotation;
+        }
 
-        private void Pan()
+        private void SetMouseWorldPositionStart()
+        {
+            _mouseRay = _camera.ScreenPointToRay(Input.mousePosition);
+            _mouseWorldPositionStart = GetRayIntersectionWithYPlane(_mouseRay, 0f);
+        }
+        
+        private static Vector3 GetRayIntersectionWithYPlane(Ray ray, float y)
+        {
+            if (ray.direction.y == 0)
+            {
+                return ray.GetPoint(ray.origin.y);
+            }
+
+            float t = (y - ray.origin.y) / ray.direction.y;
+            return ray.GetPoint(t);
+        }
+
+        private static void SetCursor(Texture2D cursor, GlobalCursors.ECursor eCursor = GlobalCursors.ECursor.Hand)
+        {
+            GlobalCursors.SetHandCursor(cursor, eCursor);
+        }
+        
+        private void Move()
         {
             if (!Input.GetAxis("Mouse Y").Equals(0) || !Input.GetAxis("Mouse X").Equals(0))
             {
@@ -55,22 +84,12 @@ namespace Core.GrabCamera.Scripts
             }
         }
 
-        private void CamOrbit()
+        private void CheckZoom()
         {
-            if (!Input.GetAxis("Mouse Y").Equals(0) || !Input.GetAxis("Mouse X").Equals(0))
-            {
-                var verticalInput = Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
-                var horizontalInput = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
-
-                // Limite de rotation verticale
-                var currentRotation = transform.rotation.eulerAngles;
-                var newVerticalRotation = Mathf.Clamp(currentRotation.x - verticalInput, clampMin, clampMax);
-                transform.rotation = Quaternion.Euler(newVerticalRotation, currentRotation.y, currentRotation.z);
-
-                transform.Rotate(Vector3.up, horizontalInput, Space.World);
-            }
+            var zoomAmount = Input.GetAxis("Mouse ScrollWheel") * zoomForce;
+            if (Mathf.Abs(zoomAmount) > 0.01f) Zoom(zoomAmount);
         }
-    
+
         private void Zoom(float amount)
         {
             var pos = transform.position;
@@ -80,33 +99,12 @@ namespace Core.GrabCamera.Scripts
             if (transform.position.y <= zoomMin) transform.position = new Vector3(pos.x, zoomMin, pos.z);
             if (transform.position.y >= zoomMax) transform.position = new Vector3(pos.x, zoomMax, pos.z);
         }
-    
-        private static Vector3 GetRayIntersectionWithYPlane(Ray ray, float y)
-        {
-            if (ray.direction.y == 0)
-            {
-                return ray.GetPoint(ray.origin.y);
-            }
 
-            float t = (y - ray.origin.y) / ray.direction.y;
-            return ray.GetPoint(t);
-        }
-        
-        private static bool CheckCameraPositionEqualZero() => _cameraPosition.Equals(Vector3.zero);
-
-        private void SetCameraTransform()
-        {
-            var cameraTransform = _camera.transform;
-            
-            cameraTransform.position = _cameraPosition;
-            cameraTransform.rotation = _cameraRotation;
-        }
-        
         private void SetTransform()
         {
-            var trs = _camera.transform;
-            _cameraPosition = trs.position;
-            _cameraRotation = trs.rotation;
+            var cameraTransform = _camera.transform;
+            _cameraPosition = cameraTransform.position;
+            _cameraRotation = cameraTransform.rotation;
         }
 
         #endregion
@@ -117,38 +115,17 @@ namespace Core.GrabCamera.Scripts
         {
             if (Input.GetMouseButtonDown(0))
             {
-                _mouseRay = _camera.ScreenPointToRay(Input.mousePosition);
-                _mouseWorldPositionStart = GetRayIntersectionWithYPlane(_mouseRay, 0f);
-            }
+                SetMouseWorldPositionStart();
+                SetCursor(GlobalCursors.Instance.CursorGrab, GlobalCursors.ECursor.Grab);
+            } // Left click
+            if (Input.GetMouseButtonUp(0))
+            {
+                SetCursor(GlobalCursors.Instance.CursorHand);
+            } // Release left click
+            
+            if (Input.GetMouseButton(0)) Move(); // Hold left click
 
-            if (Input.GetMouseButton(0))
-            {
-                if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Grab)) 
-                    GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorGrab, GlobalCursors.ECursor.Grab);
-                
-                Pan();
-            }
-            else if (Input.GetMouseButton(1))
-            {
-                // if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Eye)) 
-                //     GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorEye, GlobalCursors.ECursor.Eye);
-                //
-                // CamOrbit();
-            }
-            else
-            {
-                if (!GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Hand) &&
-                    !GlobalCursors.Instance.Ecursor.Equals(GlobalCursors.ECursor.Clic))
-                {
-                    GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorHand);
-                }
-            }
-
-            var zoomAmount = Input.GetAxis("Mouse ScrollWheel") * zoomForce;
-            if (Mathf.Abs(zoomAmount) > 0.01f)
-            {
-                Zoom(zoomAmount);
-            }
+            CheckZoom();
         }
         
         private void OnDestroy()

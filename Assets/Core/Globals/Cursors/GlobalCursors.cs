@@ -11,7 +11,6 @@ namespace Core.Globals.Cursors
 
         public Texture2D CursorHand;
         public Texture2D CursorGrab;
-        public Texture2D CursorEye;
         public Texture2D CursorClic;
         public Texture2D CursorClicHouse;
         [NonSerialized] public Vector2 HotSpot = new (32, 32);
@@ -21,9 +20,7 @@ namespace Core.Globals.Cursors
         {
             Hand,
             Grab,
-            Clic,
-            ClicHouse,
-            Eye
+            Clic
         }
 
         private void Awake()
