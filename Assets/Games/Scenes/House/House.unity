@@ -14935,7 +14935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1190665149}
   m_Layer: 0
-  m_Name: DorianHouse
+  m_Name: DorianProfil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27475,6 +27475,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1190665148}
     - target: {fileID: 289178622929507955, guid: 83cedabd15e8f7345a4060bb488c1479, type: 3}
+      propertyPath: DorianProfil
+      value: 
+      objectReference: {fileID: 1190665148}
+    - target: {fileID: 289178622929507955, guid: 83cedabd15e8f7345a4060bb488c1479, type: 3}
       propertyPath: DorianContacts
       value: 
       objectReference: {fileID: 450185805}
@@ -27482,6 +27486,10 @@ PrefabInstance:
       propertyPath: DorianTemporaire
       value: 
       objectReference: {fileID: 1035181556}
+    - target: {fileID: 289178622929507955, guid: 83cedabd15e8f7345a4060bb488c1479, type: 3}
+      propertyPath: ParentGameObject
+      value: 
+      objectReference: {fileID: 2056469029}
     - target: {fileID: 289178622929507955, guid: 83cedabd15e8f7345a4060bb488c1479, type: 3}
       propertyPath: DorianCompetences
       value: 

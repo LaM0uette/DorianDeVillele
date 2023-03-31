@@ -1,4 +1,5 @@
-using Core.GrabCamera.Scripts;
+using Core.Globals;
+using Core.House.CameraPosition;
 using UnityEngine;
 
 namespace Core.House
@@ -8,7 +9,7 @@ namespace Core.House
         #region Statements
         
         [SerializeField] private string SceneName = "House";
-        [SerializeField] private string CamPositionName;
+        [SerializeField] private CameraPositionName CameraPositionName;
 
         private Camera _camera;
         private Vector3 _cameraWorldPosition;
@@ -24,7 +25,7 @@ namespace Core.House
 
         private void LoadScene()
         {
-            SceneLoader.Instance.LoadNewScene(SceneName, CamPositionName);
+            SceneLoader.Instance.LoadNewScene(SceneName, CameraPositionName);
         }
 
         #endregion
@@ -39,7 +40,6 @@ namespace Core.House
         private void OnMouseUp()
         {
             if (!_cameraWorldPosition.Equals(_camera.transform.position)) return;
-            
             LoadScene();
         }
 

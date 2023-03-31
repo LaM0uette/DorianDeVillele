@@ -15,7 +15,6 @@ namespace Core.House
         private void OnMouseOver()
         {
             if (!GlobalCursors.Ecursor.Equals(GlobalCursors.ECursor.Hand)) return;
-
             GlobalCursors.SetHandCursor(GlobalCursors.Instance.CursorClicHouse, GlobalCursors.ECursor.Clic);
         }
 
