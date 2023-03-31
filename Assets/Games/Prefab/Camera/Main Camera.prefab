@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2080750233024268717}
   - component: {fileID: 289178622929507955}
   - component: {fileID: 1077176927283630523}
-  - component: {fileID: 5226545677409214797}
   - component: {fileID: 7690256810517068794}
   - component: {fileID: 7282158624997637311}
   - component: {fileID: 4563728629552179793}
@@ -37,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
 --- !u!20 &3663122516709712359
 Camera:
@@ -110,9 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3cf162e37c5d3a4a906aa1741deb803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DorianHouse: {fileID: 0}
-  DorianCompetences: {fileID: 0}
-  DorianContacts: {fileID: 0}
+  ParentGameObject: {fileID: 0}
 --- !u!114 &1077176927283630523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,24 +128,24 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 2.819132
-      outSlope: 2.819132
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.35461006
-      value: 0.99969256
-      inSlope: -0.05239362
-      outSlope: -0.05239362
+      inSlope: 0.021214955
+      outSlope: 0.021214955
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0.12693977
+    - serializedVersion: 3
+      time: 0.49977136
+      value: 0.99969256
+      inSlope: -0.0051251734
+      outSlope: -0.0051251734
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.12002771
       outWeight: 0.15802984
     - serializedVersion: 3
-      time: 0.5503036
-      value: 0.9941497
+      time: 0.5997893
+      value: 0.9968415
       inSlope: -0.014806338
       outSlope: -0.014806338
       tangentMode: 0
@@ -156,8 +153,8 @@ MonoBehaviour:
       inWeight: 0.47226316
       outWeight: 0.18258242
     - serializedVersion: 3
-      time: 0.732482
-      value: 1.0099323
+      time: 0.74966294
+      value: 1.0058931
       inSlope: -0.008984472
       outSlope: -0.008984472
       tangentMode: 0
@@ -165,8 +162,8 @@ MonoBehaviour:
       inWeight: 0.3714148
       outWeight: 0.35018295
     - serializedVersion: 3
-      time: 0.8903261
-      value: 0.99158347
+      time: 0.899993
+      value: 0.99696565
       inSlope: 0.0063451976
       outSlope: 0.0063451976
       tangentMode: 0
@@ -186,19 +183,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   animationDuration: 0.2
---- !u!114 &5226545677409214797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3504838998042936881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b610cc7598df91e49b15439d8936331d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialFOV: 58
 --- !u!114 &7690256810517068794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +226,7 @@ MonoBehaviour:
     m_Bits: 64
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 3
+  antialiasingMode: 0
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
