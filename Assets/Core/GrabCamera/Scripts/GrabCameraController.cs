@@ -13,11 +13,12 @@ namespace Core.GrabCamera.Scripts
         [SerializeField] private float zoomMax = 8f;
 
         // Camera
-        private static Vector3 _cameraPosition = Vector3.zero;
-        private static Quaternion _cameraRotation;
+        private static Vector3 _cameraPositionStart = Vector3.zero;
+        private static Quaternion _cameraRotationStart;
         
         // World
         private Camera _camera;
+        private Vector3 _cameraPosition;
         private Ray _mouseRay;
         private Vector3 _mouseWorldPositionStart;
 
@@ -28,6 +29,7 @@ namespace Core.GrabCamera.Scripts
 
         private void Start()
         {
+            _cameraPosition = transform.position;
             if (!CheckCameraPositionEqualZero()) SetCameraTransform();
         }
         
@@ -35,13 +37,13 @@ namespace Core.GrabCamera.Scripts
 
         #region Functions
         
-        private static bool CheckCameraPositionEqualZero() => _cameraPosition.Equals(Vector3.zero);
+        private static bool CheckCameraPositionEqualZero() => _cameraPositionStart.Equals(Vector3.zero);
         
         private void SetCameraTransform()
         {
             var cameraTransform = _camera.transform;
-            cameraTransform.position = _cameraPosition;
-            cameraTransform.rotation = _cameraRotation;
+            cameraTransform.position = _cameraPositionStart;
+            cameraTransform.rotation = _cameraRotationStart;
         }
 
         private void SetMouseWorldPositionStart()
@@ -52,12 +54,9 @@ namespace Core.GrabCamera.Scripts
         
         private static Vector3 GetRayIntersectionWithYPlane(Ray ray, float y)
         {
-            if (ray.direction.y == 0)
-            {
-                return ray.GetPoint(ray.origin.y);
-            }
+            if (ray.direction.y.Equals(0)) return ray.GetPoint(ray.origin.y);
 
-            float t = (y - ray.origin.y) / ray.direction.y;
+            var t = (y - ray.origin.y) / ray.direction.y;
             return ray.GetPoint(t);
         }
 
@@ -68,20 +67,18 @@ namespace Core.GrabCamera.Scripts
         
         private void Move()
         {
-            if (!Input.GetAxis("Mouse Y").Equals(0) || !Input.GetAxis("Mouse X").Equals(0))
-            {
-                var mouseRay = _camera.ScreenPointToRay(Input.mousePosition);
-                var planeY = new Plane(Vector3.up, Vector3.zero);
+            if (Input.GetAxis("Mouse Y").Equals(0) && Input.GetAxis("Mouse X").Equals(0)) return;
             
-                if (planeY.Raycast(mouseRay, out var distance))
-                {
-                    var mouseWorldPosition = mouseRay.GetPoint(distance);
-                    var mouseWorldPositionDiff = _mouseWorldPositionStart - mouseWorldPosition;
+            var mouseRay = _camera.ScreenPointToRay(Input.mousePosition);
+            var planeY = new Plane(Vector3.up, Vector3.zero);
+
+            if (!planeY.Raycast(mouseRay, out var distance)) return;
+            
+            var mouseWorldPosition = mouseRay.GetPoint(distance);
+            var mouseWorldPositionDiff = _mouseWorldPositionStart - mouseWorldPosition;
                 
-                    mouseWorldPositionDiff.y = 0;
-                    transform.position += mouseWorldPositionDiff;
-                }
-            }
+            mouseWorldPositionDiff.y = 0;
+            transform.position += mouseWorldPositionDiff;
         }
 
         private void CheckZoom()
@@ -92,19 +89,26 @@ namespace Core.GrabCamera.Scripts
 
         private void Zoom(float amount)
         {
-            var pos = transform.position;
-        
+            _cameraPosition = transform.position;
             transform.Translate(0, 0, amount * zoomForce * Time.deltaTime, Space.Self);
-
-            if (transform.position.y <= zoomMin) transform.position = new Vector3(pos.x, zoomMin, pos.z);
-            if (transform.position.y >= zoomMax) transform.position = new Vector3(pos.x, zoomMax, pos.z);
+            CheckZoomLimit();
         }
+
+        private void CheckZoomLimit()
+        {
+            if (transform.position.y <= zoomMin) 
+                SetCameraPositionY(zoomMin); 
+            else if (transform.position.y >= zoomMax) 
+                SetCameraPositionY(zoomMax); 
+        }
+
+        private void SetCameraPositionY(float zoom) => transform.position = new Vector3(_cameraPosition.x, zoom, _cameraPosition.z);
 
         private void SetTransform()
         {
             var cameraTransform = _camera.transform;
-            _cameraPosition = cameraTransform.position;
-            _cameraRotation = cameraTransform.rotation;
+            _cameraPositionStart = cameraTransform.position;
+            _cameraRotationStart = cameraTransform.rotation;
         }
 
         #endregion
