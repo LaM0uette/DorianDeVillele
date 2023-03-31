@@ -61,7 +61,7 @@ namespace Core.GrabCamera.Scripts
             
             _animator.SetTrigger(START);
             yield return new WaitForSeconds(0.35f);
-            
+ 
             SceneManager.LoadSceneAsync(scene);
 
             while ($"{SceneManager.GetActiveScene().name}".Equals($"{currentScene}"))
