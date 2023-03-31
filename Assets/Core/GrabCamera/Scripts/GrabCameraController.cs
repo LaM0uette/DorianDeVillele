@@ -46,6 +46,38 @@ namespace Core.GrabCamera.Scripts
             cameraTransform.rotation = _cameraRotationStart;
         }
 
+        #region LeftClick
+
+        private void CheckLeftClick()
+        {
+            CheckLeftClickDown();
+            CheckLeftClickUp();
+            CheckLeftClickHold();
+        }
+
+        private void CheckLeftClickDown()
+        {
+            if (!Input.GetMouseButtonDown(0)) return;
+            SetMouseWorldPositionStart();
+            SetCursor(GlobalCursors.Instance.CursorGrab, GlobalCursors.ECursor.Grab);
+        }
+        
+        private static void CheckLeftClickUp()
+        {
+            if (!Input.GetMouseButtonUp(0)) return;
+            SetCursor(GlobalCursors.Instance.CursorHand);
+        }
+        
+        private void CheckLeftClickHold()
+        {
+            if (!Input.GetMouseButton(0)) return;
+            Move();
+        }
+
+        #endregion
+
+        #region Move
+        
         private void SetMouseWorldPositionStart()
         {
             _mouseRay = _camera.ScreenPointToRay(Input.mousePosition);
@@ -80,7 +112,11 @@ namespace Core.GrabCamera.Scripts
             mouseWorldPositionDiff.y = 0;
             transform.position += mouseWorldPositionDiff;
         }
+        
+        #endregion
 
+        #region Zoom
+        
         private void CheckZoom()
         {
             var zoomAmount = Input.GetAxis("Mouse ScrollWheel") * zoomForce;
@@ -103,6 +139,8 @@ namespace Core.GrabCamera.Scripts
         }
 
         private void SetCameraPositionY(float zoom) => transform.position = new Vector3(_cameraPosition.x, zoom, _cameraPosition.z);
+        
+        #endregion
 
         private void SetTransform()
         {
@@ -117,18 +155,7 @@ namespace Core.GrabCamera.Scripts
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                SetMouseWorldPositionStart();
-                SetCursor(GlobalCursors.Instance.CursorGrab, GlobalCursors.ECursor.Grab);
-            } // Left click
-            if (Input.GetMouseButtonUp(0))
-            {
-                SetCursor(GlobalCursors.Instance.CursorHand);
-            } // Release left click
-            
-            if (Input.GetMouseButton(0)) Move(); // Hold left click
-
+            CheckLeftClick();
             CheckZoom();
         }
         
