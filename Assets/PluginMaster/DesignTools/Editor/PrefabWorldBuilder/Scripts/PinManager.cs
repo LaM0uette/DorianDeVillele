@@ -386,7 +386,7 @@ namespace PluginMaster
             {
                 if (_rotationSnapValueStatic == value) return;
                 _rotationSnapValueStatic = value;
-                PWBCore.staticData.Save();
+                PWBCore.staticData.SaveAndUpdateVersion();
             }
         }
 
@@ -695,7 +695,7 @@ namespace PluginMaster
             var scaleMult = strokeItem.scaleMultiplier * _pinScale;
             var itemScale = Vector3.Scale(prefab.transform.localScale, scaleMult);
 
-            itemPosition += _pinHit.normal * (brushSettings.surfaceDistance + _pinDistanceFromSurface);
+            itemPosition += _pinHit.normal * (strokeItem.surfaceDistance + _pinDistanceFromSurface);
 
             if (brushSettings.embedInSurface && !brushSettings.embedAtPivotHeight
                     && PinManager.settings.mode != PaintOnSurfaceToolSettingsBase.PaintMode.ON_SHAPE)

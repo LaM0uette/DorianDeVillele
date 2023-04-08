@@ -108,7 +108,6 @@ namespace PluginMaster
         }
         private void OnGUI()
         {
-
             if (_skin == null)
             {
                 Close();

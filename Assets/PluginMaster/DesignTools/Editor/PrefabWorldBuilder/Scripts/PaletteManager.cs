@@ -23,6 +23,8 @@ namespace PluginMaster
     {
         [SerializeField] private long _id = -1;
         [SerializeField] private float _surfaceDistance = 0f;
+        [SerializeField] private bool _randomSurfaceDistance = false;
+        [SerializeField] private RandomUtils.Range _randomSurfaceDistanceRange = new RandomUtils.Range(-0.005f, 0.005f);
         [SerializeField] protected bool _embedInSurface = false;
         [SerializeField] protected bool _embedAtPivotHeight = true;
         [SerializeField] protected Vector3 _localPositionOffset = Vector3.zero;
@@ -54,6 +56,26 @@ namespace PluginMaster
             {
                 if (_surfaceDistance == value) return;
                 _surfaceDistance = value;
+            }
+        }
+
+        public virtual bool randomSurfaceDistance
+        {
+            get => _randomSurfaceDistance;
+            set
+            {
+                if (_randomSurfaceDistance == value) return;
+                _randomSurfaceDistance = value;
+            }
+        }
+
+        public virtual RandomUtils.Range randomSurfaceDistanceRange
+        {
+            get => _randomSurfaceDistanceRange;
+            set
+            {
+                if (_randomSurfaceDistanceRange == value) return;
+                _randomSurfaceDistanceRange = value;
             }
         }
         public virtual bool embedInSurface
@@ -252,6 +274,8 @@ namespace PluginMaster
         public virtual void Copy(BrushSettings other)
         {
             _surfaceDistance = other._surfaceDistance;
+            _randomSurfaceDistance = other._randomSurfaceDistance;
+            _randomSurfaceDistanceRange = other._randomSurfaceDistanceRange;
             _embedInSurface = other._embedInSurface;
             _embedAtPivotHeight = other._embedAtPivotHeight;
             _localPositionOffset = other._localPositionOffset;
@@ -493,6 +517,14 @@ namespace PluginMaster
         public string prefabPath => _prefabPath;
         public override float surfaceDistance
             => _overwriteSettings || parentSettings == null ? base.surfaceDistance : parentSettings.surfaceDistance;
+
+        public override bool randomSurfaceDistance
+            => _overwriteSettings || parentSettings == null
+            ? base.randomSurfaceDistance : parentSettings.randomSurfaceDistance;
+
+        public override RandomUtils.Range randomSurfaceDistanceRange
+            => _overwriteSettings || parentSettings == null
+            ? base.randomSurfaceDistanceRange : parentSettings.randomSurfaceDistanceRange;
 
         public override bool embedInSurface
         {
@@ -801,12 +833,12 @@ namespace PluginMaster
 
         private void OnItemCountChange()
         {
-            UpdateThumbnail();
             UpdateTotalFrequency();
             UpdatePatternMachine();
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
             BrushstrokeManager.UpdateBrushstroke();
             SavePalette();
+            UpdateThumbnail();
         }
 
         public void Swap(int fromIdx, int toIdx, ref int[] selection)
@@ -884,7 +916,7 @@ namespace PluginMaster
 
         public override void Copy(BrushSettings other)
         {
-
+            
             if (other is MultibrushSettings)
             {
                 var otherMulti = other as MultibrushSettings;
@@ -1167,6 +1199,10 @@ namespace PluginMaster
             return _brushes[idx];
         }
 
+        public void UpdateAllThumbnails()
+        {
+            foreach (var brush in _brushes) brush.UpdateThumbnail();
+        }
         private void SetSpritesThumbnailSettings(MultibrushSettings brush)
         {
             foreach (var item in brush.items)
@@ -1186,14 +1222,14 @@ namespace PluginMaster
             _brushes.Add(brush);
             SetSpritesThumbnailSettings(brush);
             brush.palette = this;
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
             Save();
         }
 
         public void RemoveBrushAt(int idx)
         {
             _brushes.RemoveAt(idx);
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
             BrushstrokeManager.UpdateBrushstroke();
             Save();
         }
@@ -1201,7 +1237,7 @@ namespace PluginMaster
         public void RemoveBrush(MultibrushSettings brush)
         {
             _brushes.Remove(brush);
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
             BrushstrokeManager.UpdateBrushstroke();
             PrefabPalette.OnChangeRepaint();
             Save();
@@ -1212,7 +1248,7 @@ namespace PluginMaster
             _brushes.Insert(idx, brush);
             SetSpritesThumbnailSettings(brush);
             brush.palette = this;
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
             Save();
         }
 
@@ -1223,7 +1259,7 @@ namespace PluginMaster
         {
             _brushes.Sort(delegate (MultibrushSettings x, MultibrushSettings y) { return x.name.CompareTo(y.name); });
             PaletteManager.ClearSelection();
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
             PrefabPalette.OnChangeRepaint();
         }
 
@@ -1231,7 +1267,7 @@ namespace PluginMaster
         {
             _brushes.Sort(delegate (MultibrushSettings x, MultibrushSettings y) { return y.name.CompareTo(x.name); });
             PaletteManager.ClearSelection();
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
             PrefabPalette.OnChangeRepaint();
         }
 
@@ -1241,7 +1277,7 @@ namespace PluginMaster
         {
             var clone = _brushes[indexToDuplicate].Clone();
             _brushes.Insert(at, clone as MultibrushSettings);
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
             Save();
         }
 
@@ -1324,6 +1360,7 @@ namespace PluginMaster
         [SerializeField] private int _selectedBrushIdx = -1;
         [SerializeField] private bool _showBrushName = false;
         [SerializeField] private bool _viewList = false;
+        [SerializeField] private bool _showTabsInMultipleRows = false;
         private System.Collections.Generic.HashSet<int> _idxSelection = new System.Collections.Generic.HashSet<int>();
 
         public static System.Action OnBrushChanged;
@@ -1411,7 +1448,7 @@ namespace PluginMaster
             {
                 if (instance._showBrushName == value) return;
                 instance._showBrushName = value;
-                PWBCore.staticData.Save();
+                PWBCore.staticData.SaveAndUpdateVersion();
             }
         }
 
@@ -1422,7 +1459,17 @@ namespace PluginMaster
             {
                 if (instance._viewList == value) return;
                 instance._viewList = value;
-                PWBCore.staticData.Save();
+                PWBCore.staticData.SaveAndUpdateVersion();
+            }
+        }
+        public static bool showTabsInMultipleRows
+        {
+            get => instance._showTabsInMultipleRows;
+            set
+            {
+                if (instance._showTabsInMultipleRows == value) return;
+                instance._showTabsInMultipleRows = value;
+                PWBCore.staticData.SaveAndUpdateVersion();
             }
         }
         public static void ClearPaletteList() => instance._paletteDataList.Clear();
@@ -1524,6 +1571,7 @@ namespace PluginMaster
         }
 
         public static string[] paletteNames => instance.paletteDataList.Select(p => p.name).ToArray();
+        public static long[] paletteIds => instance.paletteDataList.Select(p => p.id).ToArray();
 
         public static int selectedPaletteIdx
         {
@@ -1585,7 +1633,7 @@ namespace PluginMaster
             {
                 if (instance._iconSize == value) return;
                 instance._iconSize = value;
-                PWBCore.staticData.Save();
+                PWBCore.staticData.SaveAndUpdateVersion();
             }
         }
 
@@ -1726,6 +1774,16 @@ namespace PluginMaster
             BrushProperties.RepaintWindow();
         }
 
+        public static void UpdateSelectedThumbnails()
+        {
+            foreach (var idx in instance._idxSelection) selectedPalette.GetBrush(idx).UpdateThumbnail();
+        }
+
+        public static void UpdateAllThumbnails()
+        {
+            var palettes = instance.paletteDataList.ToArray();
+            foreach (var palette in palettes) palette.UpdateAllThumbnails();
+        }
         public static PaletteData GetPalette(MultibrushSettings brush)
         {
             foreach (var palette in instance.paletteDataList)

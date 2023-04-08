@@ -712,6 +712,15 @@ namespace PluginMaster
             BrushstrokeManager.UpdatePersistentShapeBrushstroke(shapeData, objList, out objPoses);
             _disabledObjects = objList.ToList();
             var settings = shapeData.settings;
+            BrushSettings brushSettings = PaletteManager.GetBrushById(shapeData.initialBrushId);
+            if (brushSettings == null && PaletteManager.selectedBrush != null)
+            {
+                brushSettings = PaletteManager.selectedBrush;
+                shapeData.SetInitialBrushId(brushSettings.id);
+            }
+            if (settings.overwriteBrushProperties) brushSettings = settings.brushSettings;
+            if (brushSettings == null) brushSettings = new BrushSettings();
+
             for (int objIdx = 0; objIdx < objPoses.Length; ++objIdx)
             {
                 var obj = objList[objIdx];
@@ -739,9 +748,7 @@ namespace PluginMaster
                     }
                     else if (settings.mode == PaintOnSurfaceToolSettingsBase.PaintMode.ON_SURFACE) continue;
                 }
-                BrushSettings brushSettings = PaletteManager.GetBrushById(shapeData.initialBrushId);
-                if (shapeData.settings.overwriteBrushProperties) brushSettings = shapeData.settings.brushSettings;
-                else if (PaletteManager.selectedBrush != null) brushSettings = PaletteManager.selectedBrush;
+                
 
 
                 itemPosition += normal * brushSettings.surfaceDistance;
@@ -1172,7 +1179,7 @@ namespace PluginMaster
                 BrushSettings brushSettings = strokeItem.settings;
                 if (settings.overwriteBrushProperties) brushSettings = settings.brushSettings;
 
-                else itemPosition += normal * brushSettings.surfaceDistance;
+                else itemPosition += normal * strokeItem.surfaceDistance;
 
 
                 if (settings.mode != PaintOnSurfaceToolSettingsBase.PaintMode.ON_SHAPE)

@@ -65,12 +65,11 @@ namespace PluginMaster
             void CreateFile()
             {
                 _staticData = new PWBData();
-                _staticData.Save();
+                _staticData.SaveAndUpdateVersion();
             }
             if (text == null) CreateFile();
             else
             {
-                if (!ApplicationEventHandler.hierarchyLoaded) return;
                 _staticData = null;
                 try
                 {
@@ -443,7 +442,7 @@ namespace PluginMaster
         public const string RELATIVE_RESOURCES_DIR = RELATIVE_TOOL_DIR + "/Resources";
         public const string RELATIVE_DATA_DIR = RELATIVE_RESOURCES_DIR + "/" + DATA_DIR;
         public const string PALETTES_DIR = "Palettes";
-        public const string VERSION = "3.5";
+        public const string VERSION = "3.6";
         [SerializeField] private string _version = VERSION;
         [SerializeField] private string _rootDirectory = null;
         [SerializeField] private int _autoSavePeriodMinutes = 1;
@@ -495,7 +494,7 @@ namespace PluginMaster
                 value = Mathf.Clamp(value, 1, 10);
                 if (_autoSavePeriodMinutes == value) return;
                 _autoSavePeriodMinutes = value;
-                Save();
+                SaveAndUpdateVersion();
             }
         }
 
@@ -506,7 +505,7 @@ namespace PluginMaster
             {
                 if (_undoBrushProperties == value) return;
                 _undoBrushProperties = value;
-                Save();
+                SaveAndUpdateVersion();
             }
         }
 
@@ -517,7 +516,7 @@ namespace PluginMaster
             {
                 if (_undoPalette == value) return;
                 _undoPalette = value;
-                Save();
+                SaveAndUpdateVersion();
             }
         }
 
@@ -528,7 +527,7 @@ namespace PluginMaster
             {
                 if (_controlPointSize == value) return;
                 _controlPointSize = value;
-                Save();
+                SaveAndUpdateVersion();
             }
         }
 
@@ -539,7 +538,7 @@ namespace PluginMaster
             {
                 if (_closeAllWindowsWhenClosingTheToolbar == value) return;
                 _closeAllWindowsWhenClosingTheToolbar = value;
-                Save();
+                SaveAndUpdateVersion();
             }
         }
 
@@ -551,7 +550,7 @@ namespace PluginMaster
                 value = Mathf.Clamp(value, 0, 31);
                 if (_thumbnailLayer == value) return;
                 _thumbnailLayer = value;
-                Save();
+                SaveAndUpdateVersion();
             }
         }
 
@@ -562,7 +561,7 @@ namespace PluginMaster
             {
                 if (_unsavedChangesAction == value) return;
                 _unsavedChangesAction = value;
-                Save();
+                SaveAndUpdateVersion();
             }
         }
         public void SetSavePending() => _savePending = true;
@@ -661,9 +660,8 @@ namespace PluginMaster
                 return _rootDirectory;
             }
         }
-
-        public void Save() => Save(true);
-
+        public void Save() => Save(false);
+        public void SaveAndUpdateVersion() => Save(true);
         public void Save(bool updateVersion)
         {
             _saving = true;
@@ -691,7 +689,7 @@ namespace PluginMaster
             var metaPath = fullFilePath += ".meta";
             if (System.IO.File.Exists(metaPath)) System.IO.File.Delete(metaPath);
         }
-        public void SaveIfPending() { if (_savePending) Save(); }
+        public void SaveIfPending() { if (_savePending) SaveAndUpdateVersion(); }
 
         public string documentationPath => rootDirectory + "/Documentation/Prefab World Builder Documentation.pdf";
 
@@ -2063,14 +2061,13 @@ namespace PluginMaster
                             System.IO.File.Move(currentPalettePath, newPalettePath);
                             System.IO.File.Delete(currentPalettePath);
 
-                            var currentThumbnailsPath = currentDataPath.Substring(0, currentDataPath.Length - 4);
+                            var currentThumbnailsPath = currentPalettePath.Substring(0, currentPalettePath.Length - 4);
                             if (!System.IO.Directory.Exists(currentThumbnailsPath)) continue;
-                            var thumbnailsDirName = fileName.Substring(0, currentDataPath.Length - 4);
+                            var thumbnailsDirName = fileName.Substring(0, fileName.Length - 4);
                             var newThumbnailPath = newPalettesDir + "/" + thumbnailsDirName;
                             if (System.IO.Directory.Exists(newThumbnailPath)) System.IO.Directory.Delete(newThumbnailPath);
                             DeleteMeta(currentThumbnailsPath);
                             System.IO.Directory.Move(currentThumbnailsPath, newThumbnailPath);
-                            System.IO.Directory.Delete(currentThumbnailsPath);
                         }
                     }
                     if (DeleteIfEmpty(currentPalettesDir)) DeleteIfEmpty(currentFullDir);
@@ -2198,8 +2195,6 @@ namespace PluginMaster
     [UnityEditor.InitializeOnLoad]
     public static class ApplicationEventHandler
     {
-        private static bool _hierarchyLoaded = false;
-        public static bool hierarchyLoaded => _hierarchyLoaded;
         private static bool _importingPackage = false;
         public static bool importingPackage => _importingPackage;
         public static bool _refreshOnImportingCancelled = false;
@@ -2210,7 +2205,6 @@ namespace PluginMaster
         static ApplicationEventHandler()
         {
             UnityEditor.EditorApplication.playModeStateChanged += OnStateChanged;
-            UnityEditor.EditorApplication.quitting += PWBCore.staticData.Save;
             UnityEditor.EditorApplication.hierarchyChanged += OnHierarchyChanged;
             UnityEditor.AssetDatabase.importPackageStarted += OnImportPackageStarted;
             UnityEditor.AssetDatabase.importPackageCompleted += OnImportPackageCompleted;
@@ -2228,11 +2222,11 @@ namespace PluginMaster
 
         private static void OnHierarchyChanged()
         {
-            if (!_hierarchyLoaded)
+            /*if (!_hierarchyLoaded)
             {
                 _hierarchyLoaded = true;
                 return;
-            }
+            }*/
             if (!PWBCore.staticData.saving) PWBCore.LoadFromFile();
             UnityEditor.EditorApplication.hierarchyChanged -= OnHierarchyChanged;
         }
@@ -2278,7 +2272,7 @@ namespace PluginMaster
 
             var relativeDataPath = PWBSettings.relativeDataDir.Replace(Application.dataPath, string.Empty);
 
-            if (paths.Exists(p => p.Contains(relativeDataPath)))
+            if (paths.Exists(p => p.Contains(relativeDataPath) && System.IO.Path.GetExtension(p) == ".txt"))
             {
                 PaletteManager.instance.LoadPaletteFiles();
                 if (PrefabPalette.instance != null) PrefabPalette.instance.Reload(!ThumbnailUtils.savingImage);
@@ -2316,7 +2310,7 @@ namespace PluginMaster
         {
             await System.Threading.Tasks.Task.Delay(300);
             ++_quickSaveCount;
-            if (_quickSaveCount == 3 && PWBCore.staticDataWasInitialized) PWBCore.staticData.Save();
+            if (_quickSaveCount == 3 && PWBCore.staticDataWasInitialized) PWBCore.staticData.SaveAndUpdateVersion();
             PeriodicQuickSave();
         }
 

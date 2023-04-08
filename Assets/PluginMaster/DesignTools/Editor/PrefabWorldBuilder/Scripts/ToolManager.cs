@@ -44,7 +44,7 @@ namespace PluginMaster
         static ToolManager()
         {
             UnityEditor.EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
-            UnityEditor.SceneManagement.EditorSceneManager.sceneClosing += OnSceneClosing;
+            //UnityEditor.SceneManagement.EditorSceneManager.sceneClosing += OnSceneClosing;
             PaletteManager.OnBrushChanged += TilingManager.settings.UpdateCellSize;
         }
 
@@ -161,7 +161,7 @@ namespace PluginMaster
 
         private static void OnSceneClosing(UnityEngine.SceneManagement.Scene scene, bool removingScene)
         {
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
             DeselectTool();
         }
 

@@ -18,7 +18,6 @@ namespace PluginMaster
 {
     public static partial class Shortcuts
     {
-#if !PWB_3_4_OR_NEWER 
         #region TOGGLE TOOLS
         public const string PWB_TOGGLE_PIN_SHORTCUT_ID = "Prefab World Builder/Tools - Toggle Pin Tool";
          [UnityEditor.ShortcutManagement.Shortcut(PWB_TOGGLE_PIN_SHORTCUT_ID,
@@ -76,7 +75,6 @@ namespace PluginMaster
             UnityEditor.ShortcutManagement.ShortcutModifiers.Shift | UnityEditor.ShortcutManagement.ShortcutModifiers.Alt)]
         private static void ToggleMirror() => PWBIO.ToogleTool(ToolManager.PaintTool.MIRROR);
         #endregion
-#endif
         #region WINDOWS
         public const string PWB_CLOSE_ALL_WINDOWS_ID = "Prefab World Builder/Close All Windows";
         [UnityEditor.ShortcutManagement.Shortcut(PWB_CLOSE_ALL_WINDOWS_ID, KeyCode.End,

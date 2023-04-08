@@ -22,12 +22,13 @@ namespace PluginMaster
         public Vector3 tangentPosition = Vector3.zero;
         public readonly Vector3 additionalAngle = Vector3.zero;
         public readonly Vector3 scaleMultiplier = Vector3.zero;
+        public Vector3 nextTangentPosition = Vector3.zero;
         public readonly bool flipX = false;
         public readonly bool flipY = false;
-        public Vector3 nextTangentPosition = Vector3.zero;
+        public readonly float surfaceDistance = 0f;
 
         public BrushstrokeItem(MultibrushItemSettings settings, Vector3 tangentPosition,
-            Vector3 additionalAngle, Vector3 scaleMultiplier, bool flipX, bool flipY)
+            Vector3 additionalAngle, Vector3 scaleMultiplier, bool flipX, bool flipY, float surfaceDistance)
         {
             this.settings = settings;
             this.tangentPosition = tangentPosition;
@@ -36,11 +37,13 @@ namespace PluginMaster
             nextTangentPosition = tangentPosition;
             this.flipX = flipX;
             this.flipY = flipY;
+            this.surfaceDistance = surfaceDistance;
         }
 
         public BrushstrokeItem Clone()
         {
-            var clone = new BrushstrokeItem(settings, tangentPosition, additionalAngle, scaleMultiplier, flipX, flipY);
+            var clone = new BrushstrokeItem(settings, tangentPosition, additionalAngle,
+                scaleMultiplier, flipX, flipY, surfaceDistance);
             clone.nextTangentPosition = nextTangentPosition;
             return clone;
         }
@@ -65,6 +68,9 @@ namespace PluginMaster
             hashCode = hashCode * -1521134295 + additionalAngle.GetHashCode();
             hashCode = hashCode * -1521134295 + scaleMultiplier.GetHashCode();
             hashCode = hashCode * -1521134295 + nextTangentPosition.GetHashCode();
+            hashCode = hashCode * -1521134295 + flipX.GetHashCode();
+            hashCode = hashCode * -1521134295 + flipY.GetHashCode();
+            hashCode = hashCode * -1521134295 + surfaceDistance.GetHashCode();
             return hashCode;
         }
     }
@@ -102,7 +108,7 @@ namespace PluginMaster
             BrushSettings brushSettings = PaletteManager.selectedBrush.items[index];
             if (paintToolSettings != null && paintToolSettings.overwriteBrushProperties)
                 brushSettings = paintToolSettings.brushSettings;
-            
+
             var additonalAngle = angle;
             if (brushSettings.addRandomRotation)
             {
@@ -120,12 +126,14 @@ namespace PluginMaster
             var scale = brushSettings.randomScaleMultiplier
                 ? brushSettings.randomScaleMultiplierRange.randomVector : brushSettings.scaleMultiplier;
             if (!brushSettings.separateScaleAxes) scale.z = scale.y = scale.x;
-            bool flipX = brushSettings.flipX == BrushSettings.FlipAction.NONE ? false
+            var flipX = brushSettings.flipX == BrushSettings.FlipAction.NONE ? false
                 : brushSettings.flipX == BrushSettings.FlipAction.FLIP ? true : Random.value > 0.5;
-            bool flipY = brushSettings.flipY == BrushSettings.FlipAction.NONE ? false
+            var flipY = brushSettings.flipY == BrushSettings.FlipAction.NONE ? false
                : brushSettings.flipY == BrushSettings.FlipAction.FLIP ? true : Random.value > 0.5;
+            var surfaceDistance = brushSettings.randomSurfaceDistance
+                ? brushSettings.randomSurfaceDistanceRange.randomValue : brushSettings.surfaceDistance;
             var strokeItem = new BrushstrokeItem(PaletteManager.selectedBrush.items[index],
-                tangentPosition, additonalAngle, scale, flipX, flipY);
+                tangentPosition, additonalAngle, scale, flipX, flipY, surfaceDistance);
             if (_brushstroke.Count > 0) _brushstroke.Last().nextTangentPosition = tangentPosition;
             _brushstroke.Add(strokeItem);
         }
@@ -405,6 +413,9 @@ namespace PluginMaster
                 if (secondLocalAngle <= firstLocalAngle) secondLocalAngle += TAU;
                 var arcDelta = secondLocalAngle - firstLocalAngle;
                 var arcPerimeter = arcDelta / TAU * perimeter;
+                if (PaletteManager.selectedBrush.patternMachine != null &&
+                    PaletteManager.selectedBrush.restartPatternForEachStroke)
+                    PaletteManager.selectedBrush.patternMachine.Reset();
                 do
                 {
                     float itemSize;
@@ -420,12 +431,15 @@ namespace PluginMaster
                     itemsSize += itemSize;
                     items.Add((nextIdx, itemSize));
                 } while (itemsSize < arcPerimeter);
-                var spacing = (arcPerimeter - itemsSize) / (items.Count + 1);
+
+                var spacing = (arcPerimeter - itemsSize) / (items.Count);
 
                 if (items.Count == 0) return;
-                var distance = firstLocalAngle / TAU * perimeter + items[0].size/2;
-                foreach (var item in items)
+                var distance = firstLocalAngle / TAU * perimeter + items[0].size / 2;
+
+                for (int i = 0; i < items.Count; ++i)
                 {
+                    var item = items[i];
                     var arcAngle = distance / perimeter * TAU;
                     var LocalRadiusVector = new Vector3(Mathf.Cos(arcAngle), 0f, Mathf.Sin(arcAngle))
                         * ShapeData.instance.radius;
@@ -441,11 +455,15 @@ namespace PluginMaster
                     var segmentRotation = Quaternion.LookRotation(itemDir, -settings.projectionDirection) * lookAt;
                     var angle = segmentRotation.eulerAngles;
                     AddBrushstrokeItem(item.idx, position, angle, settings);
-                    distance += item.size + spacing;
+                    var nextItem = items[(i+1)%items.Count];
+                    distance += item.size/2 + nextItem.size/2 + spacing;
                 }
             }
             else
             {
+                if (PaletteManager.selectedBrush.patternMachine != null && 
+                    PaletteManager.selectedBrush.restartPatternForEachStroke)
+                    PaletteManager.selectedBrush.patternMachine.Reset();
                 for (int i = 0; i < points.Count - 1; ++i)
                 {
                     var start = points[i];

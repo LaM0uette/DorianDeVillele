@@ -508,7 +508,7 @@ namespace PluginMaster
         private static string _createProfileName = ToolProfile.DEFAULT;
 
         public static bool selectingLinePoints
-        { 
+        {
             get => _selectingLinePoints;
             set
             {
@@ -915,6 +915,16 @@ namespace PluginMaster
             _disabledObjects.AddRange(lineData.objects.ToList());
             float pathLength = 0;
             var prevSegmentDir = Vector3.zero;
+
+            BrushSettings brushSettings = PaletteManager.GetBrushById(lineData.initialBrushId);
+            if (brushSettings == null && PaletteManager.selectedBrush != null)
+            {
+                brushSettings = PaletteManager.selectedBrush;
+                lineData.SetInitialBrushId(brushSettings.id);
+            }
+            if (settings.overwriteBrushProperties) brushSettings = settings.brushSettings;
+            if (brushSettings == null) brushSettings = new BrushSettings();
+
             for (int objIdx = 0; objIdx < objPos.Length; ++objIdx)
             {
                 var obj = objList[objIdx];
@@ -980,9 +990,8 @@ namespace PluginMaster
                     }
                     else if (settings.mode == PaintOnSurfaceToolSettingsBase.PaintMode.ON_SURFACE) continue;
                 }
-                BrushSettings brushSettings = PaletteManager.GetBrushById(lineData.initialBrushId);
-                if (settings.overwriteBrushProperties) brushSettings = settings.brushSettings;
-                else if (PaletteManager.selectedBrush != null) brushSettings = PaletteManager.selectedBrush;
+
+
                 if (settings.perpendicularToTheSurface && segmentDir != Vector3.zero)
                 {
                     if (settings.mode == PaintOnSurfaceToolSettingsBase.PaintMode.ON_SHAPE)
@@ -1185,7 +1194,8 @@ namespace PluginMaster
                     ResetLineState(false);
                 }
             }
-            else if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Delete)
+            else if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Delete
+                && !Event.current.control && !Event.current.alt && !Event.current.shift)
             {
                 lineData.RemoveSelectedPoints();
                 if (persistent) PreviewPersistenLine(_selectedPersistentLineData);
@@ -1323,7 +1333,7 @@ namespace PluginMaster
                         itemPosition = itemHit.point;
                         if (settings.perpendicularToTheSurface) normal = itemHit.normal;
                         var colObj = PWBCore.GetGameObjectFromTempCollider(collider);
-                        if(colObj != null) surface = colObj.transform;
+                        if (colObj != null) surface = colObj.transform;
                     }
                     else if (settings.mode == PaintOnSurfaceToolSettingsBase.PaintMode.ON_SURFACE) continue;
                 }
@@ -1349,7 +1359,7 @@ namespace PluginMaster
                 else if (!settings.perpendicularToTheSurface && segmentDir != Vector3.zero)
                     itemRotation = Quaternion.LookRotation(segmentDir, normal) * lookAt;
 
-                itemPosition += normal * brushSettings.surfaceDistance;
+                itemPosition += normal * strokeItem.surfaceDistance;
                 itemRotation *= Quaternion.Euler(strokeItem.additionalAngle);
 
                 itemPosition += itemRotation * brushSettings.localPositionOffset;

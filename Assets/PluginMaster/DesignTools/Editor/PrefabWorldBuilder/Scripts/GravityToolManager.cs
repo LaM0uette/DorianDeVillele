@@ -54,7 +54,34 @@ namespace PluginMaster
     }
 
     [System.Serializable]
-    public class GravityToolManager : ToolManagerBase<GravityToolSettings> { }
+    public class GravityToolManager : ToolManagerBase<GravityToolSettings> 
+    {
+        private static float _surfaceDistanceSensitivityStatic = 1.0f;
+        [SerializeField] private float _surfaceDistanceSensitivity = _surfaceDistanceSensitivityStatic;
+        public static float surfaceDistanceSensitivity
+        {
+            get => _surfaceDistanceSensitivityStatic;
+            set
+            {
+                value = Mathf.Clamp(value, 0f, 1f);
+                if (_surfaceDistanceSensitivityStatic == value) return;
+                _surfaceDistanceSensitivityStatic = value;
+                PWBCore.staticData.Save();
+            }
+        }
+
+        public override void OnBeforeSerialize()
+        {
+            base.OnBeforeSerialize();
+            _surfaceDistanceSensitivity = _surfaceDistanceSensitivityStatic;
+        }
+
+        public override void OnAfterDeserialize()
+        {
+            base.OnAfterDeserialize();
+            _surfaceDistanceSensitivityStatic = _surfaceDistanceSensitivity;
+        }
+    }
     #endregion
 
     #region PWBIO
@@ -124,7 +151,8 @@ namespace PluginMaster
             else if (PWBSettings.shortcuts.gravityAdd01UnitToSurfDist.Check()) AddHeight(0.1f);
             else if (PWBSettings.shortcuts.gravitySurfDist.Check())
             {
-                var delta = Mathf.Sign(PWBSettings.shortcuts.gravitySurfDist.combination.delta);
+                var delta = Mathf.Sign(PWBSettings.shortcuts.gravitySurfDist.combination.delta)
+                    * GravityToolManager.surfaceDistanceSensitivity;
                 GravityToolManager.settings.height = Mathf.Max((GravityToolManager.settings.height + delta * 0.5f)
                     * (1f + delta * 0.02f), 0.05f);
                 ToolProperties.RepainWindow();

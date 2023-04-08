@@ -211,6 +211,8 @@ namespace PluginMaster
         private class BrushSelectionState
         {
             public SelectionFieldState surfaceDistance = SelectionFieldState.SAME;
+            public SelectionFieldState randomSurfaceDistance = SelectionFieldState.SAME;
+            public SelectionFieldState randomSurfaceDistanceRange = SelectionFieldState.SAME;
             public SelectionFieldState embedInSurface = SelectionFieldState.SAME;
             public SelectionFieldState embedAtPivotHeight = SelectionFieldState.SAME;
             public SelectionFieldState localPositionOffset = SelectionFieldState.SAME;
@@ -226,6 +228,8 @@ namespace PluginMaster
             public SelectionFieldState flipY = SelectionFieldState.SAME;
             public virtual bool changed
                 => surfaceDistance == SelectionFieldState.CHANGED
+                || randomSurfaceDistance == SelectionFieldState.CHANGED
+                || randomSurfaceDistanceRange == SelectionFieldState.CHANGED
                 || embedInSurface == SelectionFieldState.CHANGED
                 || embedAtPivotHeight == SelectionFieldState.CHANGED
                 || localPositionOffset == SelectionFieldState.CHANGED
@@ -242,6 +246,8 @@ namespace PluginMaster
             public virtual void Reset()
             {
                 surfaceDistance = SelectionFieldState.SAME;
+                randomSurfaceDistance = SelectionFieldState.SAME;
+                randomSurfaceDistanceRange = SelectionFieldState.SAME;
                 embedInSurface = SelectionFieldState.SAME;
                 embedAtPivotHeight = SelectionFieldState.SAME;
                 localPositionOffset = SelectionFieldState.SAME;
@@ -290,6 +296,12 @@ namespace PluginMaster
                 if (brushSelectionState.surfaceDistance != SelectionFieldState.CHANGED
                     && brush.surfaceDistance != nextBrush.surfaceDistance)
                     brushSelectionState.surfaceDistance = SelectionFieldState.MIXED;
+                if (brushSelectionState.randomSurfaceDistance != SelectionFieldState.CHANGED
+                    && brush.randomSurfaceDistance != nextBrush.randomSurfaceDistance)
+                    brushSelectionState.randomSurfaceDistance = SelectionFieldState.MIXED;
+                if (brushSelectionState.randomSurfaceDistanceRange != SelectionFieldState.CHANGED
+                    && brush.randomSurfaceDistanceRange != nextBrush.randomSurfaceDistanceRange)
+                    brushSelectionState.randomSurfaceDistanceRange = SelectionFieldState.MIXED;
                 if (brushSelectionState.localPositionOffset != SelectionFieldState.CHANGED
                     && brush.localPositionOffset != nextBrush.localPositionOffset)
                     brushSelectionState.localPositionOffset = SelectionFieldState.MIXED;
@@ -375,19 +387,57 @@ namespace PluginMaster
                             }
                         }
                     }
-                    using (new GUILayout.HorizontalScope())
+                    using (new GUILayout.VerticalScope(UnityEditor.EditorStyles.helpBox))
                     {
-                        GUILayout.Box(GetStateGUIContent(brushSelectionState.surfaceDistance), UnityEditor.EditorStyles.label);
-
-                        using (var check = new UnityEditor.EditorGUI.ChangeCheckScope())
+                        using (new GUILayout.HorizontalScope())
                         {
-                            brushSelectionSettings.surfaceDistance
-                                = UnityEditor.EditorGUILayout.FloatField("Surface Distance:",
-                                brushSelectionSettings.surfaceDistance);
-                            if (check.changed)
-                                brushSelectionState.surfaceDistance = SelectionFieldState.CHANGED;
+                            GUILayout.Box(GetStateGUIContent(brushSelectionState.randomSurfaceDistance),
+                                UnityEditor.EditorStyles.label);
+
+                            using (var check = new UnityEditor.EditorGUI.ChangeCheckScope())
+                            {
+                                brushSelectionSettings.randomSurfaceDistance
+                                    = UnityEditor.EditorGUILayout.Popup("Surface Distance:",
+                                    brushSelectionSettings.randomSurfaceDistance ? 1 : 0,
+                                    new string[] { "Constant", "Random" }) == 1;
+                                if (check.changed)
+                                    brushSelectionState.randomSurfaceDistance = SelectionFieldState.CHANGED;
+                            }
+                            GUILayout.FlexibleSpace();
                         }
-                        GUILayout.FlexibleSpace();
+                        if (brushSelectionSettings.randomSurfaceDistance)
+                        {
+                            GUILayout.Box(GetStateGUIContent(brushSelectionState.randomSurfaceDistanceRange),
+                                    UnityEditor.EditorStyles.label);
+
+                            using (var check = new UnityEditor.EditorGUI.ChangeCheckScope())
+                            {
+                                brushSelectionSettings.randomSurfaceDistanceRange
+                                    = EditorGUIUtils.RangeField(string.Empty,
+                                    brushSelectionSettings.randomSurfaceDistanceRange);
+                                if (check.changed)
+                                    brushSelectionState.randomSurfaceDistanceRange = SelectionFieldState.CHANGED;
+                            }
+                            GUILayout.FlexibleSpace();
+                        }
+                        else
+                        {
+                            using (new GUILayout.HorizontalScope())
+                            {
+                                GUILayout.Box(GetStateGUIContent(brushSelectionState.surfaceDistance),
+                                    UnityEditor.EditorStyles.label);
+
+                                using (var check = new UnityEditor.EditorGUI.ChangeCheckScope())
+                                {
+                                    brushSelectionSettings.surfaceDistance
+                                        = UnityEditor.EditorGUILayout.FloatField("Value:",
+                                        brushSelectionSettings.surfaceDistance);
+                                    if (check.changed)
+                                        brushSelectionState.surfaceDistance = SelectionFieldState.CHANGED;
+                                }
+                                GUILayout.FlexibleSpace();
+                            }
+                        }
                     }
                     using (new GUILayout.HorizontalScope())
                     {
@@ -753,8 +803,16 @@ namespace PluginMaster
                                         tempBrush.embedAtPivotHeight);
                             }
                         }
-                        tempBrush.surfaceDistance = UnityEditor.EditorGUILayout.FloatField("Surface Distance:",
-                            tempBrush.surfaceDistance);
+                        using (new GUILayout.VerticalScope(UnityEditor.EditorStyles.helpBox))
+                        {
+                            tempBrush.randomSurfaceDistance = UnityEditor.EditorGUILayout.Popup("Surface distance:",
+                               tempBrush.randomSurfaceDistance ? 1 : 0, new string[] { "Constant", "Random" }) == 1;
+                            if (tempBrush.randomSurfaceDistance)
+                                tempBrush.randomSurfaceDistanceRange = EditorGUIUtils.RangeField(string.Empty,
+                                    tempBrush.randomSurfaceDistanceRange);
+                            else tempBrush.surfaceDistance = UnityEditor.EditorGUILayout.FloatField("Value:",
+                                tempBrush.surfaceDistance);
+                        }
                         tempBrush.localPositionOffset = UnityEditor.EditorGUILayout.Vector3Field("Local Offset:",
                             tempBrush.localPositionOffset);
                     }

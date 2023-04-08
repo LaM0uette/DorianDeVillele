@@ -965,13 +965,14 @@ namespace PluginMaster
                 Vector3 itemTangent = itemRotation * Vector3.forward;
                 BrushSettings brushSettings = strokeItem.settings;
                 if (settings.overwriteBrushProperties) brushSettings = settings.brushSettings;
+                if (brushSettings != null) brushSettings = new BrushSettings();
                 if (brushSettings.rotateToTheSurface
                     && settings.mode != PaintOnSurfaceToolSettingsBase.PaintMode.ON_SHAPE)
                 {
                     itemRotation = Quaternion.LookRotation(itemTangent, normal);
-                    itemPosition += normal * brushSettings.surfaceDistance;
+                    itemPosition += normal * strokeItem.surfaceDistance;
                 }
-                else itemPosition += normal * brushSettings.surfaceDistance;
+                else itemPosition += normal * strokeItem.surfaceDistance;
                 var axisAlignedWithNormal = (Vector3)settings.axisAlignedWithNormal;
                 if (settings.axisAlignedWithNormal.axis != AxesUtils.Axis.Y) axisAlignedWithNormal *= -1;
                 itemRotation *= Quaternion.FromToRotation(Vector3.up, axisAlignedWithNormal);

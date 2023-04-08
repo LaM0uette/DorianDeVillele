@@ -84,7 +84,7 @@ namespace PluginMaster
         public void SaveProfile()
         {
             _staticProfiles[_staticSelectedProfileName].Copy(_staticUnsavedProfile);
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
         }
         public void SaveProfileAs(string name)
         {
@@ -98,7 +98,7 @@ namespace PluginMaster
             _staticSelectedProfileName = name;
             UpdateUnsaved();
             _staticUnsavedProfile.DataChanged();
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
         }
         public void DeleteProfile()
         {
@@ -107,20 +107,20 @@ namespace PluginMaster
             _staticSelectedProfileName = ToolProfile.DEFAULT;
             _staticUnsavedProfile.Copy(_staticProfiles[ToolProfile.DEFAULT]);
             _staticUnsavedProfile.DataChanged();
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
         }
         public void Revert()
         {
             UpdateUnsaved();
             _staticUnsavedProfile.DataChanged();
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
         }
 
         public void FactoryReset()
         {
             _staticUnsavedProfile = new TOOL_SETTINGS();
             _staticUnsavedProfile.DataChanged();
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
         }
 
         public void CopyToolSettings(TOOL_SETTINGS value) => _staticUnsavedProfile.Copy(value);
@@ -181,7 +181,7 @@ namespace PluginMaster
                 if (item != null) return;
             }
             sceneItem.AddItem(data);
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
         }
 
 
@@ -211,13 +211,26 @@ namespace PluginMaster
         public void RemovePersistentItem(long itemId)
         {
             foreach (var item in _staticSceneItems) item.RemoveItemData(itemId);
-            PWBCore.staticData.Save();
+            PWBCore.staticData.SaveAndUpdateVersion();
         }
         public void DeletePersistentItem(long itemId, bool deleteObjects)
         {
             ToolProperties.RegisterUndo("Delete Item");
-            foreach (var item in _staticSceneItems) item.DeleteItemData(itemId, deleteObjects);
-            PWBCore.staticData.Save();
+            var parents = new System.Collections.Generic.List<GameObject>();
+            foreach (var item in _staticSceneItems)
+            {
+                var itemParents = item.GetParents(itemId);
+                foreach (var parent in itemParents)
+                    if (!parents.Contains(parent)) parents.Add(parent);
+                item.DeleteItemData(itemId, deleteObjects);
+            }
+
+            foreach (var parent in parents)
+            {
+                var components = parent.GetComponentsInChildren<Component>();
+                if (components.Length == 1) UnityEditor.Undo.DestroyObjectImmediate(parent);
+            }
+            PWBCore.staticData.SaveAndUpdateVersion();
         }
         public TOOL_DATA GetItem(long itemId)
         {
@@ -523,9 +536,9 @@ namespace PluginMaster
         public bool setSurfaceAsParent
         {
             get => _setSurfaceAsParent;
-            set 
+            set
             {
-                if(_setSurfaceAsParent == value) return;
+                if (_setSurfaceAsParent == value) return;
                 _setSurfaceAsParent = value;
                 OnDataChanged();
             }
@@ -681,7 +694,7 @@ namespace PluginMaster
                 OnDataChanged();
             }
         }
-       
+
         public override bool paintOnMeshesWithoutCollider
         {
             get
@@ -1050,7 +1063,8 @@ namespace PluginMaster
         public string hexId => HexId(id);
         #endregion
         #region OBJECT POSES
-        [SerializeField] protected System.Collections.Generic.List<ObjectPose> _objectPoses
+        [SerializeField]
+        protected System.Collections.Generic.List<ObjectPose> _objectPoses
             = new System.Collections.Generic.List<ObjectPose>();
         public void UpdateObjects()
         {
@@ -1104,14 +1118,14 @@ namespace PluginMaster
             {
                 var list = new System.Collections.Generic.List<GameObject>();
                 var objPos = _objectPoses.ToArray();
-                foreach (var item in objPos)
+                _objectPoses.Clear();
+                for (int i = 0; i < objPos.Length; ++i)
                 {
+                    var item = objPos[i];
+                    if (item == null) continue;
                     var obj = item.obj;
-                    if (obj == null)
-                    {
-                        _objectPoses.Remove(item);
-                        continue;
-                    }
+                    if (obj == null) continue;
+                    _objectPoses.Add(item);
                     list.Add(obj);
                 }
                 return list;
@@ -1174,7 +1188,8 @@ namespace PluginMaster
         }
         #endregion
         #region CONTROL POINTS
-        [SerializeField] protected System.Collections.Generic.List<CONTROL_POINT> _controlPoints
+        [SerializeField]
+        protected System.Collections.Generic.List<CONTROL_POINT> _controlPoints
             = new System.Collections.Generic.List<CONTROL_POINT>();
         private int _selectedPointIdx = -1;
         protected System.Collections.Generic.List<int> _selection = new System.Collections.Generic.List<int>();
@@ -1353,6 +1368,7 @@ namespace PluginMaster
         }
 
         public long initialBrushId => _initialBrushId;
+        public void SetInitialBrushId(long value) => _initialBrushId = value;
 
         protected void Clone(PersistentData<TOOL_NAME, TOOL_SETTINGS, CONTROL_POINT> clone)
         {
@@ -1435,10 +1451,39 @@ namespace PluginMaster
         {
             var item = GetItem(itemId);
             if (item == null) return;
-            if(deleteObjects) item.Delete();
+            if (deleteObjects) item.Delete();
             RemoveItemData(itemId);
         }
         public TOOL_DATA GetItem(long itemId) => _items.Find(i => i.id == itemId);
+
+        public GameObject[] GetParents(long itemId)
+        {
+            var parents = new System.Collections.Generic.List<GameObject>();
+            var item = GetItem(itemId);
+            if (item == null) return parents.ToArray();
+            var objs = item.objects;
+            foreach (var obj in objs)
+            {
+                if (obj == null) continue;
+                if (obj.transform.parent == null) continue;
+                var parent = obj.transform.parent.gameObject;
+                if (parents.Contains(parent)) continue;
+                parents.Add(parent);
+                do
+                {
+                    if (parent.transform.parent == null) parent = null;
+                    else
+                    {
+                        parent = parent.transform.parent.gameObject;
+                        if (!parents.Contains(parent)) parents.Add(parent);
+                    }
+                }
+                while (parent != null);
+            }
+
+
+            return parents.ToArray();
+        }
     }
     #endregion
 }

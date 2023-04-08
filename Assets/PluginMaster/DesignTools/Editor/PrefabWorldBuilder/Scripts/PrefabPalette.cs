@@ -162,6 +162,8 @@ namespace PluginMaster
             if (!_undoRegistered) _loadFromFile = true;
             PaletteManager.ClearSelection(false);
         }
+
+        public void UpdateAllThumbnails() => PaletteManager.UpdateAllThumbnails();
         #endregion
 
         #region PALETTE
@@ -210,15 +212,22 @@ namespace PluginMaster
                 UpdateFilteredList(false);
             }
             BrushInputData toggleData = null;
-            using (var scrollView = new UnityEditor.EditorGUILayout.ScrollViewScope(_scrollPosition, false, false,
-                GUI.skin.horizontalScrollbar, GUI.skin.verticalScrollbar, _skin.box))
+            try
             {
-                _scrollPosition = scrollView.scrollPosition;
-                Brushes(ref toggleData);
-                if (_showCursor) GUI.Box(_cursorRect, string.Empty, _cursorStyle);
+                using (var scrollView = new UnityEditor.EditorGUILayout.ScrollViewScope(_scrollPosition, false, false,
+                    GUI.skin.horizontalScrollbar, GUI.skin.verticalScrollbar, _skin.box))
+                {
+                    _scrollPosition = scrollView.scrollPosition;
+                    Brushes(ref toggleData);
+                    if (_showCursor) GUI.Box(_cursorRect, string.Empty, _cursorStyle);
+                }
+                _scrollViewRect = GUILayoutUtility.GetLastRect();
+                if (PaletteManager.selectedPalette.brushCount == 0) DropBox();
             }
-            _scrollViewRect = GUILayoutUtility.GetLastRect();
-            if (PaletteManager.selectedPalette.brushCount == 0) DropBox();
+            catch 
+            {
+                RepainWindow();
+            }
             Bottom();
 
             BrushMouseEventHandler(toggleData);
@@ -348,6 +357,8 @@ namespace PluginMaster
                 UpdateTabBar();
                 Repaint();
             });
+            menu.AddSeparator(string.Empty);
+            menu.AddItem(new GUIContent("Update all thumbnails"), false, UpdateAllThumbnails);
             menu.AddSeparator(string.Empty);
             menu.AddItem(new GUIContent("Brush creation settings..."), false,
                 BrushCreationSettingsWindow.ShowWindow);
@@ -640,11 +651,7 @@ namespace PluginMaster
             UnityEditor.Selection.objects = selection.ToArray();
         }
 
-        private void UpdateThumbnail(object idx)
-        {
-            var brush = PaletteManager.selectedPalette.GetBrush((int)idx);
-            brush.UpdateThumbnail();
-        }
+        private void UpdateThumbnail(object idx) => PaletteManager.UpdateSelectedThumbnails();
 
         private void EditThumbnail(object idx)
         {
@@ -858,6 +865,8 @@ namespace PluginMaster
             menu.AddItem(new GUIContent("New MultiBrush From Selection"), false, CreateBrushFromSelection);
             menu.AddItem(new GUIContent("New Brush From Each Prefab Selected"), false,
                 CreateBushFromEachPrefabSelected);
+            menu.AddSeparator(string.Empty);
+            menu.AddItem(new GUIContent("Update all thumbnails"), false, UpdateAllThumbnails);
             menu.AddSeparator(string.Empty);
             menu.AddItem(new GUIContent("Brush Creation And Drop Settings"), false,
                 BrushCreationSettingsWindow.ShowWindow);
@@ -1103,7 +1112,6 @@ namespace PluginMaster
             if (UnityEditor.EditorUtility.DisplayDialog("Delete Palette: " + palette.name,
                 "Are you sure you want to delete this palette?\n" + palette.name, "Delete", "Cancel"))
             {
-
                 RegisterUndo("Remove Palette");
                 PaletteManager.RemovePaletteAt(paletteIdx);
                 if (PaletteManager.paletteCount == 0) CreatePalette();
@@ -1163,7 +1171,12 @@ namespace PluginMaster
             _updateTabBar = true;
         }
 
+        private void ToggleMultipleRows()
+            => PaletteManager.showTabsInMultipleRows = !PaletteManager.showTabsInMultipleRows;
+
         private System.Collections.Generic.List<Rect> _tabRects = new System.Collections.Generic.List<Rect>();
+        private System.Collections.Generic.Dictionary<long, float> _tabSize
+            = new System.Collections.Generic.Dictionary<long, float>();
         private void TabBar()
         {
             float visibleW = 0;
@@ -1183,12 +1196,53 @@ namespace PluginMaster
                     }
                 }
             }
+            var names = PaletteManager.paletteNames;
+            var paletteIds = PaletteManager.paletteIds;
+
+            int Tabs(int from, int to)
+            {
+                var lastVisible = to;
+                for (int i = from; i <= to; ++i)
+                {
+                    var isSelected = PaletteManager.selectedPaletteIdx == i;
+                    var name = names[i];
+
+
+                    if (GUILayout.Toggle(isSelected, name, UnityEditor.EditorStyles.toolbarButton)
+                        && Event.current.button == 0)
+                    {
+                        if (!isSelected) SelectPalette(i);
+                        isSelected = true;
+                    }
+
+                    var toggleRect = GUILayoutUtility.GetLastRect();
+                    var id = paletteIds[i];
+                    if (Event.current.type == EventType.Repaint)
+                    {
+                        if (_tabSize.ContainsKey(id)) _tabSize[id] = toggleRect.width;
+                        else _tabSize.Add(id, toggleRect.width);
+                    }
+
+                    if (Event.current.type == EventType.Repaint) _tabRects.Add(toggleRect);
+                    if (Event.current.type == EventType.Repaint && toggleRect.xMax < position.width)
+                    {
+                        lastVisible = i;
+                        visibleW = toggleRect.xMax;
+                    }
+                }
+                GUILayout.FlexibleSpace();
+                return lastVisible;
+            }
+
             using (new GUILayout.HorizontalScope(UnityEditor.EditorStyles.toolbar))
             {
                 if (GUILayout.Button(_dropdownIcon, UnityEditor.EditorStyles.toolbarButton))
                 {
                     var menu = new UnityEditor.GenericMenu();
                     menu.AddItem(new GUIContent("New palette"), false, CreatePalette);
+                    menu.AddSeparator(string.Empty);
+                    menu.AddItem(new GUIContent("Show tabs in multiple rows"),
+                        PaletteManager.showTabsInMultipleRows, ToggleMultipleRows);
                     menu.AddSeparator(string.Empty);
                     var namesDic = PaletteManager.paletteNames.Select((name, index) => new { name, index })
                         .ToDictionary(item => item.index, item => item.name);
@@ -1208,27 +1262,8 @@ namespace PluginMaster
                 }
                 if (Event.current.type == EventType.Repaint) _tabRects.Clear();
                 if (PaletteManager.paletteCount == 0) return;
-                for (int i = 0; i <= this.lastVisibleIdx; ++i)
-                {
-                    var isSelected = PaletteManager.selectedPaletteIdx == i;
-                    var name = PaletteManager.paletteNames[i];
 
-                    if (GUILayout.Toggle(isSelected, name, UnityEditor.EditorStyles.toolbarButton) && Event.current.button == 0)
-                    {
-                        if (!isSelected) SelectPalette(i);
-                        isSelected = true;
-                    }
-
-                    var toggleRect = GUILayoutUtility.GetLastRect();
-                    if (Event.current.type == EventType.Repaint) _tabRects.Add(toggleRect);
-                    if (Event.current.type == EventType.Repaint && toggleRect.xMax < position.width)
-                    {
-                        lastVisibleIdx = i;
-                        visibleW = toggleRect.xMax;
-                    }
-                }
-                GUILayout.FlexibleSpace();
-
+                lastVisibleIdx = Tabs(0, this.lastVisibleIdx);
                 if (Event.current.type == EventType.Repaint)
                 {
                     if (_updateTabBarWidth && _visibleTabCount == PaletteManager.paletteCount)
@@ -1252,10 +1287,53 @@ namespace PluginMaster
                     }
                 }
             }
-
+            if (PaletteManager.showTabsInMultipleRows)
+            {
+                var rowItemCount = new System.Collections.Generic.List<int>();
+                float tabsWidth = 0;
+                var tabItemCount = 0;
+                for (int i = _visibleTabCount; i < PaletteManager.paletteCount; ++i)
+                {
+                    var id = paletteIds[i];
+                    if (!_tabSize.ContainsKey(id))
+                    {
+                        _updateTabBarWidth = true;
+                        _updateTabBar = true;
+                        continue;
+                    }
+                    var w = _tabSize[id];
+                    tabsWidth += w;
+                    if (tabsWidth > position.width)
+                    {
+                        rowItemCount.Add(Mathf.Max(tabItemCount, 1));
+                        tabsWidth = tabItemCount > 0 ? w : 0;
+                        if (tabItemCount == 0) continue;
+                        tabItemCount = 0;
+                    }
+                    ++tabItemCount;
+                }
+                if(tabItemCount > 0) rowItemCount.Add(tabItemCount);
+                if (rowItemCount.Count > 0)
+                {
+                    if (_visibleTabCount == PaletteManager.paletteCount)
+                        _updateTabBar = true;
+                    int fromIdx = _visibleTabCount;
+                    int toIdx = _visibleTabCount;
+                    foreach (var itemCount in rowItemCount)
+                     {
+                         toIdx = fromIdx + itemCount - 1;
+                         using (new GUILayout.HorizontalScope(UnityEditor.EditorStyles.toolbar))
+                         {
+                             Tabs(fromIdx, toIdx);
+                         }
+                         fromIdx = toIdx + 1;
+                         if (fromIdx >= PaletteManager.paletteCount) break;
+                     }
+                }
+            }
             if (_updateTabBar && PaletteManager.paletteCount > 1)
             {
-                if (PaletteManager.selectedPaletteIdx > this.lastVisibleIdx)
+                if (!PaletteManager.showTabsInMultipleRows && PaletteManager.selectedPaletteIdx > this.lastVisibleIdx)
                 {
                     PaletteManager.SwapPalette(PaletteManager.selectedPaletteIdx, this.lastVisibleIdx);
                     PaletteManager.selectedPaletteIdx = this.lastVisibleIdx;

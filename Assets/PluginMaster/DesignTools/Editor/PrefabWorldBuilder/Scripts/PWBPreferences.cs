@@ -49,6 +49,7 @@ namespace PluginMaster
         private bool _gizmosGroupOpen = true;
         private bool _toolbarGroupOpen = true;
         private bool _pinToolGroupOpen = true;
+        private bool _gravityToolGroupOpen = true;
         private bool _thumbnailsGroupOpen = true;
 
         private void GeneralSettings()
@@ -78,6 +79,10 @@ namespace PluginMaster
 
             _pinToolGroupOpen = UnityEditor.EditorGUILayout.BeginFoldoutHeaderGroup(_pinToolGroupOpen, "Pin Tool");
             if (_pinToolGroupOpen) PinToolGroup();
+            UnityEditor.EditorGUILayout.EndFoldoutHeaderGroup();
+
+            _gravityToolGroupOpen = UnityEditor.EditorGUILayout.BeginFoldoutHeaderGroup(_gravityToolGroupOpen, "Gravity Tool");
+            if (_gravityToolGroupOpen) GravityToolGroup();
             UnityEditor.EditorGUILayout.EndFoldoutHeaderGroup();
 
             _thumbnailsGroupOpen = UnityEditor.EditorGUILayout.BeginFoldoutHeaderGroup(_thumbnailsGroupOpen, "Thumnails");
@@ -150,12 +155,22 @@ namespace PluginMaster
         {
             using (new GUILayout.VerticalScope(UnityEditor.EditorStyles.helpBox))
             {
-                UnityEditor.EditorGUIUtility.labelWidth = 150;
+                UnityEditor.EditorGUIUtility.labelWidth = 155;
                 PinManager.rotationSnapValue = UnityEditor.EditorGUILayout.Slider("Rotation snap value (Deg):",
                     PinManager.rotationSnapValue, 0f, 360f);
             }
         }
 
+        private void GravityToolGroup()
+        {
+            using (new GUILayout.VerticalScope(UnityEditor.EditorStyles.helpBox))
+            {
+                UnityEditor.EditorGUIUtility.labelWidth = 182;
+                GravityToolManager.surfaceDistanceSensitivity
+                    = UnityEditor.EditorGUILayout.Slider("Distance to surface sensitivity:",
+                     GravityToolManager.surfaceDistanceSensitivity, 0f, 1f);
+            }
+        }
         private void ThumbnailsGroup()
         {
             using (new GUILayout.VerticalScope(UnityEditor.EditorStyles.helpBox))
