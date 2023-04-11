@@ -5,6 +5,8 @@
         DorianTemporaire,
         DorianProfil,
         DorianCompetences,
-        DorianContacts
+        DorianContacts,
+        ExpCdi,
+        ExpInterim
     }
 }
