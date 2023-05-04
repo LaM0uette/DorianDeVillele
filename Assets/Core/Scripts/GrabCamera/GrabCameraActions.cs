@@ -4,6 +4,8 @@ namespace Core.Scripts.GrabCamera
 {
     public class GrabCameraActions : MonoBehaviour
     {
+        #region Statements
+
         private InputHandler inputHandler;
 
         private void Awake()
@@ -11,34 +13,53 @@ namespace Core.Scripts.GrabCamera
             inputHandler = GetComponent<InputHandler>();
         }
 
+        #endregion
+        
+        #region Subscriptions
+
+        private void SubscribeInputHandler()
+        {
+            inputHandler.OnLeftClickDown += OnLeftClickDown;
+            inputHandler.OnLeftClickUp += OnLeftClickUp;
+            inputHandler.OnLeftClickHeld += OnLeftClickHeld;
+        }
+        
+        private void UnsubscribeInputHandler()
+        {
+            inputHandler.OnLeftClickDown -= OnLeftClickDown;
+            inputHandler.OnLeftClickUp -= OnLeftClickUp;
+            inputHandler.OnLeftClickHeld -= OnLeftClickHeld;
+        }
+
+        #endregion
+
+        #region Events
+
         private void OnEnable()
         {
-            inputHandler.OnLeftClickDown += CheckLeftClickDown;
-            inputHandler.OnLeftClickUp += CheckLeftClickUp;
-            inputHandler.OnLeftClickHeld += CheckLeftClickHeld;
+            SubscribeInputHandler();
         }
 
         private void OnDisable()
         {
-            inputHandler.OnLeftClickDown -= CheckLeftClickDown;
-            inputHandler.OnLeftClickUp -= CheckLeftClickUp;
-            inputHandler.OnLeftClickHeld -= CheckLeftClickHeld;
+            UnsubscribeInputHandler();
         }
 
-        private void CheckLeftClickDown()
+        private void OnLeftClickDown()
         {
-        Debug.Log("CheckLeftClickDown");
+            Debug.Log("CheckLeftClickDown");
         }
 
-        private void CheckLeftClickUp()
+        private void OnLeftClickUp()
         {
-        Debug.Log("CheckLeftClickUp");
+            Debug.Log("CheckLeftClickUp");
         }
 
-        private void CheckLeftClickHeld()
+        private void OnLeftClickHeld()
         {
             Debug.Log("CheckLeftClickHeld");
         }
 
+        #endregion
     }
 }
