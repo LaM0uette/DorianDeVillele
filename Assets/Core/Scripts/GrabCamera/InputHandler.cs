@@ -5,36 +5,43 @@ namespace Core.Scripts.GrabCamera
 {
     public class InputHandler : MonoBehaviour
     {
+        #region Statements
+
         public delegate void MouseButtonEvent();
         public event MouseButtonEvent OnLeftClickDown;
         public event MouseButtonEvent OnLeftClickUp;
-        public event MouseButtonEvent OnLeftClickHold;
         public event MouseButtonEvent OnLeftClickHeld;
         
         private InputActionAsset inputActions;
-        private InputAction mouseLeftClickAction;
+        private InputAction LeftClickAction;
 
         private void Awake()
         {
             inputActions = GetComponent<PlayerInput>().actions;
-            mouseLeftClickAction = inputActions.FindAction("LeftClick");
+            LeftClickAction = inputActions.FindAction("LeftClick");
         }
 
-        private void OnEnable()
+        #endregion
+
+        #region Subscriptions
+
+        private void SubscribeLeftClickActions()
         {
-            mouseLeftClickAction.started += HandleLeftClickDown;
-            mouseLeftClickAction.canceled += HandleLeftClickUp;
-            mouseLeftClickAction.performed += HandleLeftClickHold;
-            mouseLeftClickAction.Enable();
+            LeftClickAction.started += HandleLeftClickDown;
+            LeftClickAction.canceled += HandleLeftClickUp;
+            LeftClickAction.Enable();
+        }
+        
+        private void UnsubscribeLeftClickActions()
+        {
+            LeftClickAction.started -= HandleLeftClickDown;
+            LeftClickAction.canceled -= HandleLeftClickUp;
+            LeftClickAction.Disable();
         }
 
-        private void OnDisable()
-        {
-            mouseLeftClickAction.started -= HandleLeftClickDown;
-            mouseLeftClickAction.canceled -= HandleLeftClickUp;
-            mouseLeftClickAction.performed -= HandleLeftClickHold;
-            mouseLeftClickAction.Disable();
-        }
+        #endregion
+
+        #region Functions
 
         private void HandleLeftClickDown(InputAction.CallbackContext context)
         {
@@ -46,17 +53,27 @@ namespace Core.Scripts.GrabCamera
             OnLeftClickUp?.Invoke();
         }
 
-        private void HandleLeftClickHold(InputAction.CallbackContext context)
+        #endregion
+
+        #region Events
+
+        private void OnEnable()
         {
-            OnLeftClickHold?.Invoke();
+            SubscribeLeftClickActions();
+        }
+
+        private void OnDisable()
+        {
+            UnsubscribeLeftClickActions();
         }
         
         private void Update()
         {
-            if (mouseLeftClickAction.ReadValue<float>() > 0)
-            {
-                OnLeftClickHeld?.Invoke();
-            }
+            if (!(LeftClickAction.ReadValue<float>() > 0)) return;
+            
+            OnLeftClickHeld?.Invoke();
         }
+
+        #endregion
     }
 }

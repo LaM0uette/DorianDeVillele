@@ -15,7 +15,6 @@ namespace Core.Scripts.GrabCamera
         {
             inputHandler.OnLeftClickDown += CheckLeftClickDown;
             inputHandler.OnLeftClickUp += CheckLeftClickUp;
-            inputHandler.OnLeftClickHold += CheckLeftClickHold;
             inputHandler.OnLeftClickHeld += CheckLeftClickHeld;
         }
 
@@ -23,7 +22,6 @@ namespace Core.Scripts.GrabCamera
         {
             inputHandler.OnLeftClickDown -= CheckLeftClickDown;
             inputHandler.OnLeftClickUp -= CheckLeftClickUp;
-            inputHandler.OnLeftClickHold -= CheckLeftClickHold;
             inputHandler.OnLeftClickHeld -= CheckLeftClickHeld;
         }
 
@@ -35,11 +33,6 @@ namespace Core.Scripts.GrabCamera
         private void CheckLeftClickUp()
         {
         Debug.Log("CheckLeftClickUp");
-        }
-
-        private void CheckLeftClickHold()
-        {
-        Debug.Log("CheckLeftClickHold");
         }
 
         private void CheckLeftClickHeld()
