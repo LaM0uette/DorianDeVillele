@@ -6,11 +6,11 @@ namespace Core.Scripts.GrabCamera
     {
         #region Statements
 
-        private InputHandler inputHandler;
+        private InputHandler _inputHandler;
 
         private void Awake()
         {
-            inputHandler = GetComponent<InputHandler>();
+            _inputHandler = GetComponent<InputHandler>();
         }
 
         #endregion
@@ -19,16 +19,16 @@ namespace Core.Scripts.GrabCamera
 
         private void SubscribeInputHandler()
         {
-            inputHandler.OnLeftClickDown += OnLeftClickDown;
-            inputHandler.OnLeftClickUp += OnLeftClickUp;
-            inputHandler.OnLeftClickHeld += OnLeftClickHeld;
+            _inputHandler.OnLeftClickDown += OnLeftClickDown;
+            _inputHandler.OnLeftClickUp += OnLeftClickUp;
+            _inputHandler.OnLeftClickHeld += OnLeftClickHeld;
         }
         
         private void UnsubscribeInputHandler()
         {
-            inputHandler.OnLeftClickDown -= OnLeftClickDown;
-            inputHandler.OnLeftClickUp -= OnLeftClickUp;
-            inputHandler.OnLeftClickHeld -= OnLeftClickHeld;
+            _inputHandler.OnLeftClickDown -= OnLeftClickDown;
+            _inputHandler.OnLeftClickUp -= OnLeftClickUp;
+            _inputHandler.OnLeftClickHeld -= OnLeftClickHeld;
         }
 
         #endregion

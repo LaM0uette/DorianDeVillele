@@ -12,13 +12,13 @@ namespace Core.Scripts.GrabCamera
         public event MouseButtonEvent OnLeftClickUp;
         public event MouseButtonEvent OnLeftClickHeld;
         
-        private InputActionAsset inputActions;
-        private InputAction LeftClickAction;
+        private InputActionAsset _inputActions;
+        private InputAction _leftClickAction;
 
         private void Awake()
         {
-            inputActions = GetComponent<PlayerInput>().actions;
-            LeftClickAction = inputActions.FindAction("LeftClick");
+            _inputActions = GetComponent<PlayerInput>().actions;
+            _leftClickAction = _inputActions.FindAction("LeftClick");
         }
 
         #endregion
@@ -27,16 +27,16 @@ namespace Core.Scripts.GrabCamera
 
         private void SubscribeLeftClickActions()
         {
-            LeftClickAction.started += HandleLeftClickDown;
-            LeftClickAction.canceled += HandleLeftClickUp;
-            LeftClickAction.Enable();
+            _leftClickAction.started += HandleLeftClickDown;
+            _leftClickAction.canceled += HandleLeftClickUp;
+            _leftClickAction.Enable();
         }
         
         private void UnsubscribeLeftClickActions()
         {
-            LeftClickAction.started -= HandleLeftClickDown;
-            LeftClickAction.canceled -= HandleLeftClickUp;
-            LeftClickAction.Disable();
+            _leftClickAction.started -= HandleLeftClickDown;
+            _leftClickAction.canceled -= HandleLeftClickUp;
+            _leftClickAction.Disable();
         }
 
         #endregion
@@ -69,7 +69,7 @@ namespace Core.Scripts.GrabCamera
         
         private void Update()
         {
-            if (!(LeftClickAction.ReadValue<float>() > 0)) return;
+            if (!(_leftClickAction.ReadValue<float>() > 0)) return;
             
             OnLeftClickHeld?.Invoke();
         }
