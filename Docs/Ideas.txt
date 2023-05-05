@@ -1,2 +1,4 @@
 emeraudes ou pokéball cachées, but : toutes les trouver
 meteo en fonction du temps irl
+
+version static, train qui avance au scroll et donc nous monttre le cv au fur et a mesure
