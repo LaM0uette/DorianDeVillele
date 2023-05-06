@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace Core.Scripts.GrabCamera.InputHandler
 {
-    public class InputHandler : MonoBehaviour, IInputHandlerEvent, IInputHandlerInputs
+    public class InputHandler : MonoBehaviour, IInputHandler
     {
         #region Statements
 
@@ -13,9 +13,10 @@ namespace Core.Scripts.GrabCamera.InputHandler
         public event Action OnLeftClickUp;
         public event Action OnLeftClickHeld;
         
-        // Inoputs
+        // Inputs
         public Vector2 Move => _moveAction.ReadValue<Vector2>();
         
+        //InputActions
         private InputActionAsset _inputActions;
         private InputAction _leftClickAction;
         private InputAction _moveAction;
