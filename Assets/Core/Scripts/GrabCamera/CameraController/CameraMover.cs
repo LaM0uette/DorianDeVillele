@@ -8,15 +8,10 @@ namespace Core.Scripts.GrabCamera
     public class CameraMover : MonoBehaviour
     {
         #region Statements
-        
-        // Limits
-        [Header("Limits")]
-        [SerializeField] private GameObject _limitMin;
-        [SerializeField] private GameObject _limitMax;
 
         // Components
         private IInputHandler _inputHandler;
-        private Camera _camera;
+        private ICameraController _cameraController;
         
         // World
         private Vector3 _mouseWorldPositionStart;
@@ -24,7 +19,7 @@ namespace Core.Scripts.GrabCamera
         private void Awake()
         {
             _inputHandler = GetComponent<IInputHandler>();
-            _camera = Camera.main;
+            _cameraController = GetComponent<ICameraController>();
         }
 
         #endregion
@@ -43,15 +38,6 @@ namespace Core.Scripts.GrabCamera
             _inputHandler.OnLeftClickUp -= OnLeftClickUp;
             _inputHandler.OnLeftClickHeld -= OnLeftClickHeld;
         }
-        
-        private void SubscribeCameraZoomer(CameraZoomer cameraZoomer)
-        {
-            cameraZoomer.OnZoomLimitsChecked += CheckPositionLimits;
-        }
-        private void UnsubscribeCameraZoomer(CameraZoomer cameraZoomer)
-        {
-            cameraZoomer.OnZoomLimitsChecked -= CheckPositionLimits;
-        }
 
         #endregion
 
@@ -60,8 +46,8 @@ namespace Core.Scripts.GrabCamera
         private void SetMouseWorldPositionStart()
         {
             var mousePosition = NewInput.GetMousePosition();
-            var mouseWorldRay = _camera.ScreenPointToRay(mousePosition);
-            _mouseWorldPositionStart = GetRayIntersectionWithYPlane(mouseWorldRay, 0f);
+            var mouseWorldRay = _cameraController.Camera.ScreenPointToRay(mousePosition);
+            _mouseWorldPositionStart = CameraController.GetRayIntersectionWithYPlane(mouseWorldRay, 0f);
         }
         
         private void Move()
@@ -69,7 +55,7 @@ namespace Core.Scripts.GrabCamera
             if (_inputHandler.Move.Equals(Vector2.zero)) return;
 
             var mousePosition = NewInput.GetMousePosition();
-            var mouseRay = _camera.ScreenPointToRay(mousePosition);
+            var mouseRay = _cameraController.Camera.ScreenPointToRay(mousePosition);
             var planeY = new Plane(Vector3.up, Vector3.zero);
 
             if (!planeY.Raycast(mouseRay, out var distance)) return;
@@ -82,34 +68,7 @@ namespace Core.Scripts.GrabCamera
             var newPosition = cameraTransform.position + mouseWorldPositionDiff;
             cameraTransform.position = newPosition;
 
-            CheckPositionLimits();
-        }
-        
-        private void CheckPositionLimits()
-        {
-            var position = transform.position;
-            var viewportCenter = new Vector3(0.5f, 0.5f, 0);
-            var ray = _camera.ViewportPointToRay(viewportCenter);
-            var intersectionPoint = GetRayIntersectionWithYPlane(ray, 0);
-            var offset = intersectionPoint - position;
-            offset.y = 0;
-
-            var newViewportCenter = position + offset;
-            var limitMin = _limitMin.transform.position;
-            var limitMax = _limitMax.transform.position;
-
-            newViewportCenter.x = Mathf.Clamp(newViewportCenter.x, limitMin.x, limitMax.x);
-            newViewportCenter.z = Mathf.Clamp(newViewportCenter.z, limitMin.z, limitMax.z);
-
-            position = newViewportCenter - offset;
-            transform.position = position;
-        }
-        
-        private static Vector3 GetRayIntersectionWithYPlane(Ray ray, float y)
-        {
-            if (ray.direction.y.Equals(0)) return ray.GetPoint(ray.origin.y);
-            var t = (y - ray.origin.y) / ray.direction.y;
-            return ray.GetPoint(t);
+            _cameraController.CheckCameraPositionLimits();
         }
 
         #endregion
@@ -119,13 +78,11 @@ namespace Core.Scripts.GrabCamera
         private void OnEnable()
         {
             SubscribeInputHandler();
-            SubscribeCameraZoomer(GetComponent<CameraZoomer>());
         }
 
         private void OnDisable()
         {
             UnsubscribeInputHandler();
-            UnsubscribeCameraZoomer(GetComponent<CameraZoomer>());
         }
 
         private void OnLeftClickDown()
