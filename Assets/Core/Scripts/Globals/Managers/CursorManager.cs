@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Core.Scripts.Globals.Managers
@@ -36,6 +35,11 @@ namespace Core.Scripts.Globals.Managers
             {
                 Destroy(gameObject);
             }
+        }
+
+        private void Start()
+        {
+            Instance.SetCursor(CursorState.Hand);
         }
 
         #endregion
