@@ -2,18 +2,19 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Core.Scripts.GrabCamera
+namespace Core.Scripts.GrabCamera.InputHandler
 {
-    public class InputHandler : MonoBehaviour
+    public class InputHandler : MonoBehaviour, IInputHandlerEvent, IInputHandlerInputs
     {
         #region Statements
 
-        public delegate void MouseButtonEvent();
-        public event MouseButtonEvent OnLeftClickDown;
-        public event MouseButtonEvent OnLeftClickUp;
-        public event MouseButtonEvent OnLeftClickHeld;
+        // Events
+        public event Action OnLeftClickDown;
+        public event Action OnLeftClickUp;
+        public event Action OnLeftClickHeld;
         
-        [NonSerialized] public Vector2 Move;
+        // Inoputs
+        public Vector2 Move { get; private set; }
         
         private InputActionAsset _inputActions;
         private InputAction _leftClickAction;

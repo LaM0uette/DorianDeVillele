@@ -8,7 +8,7 @@ namespace Core.Scripts.GrabCamera
         #region Statements
 
         // Components
-        private InputHandler _inputHandler;
+        private InputHandler.InputHandler _inputHandler;
         
         // Camera
         private Camera _camera;
@@ -19,7 +19,7 @@ namespace Core.Scripts.GrabCamera
 
         private void Awake()
         {
-            _inputHandler = GetComponent<InputHandler>();
+            _inputHandler = GetComponent<InputHandler.InputHandler>();
             _camera = Camera.main;
         }
 
