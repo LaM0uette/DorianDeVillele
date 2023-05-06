@@ -14,15 +14,16 @@ namespace Core.Scripts.GrabCamera.InputHandler
         public event Action OnLeftClickHeld;
         
         // Inoputs
-        public Vector2 Move { get; private set; }
+        public Vector2 Move => _moveAction.ReadValue<Vector2>();
         
         private InputActionAsset _inputActions;
         private InputAction _leftClickAction;
+        private InputAction _moveAction;
 
         private void Awake()
         {
             _inputActions = GetComponent<PlayerInput>().actions;
-            _leftClickAction = _inputActions.FindAction("LeftClick");
+            InitializeInputActions();
         }
 
         #endregion
@@ -33,19 +34,35 @@ namespace Core.Scripts.GrabCamera.InputHandler
         {
             _leftClickAction.started += HandleLeftClickDown;
             _leftClickAction.canceled += HandleLeftClickUp;
+            
             _leftClickAction.Enable();
         }
-        
         private void UnsubscribeLeftClickActions()
         {
             _leftClickAction.started -= HandleLeftClickDown;
             _leftClickAction.canceled -= HandleLeftClickUp;
+            
             _leftClickAction.Disable();
+        }
+        
+        private void SubscribeMoveActions()
+        {
+            _moveAction.Enable();
+        }
+        private void UnsubscribeMoveActions()
+        {
+            _moveAction.Disable();
         }
 
         #endregion
 
         #region Functions
+        
+        private void InitializeInputActions()
+        {
+            _leftClickAction = _inputActions.FindAction("LeftClick");
+            _moveAction = _inputActions.FindAction("Move");
+        }
 
         private void HandleLeftClickDown(InputAction.CallbackContext context)
         {
@@ -62,8 +79,6 @@ namespace Core.Scripts.GrabCamera.InputHandler
             if (!(_leftClickAction.ReadValue<float>() > 0)) return;
             OnLeftClickHeld?.Invoke();
         }
-        
-        private void MoveInput(Vector2 input) => Move = input;
 
         #endregion
 
@@ -72,13 +87,14 @@ namespace Core.Scripts.GrabCamera.InputHandler
         private void OnEnable()
         {
             SubscribeLeftClickActions();
+            SubscribeMoveActions();
         }
+        
         private void OnDisable()
         {
             UnsubscribeLeftClickActions();
+            UnsubscribeMoveActions();
         }
-        
-        public void OnMove(InputValue value) => MoveInput(value.Get<Vector2>());
 
         private void Update()
         {
