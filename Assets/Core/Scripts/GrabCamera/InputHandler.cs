@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +12,8 @@ namespace Core.Scripts.GrabCamera
         public event MouseButtonEvent OnLeftClickDown;
         public event MouseButtonEvent OnLeftClickUp;
         public event MouseButtonEvent OnLeftClickHeld;
+        
+        [NonSerialized] public Vector2 Move;
         
         private InputActionAsset _inputActions;
         private InputAction _leftClickAction;
@@ -58,6 +61,8 @@ namespace Core.Scripts.GrabCamera
             if (!(_leftClickAction.ReadValue<float>() > 0)) return;
             OnLeftClickHeld?.Invoke();
         }
+        
+        private void MoveInput(Vector2 input) => Move = input;
 
         #endregion
 
@@ -67,12 +72,13 @@ namespace Core.Scripts.GrabCamera
         {
             SubscribeLeftClickActions();
         }
-
         private void OnDisable()
         {
             UnsubscribeLeftClickActions();
         }
         
+        public void OnMove(InputValue value) => MoveInput(value.Get<Vector2>());
+
         private void Update()
         {
             HandleLeftClickHeld();
