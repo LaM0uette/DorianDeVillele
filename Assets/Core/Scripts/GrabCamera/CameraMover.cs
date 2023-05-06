@@ -1,4 +1,5 @@
 using Core.Scripts.Globals;
+using Core.Scripts.Globals.Managers;
 using Core.Scripts.GrabCamera.InputHandler;
 using UnityEngine;
 
@@ -91,11 +92,12 @@ namespace Core.Scripts.GrabCamera
         private void OnLeftClickDown()
         {
             SetMouseWorldPositionStart();
+            CursorManager.Instance.SetCursor(CursorManager.CursorState.Grab);
         }
 
         private void OnLeftClickUp()
         {
-            Debug.Log("CheckLeftClickUp");
+            CursorManager.Instance.SetCursor(CursorManager.CursorState.Hand);
         }
 
         private void OnLeftClickHeld()

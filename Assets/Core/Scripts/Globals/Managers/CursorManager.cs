@@ -16,7 +16,7 @@ namespace Core.Scripts.Globals.Managers
         }
         
         public static CursorManager Instance;
-        public static CursorState CurrentCursorState { get; set; }
+        public static CursorState CurrentCursorState { get; private set; }
 
         public Texture2D CursorHand;
         public Texture2D CursorGrab;
@@ -30,7 +30,7 @@ namespace Core.Scripts.Globals.Managers
             if (Instance is null)
             {
                 Instance = this;
-                DontDestroyOnLoad(gameObject);
+                PersistentRoot.Instance.AddPersistentObject(gameObject);
             }
             else
             {
