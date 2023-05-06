@@ -53,6 +53,12 @@ namespace Core.Scripts.GrabCamera
             OnLeftClickUp?.Invoke();
         }
 
+        private void HandleLeftClickHeld()
+        {
+            if (!(_leftClickAction.ReadValue<float>() > 0)) return;
+            OnLeftClickHeld?.Invoke();
+        }
+
         #endregion
 
         #region Events
@@ -69,9 +75,7 @@ namespace Core.Scripts.GrabCamera
         
         private void Update()
         {
-            if (!(_leftClickAction.ReadValue<float>() > 0)) return;
-            
-            OnLeftClickHeld?.Invoke();
+            HandleLeftClickHeld();
         }
 
         #endregion
