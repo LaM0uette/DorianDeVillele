@@ -37,12 +37,20 @@ namespace Core.Scripts.GrabCamera
             _inputHandler.OnLeftClickUp += OnLeftClickUp;
             _inputHandler.OnLeftClickHeld += OnLeftClickHeld;
         }
-        
         private void UnsubscribeInputHandler()
         {
             _inputHandler.OnLeftClickDown -= OnLeftClickDown;
             _inputHandler.OnLeftClickUp -= OnLeftClickUp;
             _inputHandler.OnLeftClickHeld -= OnLeftClickHeld;
+        }
+        
+        private void SubscribeCameraZoomer(CameraZoomer cameraZoomer)
+        {
+            cameraZoomer.OnZoomLimitsChecked += CheckPositionLimits;
+        }
+        private void UnsubscribeCameraZoomer(CameraZoomer cameraZoomer)
+        {
+            cameraZoomer.OnZoomLimitsChecked -= CheckPositionLimits;
         }
 
         #endregion
@@ -55,36 +63,53 @@ namespace Core.Scripts.GrabCamera
             var mouseWorldRay = _camera.ScreenPointToRay(mousePosition);
             _mouseWorldPositionStart = GetRayIntersectionWithYPlane(mouseWorldRay, 0f);
         }
-
-        private static Vector3 GetRayIntersectionWithYPlane(Ray ray, float y)
-        {
-            if (ray.direction.y.Equals(0)) return ray.GetPoint(ray.origin.y);
-            var t = (y - ray.origin.y) / ray.direction.y;
-            return ray.GetPoint(t);
-        }
         
         private void Move()
         {
             if (_inputHandler.Move.Equals(Vector2.zero)) return;
-            
+
             var mousePosition = NewInput.GetMousePosition();
             var mouseRay = _camera.ScreenPointToRay(mousePosition);
             var planeY = new Plane(Vector3.up, Vector3.zero);
 
             if (!planeY.Raycast(mouseRay, out var distance)) return;
-            
+
             var mouseWorldPosition = mouseRay.GetPoint(distance);
             var mouseWorldPositionDiff = _mouseWorldPositionStart - mouseWorldPosition;
-                
             mouseWorldPositionDiff.y = 0;
-            var newPosition = transform.position + mouseWorldPositionDiff;
+            
+            var cameraTransform = transform;
+            var newPosition = cameraTransform.position + mouseWorldPositionDiff;
+            cameraTransform.position = newPosition;
+
+            CheckPositionLimits();
+        }
+        
+        private void CheckPositionLimits()
+        {
+            var position = transform.position;
+            var viewportCenter = new Vector3(0.5f, 0.5f, 0);
+            var ray = _camera.ViewportPointToRay(viewportCenter);
+            var intersectionPoint = GetRayIntersectionWithYPlane(ray, 0);
+            var offset = intersectionPoint - position;
+            offset.y = 0;
+
+            var newViewportCenter = position + offset;
             var limitMin = _limitMin.transform.position;
             var limitMax = _limitMax.transform.position;
-            
-            newPosition.x = Mathf.Clamp(newPosition.x, limitMin.x, limitMax.x);
-            newPosition.z = Mathf.Clamp(newPosition.z, limitMin.z, limitMax.z);
 
-            transform.position = newPosition;
+            newViewportCenter.x = Mathf.Clamp(newViewportCenter.x, limitMin.x, limitMax.x);
+            newViewportCenter.z = Mathf.Clamp(newViewportCenter.z, limitMin.z, limitMax.z);
+
+            position = newViewportCenter - offset;
+            transform.position = position;
+        }
+        
+        private static Vector3 GetRayIntersectionWithYPlane(Ray ray, float y)
+        {
+            if (ray.direction.y.Equals(0)) return ray.GetPoint(ray.origin.y);
+            var t = (y - ray.origin.y) / ray.direction.y;
+            return ray.GetPoint(t);
         }
 
         #endregion
@@ -94,11 +119,13 @@ namespace Core.Scripts.GrabCamera
         private void OnEnable()
         {
             SubscribeInputHandler();
+            SubscribeCameraZoomer(GetComponent<CameraZoomer>());
         }
 
         private void OnDisable()
         {
             UnsubscribeInputHandler();
+            UnsubscribeCameraZoomer(GetComponent<CameraZoomer>());
         }
 
         private void OnLeftClickDown()

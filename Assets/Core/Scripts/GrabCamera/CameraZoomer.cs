@@ -1,3 +1,4 @@
+using System;
 using Core.Scripts.GrabCamera.InputHandler;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ namespace Core.Scripts.GrabCamera
     public class CameraZoomer : MonoBehaviour
     {
         #region Statements
+        
+        public event Action OnZoomLimitsChecked;
         
         // Components
         private IInputHandler _inputHandler;
@@ -47,13 +50,15 @@ namespace Core.Scripts.GrabCamera
             transform.Translate(0, 0, -zoomAmount * _zoomSpeed * Time.deltaTime, Space.Self);
             CheckAndSetZoomLimits();
         }
-        
+
         private void CheckAndSetZoomLimits()
         {
             var posY = transform.position.y;
                 
             if (posY <= _zoomMin) SetPositionY(_zoomMin); 
             else if (posY >= _zoomMax) SetPositionY(_zoomMax); 
+            
+            OnZoomLimitsChecked?.Invoke();
         }
         
         private void SetPositionY(float posY) => transform.position = new Vector3(_cameraPosition.x, posY, _cameraPosition.z);
