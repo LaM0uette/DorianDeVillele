@@ -1,25 +1,23 @@
+using Core.Scripts.Globals;
+using Core.Scripts.GrabCamera.InputHandler;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Core.Scripts.GrabCamera
 {
-    public class GrabCameraActions : MonoBehaviour
+    public class CameraMover : MonoBehaviour
     {
         #region Statements
 
         // Components
-        private InputHandler.InputHandler _inputHandler;
-        
-        // Camera
+        private IInputHandler _inputHandler;
         private Camera _camera;
         
         // World
-        private Ray _mouseWorldRay;
         private Vector3 _mouseWorldPositionStart;
 
         private void Awake()
         {
-            _inputHandler = GetComponent<InputHandler.InputHandler>();
+            _inputHandler = GetComponent<IInputHandler>();
             _camera = Camera.main;
         }
 
@@ -47,11 +45,11 @@ namespace Core.Scripts.GrabCamera
 
         private void SetMouseWorldPositionStart()
         {
-            var mousePosition = Mouse.current.position.ReadValue();
-            _mouseWorldRay = _camera.ScreenPointToRay(mousePosition);
-            _mouseWorldPositionStart = GetRayIntersectionWithYPlane(_mouseWorldRay, 0f);
+            var mousePosition = NewInput.GetMousePosition();
+            var mouseWorldRay = _camera.ScreenPointToRay(mousePosition);
+            _mouseWorldPositionStart = GetRayIntersectionWithYPlane(mouseWorldRay, 0f);
         }
-        
+
         private static Vector3 GetRayIntersectionWithYPlane(Ray ray, float y)
         {
             if (ray.direction.y.Equals(0)) return ray.GetPoint(ray.origin.y);
@@ -63,7 +61,7 @@ namespace Core.Scripts.GrabCamera
         {
             if (_inputHandler.Move.Equals(Vector2.zero)) return;
             
-            var mousePosition = Mouse.current.position.ReadValue();
+            var mousePosition = NewInput.GetMousePosition();
             var mouseRay = _camera.ScreenPointToRay(mousePosition);
             var planeY = new Plane(Vector3.up, Vector3.zero);
 
