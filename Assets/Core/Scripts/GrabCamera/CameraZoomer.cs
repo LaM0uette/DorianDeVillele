@@ -1,0 +1,77 @@
+using Core.Scripts.GrabCamera.InputHandler;
+using UnityEngine;
+
+namespace Core.Scripts.GrabCamera
+{
+    public class CameraZoomer : MonoBehaviour
+    {
+        #region Statements
+        
+        // Components
+        private IInputHandler _inputHandler;
+
+        [Header("Zoom Settings")]
+        [SerializeField] private float _zoomSpeed = 10f;
+        [SerializeField] private float _zoomMin = 10f;
+        [SerializeField] private float _zoomMax = 600f;
+
+        // World
+        private Vector3 _cameraPosition;
+
+        private void Awake()
+        {
+            _inputHandler = GetComponent<IInputHandler>();
+        }
+
+        #endregion
+        
+        #region Subscriptions
+
+        private void SubscribeInputHandler()
+        {
+            _inputHandler.OnZoom += HandleZoom;
+        }
+        
+        private void UnsubscribeInputHandler()
+        {
+            _inputHandler.OnZoom -= HandleZoom;
+        }
+
+        #endregion
+
+        #region Functions
+
+        private void HandleZoom(float zoomAmount)
+        {
+            _cameraPosition = transform.position;
+            transform.Translate(0, 0, -zoomAmount * _zoomSpeed * Time.deltaTime, Space.Self);
+            CheckAndSetZoomLimits();
+        }
+        
+        private void CheckAndSetZoomLimits()
+        {
+            var posY = transform.position.y;
+                
+            if (posY <= _zoomMin) SetPositionY(_zoomMin); 
+            else if (posY >= _zoomMax) SetPositionY(_zoomMax); 
+        }
+        
+        private void SetPositionY(float posY) => transform.position = new Vector3(_cameraPosition.x, posY, _cameraPosition.z);
+
+        #endregion
+
+        #region Events
+
+        private void OnEnable()
+        {
+            SubscribeInputHandler();
+        }
+
+        private void OnDisable()
+        {
+            UnsubscribeInputHandler();
+        }
+
+        #endregion
+    }
+}

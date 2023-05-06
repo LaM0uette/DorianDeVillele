@@ -15,6 +15,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Zoom",
+                    "type": "Value",
+                    "id": "313e8ef1-f6e4-4c70-8d44-37943131ca9b",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "LeftClick",
                     "type": "Button",
                     "id": "3e885f5c-890a-4a43-8f02-0223dce858a5",
@@ -44,6 +53,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "LeftClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "32f71fa8-5ce4-4776-9dea-57c1215213e4",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "ScaleVector2(y=10),InvertVector2",
+                    "groups": "",
+                    "action": "Zoom",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
