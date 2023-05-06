@@ -29,7 +29,6 @@ namespace Core.Scripts.Globals.Managers
             if (Instance is null)
             {
                 Instance = this;
-                PersistentRoot.Instance.AddPersistentObject(gameObject);
             }
             else
             {

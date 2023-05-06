@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 9560
+  controlID: 9762
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 9459
+  controlID: 9661
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 9526
+  controlID: 9728
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1171,8 +1171,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/Core/Scripts/Globals/Managers
+    m_Folders: []
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1218,7 +1217,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff0000000038720000f8750000fa750000fc750000fe7500001e76000068820000308300006a830000
+    m_ExpandedIDs: ffffffff0000000038720000f8750000fa750000fe750000187600006a830000fe860000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -5109,7 +5108,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e6dbfbffd8faffff
+      m_ExpandedIDs: 1206fbffc806fbffec08fbffe40cfbffd80ffbffe6dbfbffd8faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -5200,7 +5199,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 9561
+  controlID: 9763
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
