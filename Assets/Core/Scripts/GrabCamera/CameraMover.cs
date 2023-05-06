@@ -8,6 +8,11 @@ namespace Core.Scripts.GrabCamera
     public class CameraMover : MonoBehaviour
     {
         #region Statements
+        
+        // Limits
+        [Header("Limits")]
+        [SerializeField] private GameObject _limitMin;
+        [SerializeField] private GameObject _limitMax;
 
         // Components
         private IInputHandler _inputHandler;
@@ -72,7 +77,14 @@ namespace Core.Scripts.GrabCamera
             var mouseWorldPositionDiff = _mouseWorldPositionStart - mouseWorldPosition;
                 
             mouseWorldPositionDiff.y = 0;
-            transform.position += mouseWorldPositionDiff;
+            var newPosition = transform.position + mouseWorldPositionDiff;
+            var limitMin = _limitMin.transform.position;
+            var limitMax = _limitMax.transform.position;
+            
+            newPosition.x = Mathf.Clamp(newPosition.x, limitMin.x, limitMax.x);
+            newPosition.z = Mathf.Clamp(newPosition.z, limitMin.z, limitMax.z);
+
+            transform.position = newPosition;
         }
 
         #endregion
