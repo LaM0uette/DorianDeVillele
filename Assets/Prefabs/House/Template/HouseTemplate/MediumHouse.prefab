@@ -118,7 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6529047167306145621}
   m_Layer: 0
-  m_Name: DorianHouseTemplate
+  m_Name: MediumHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
