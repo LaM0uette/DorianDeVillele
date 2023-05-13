@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 6716
+  controlID: 1774
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 726
+    y: 780
     width: 1219
     height: 211
   m_SerializedDataModeController:
@@ -96,7 +96,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 6717
+  controlID: 1775
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,9 +170,9 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1220
-    height: 707
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+    height: 612
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
@@ -203,7 +203,7 @@ MonoBehaviour:
     x: 0
     y: 73
     width: 1219
-    height: 686
+    height: 591
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -640,9 +640,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 516.3814, y: -0.8262787, z: 87.39059}
+    m_Target: {x: 489.30585, y: -41.402355, z: 188.10977}
     speed: 2
-    m_Value: {x: 516.3814, y: -0.8262787, z: 87.39059}
+    m_Value: {x: 489.30585, y: -41.402355, z: 188.10977}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -688,13 +688,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.32368726, y: 0.11963911, z: -0.04129994, w: -0.93766373}
+    m_Target: {x: 0.3337426, y: -0.11415058, z: 0.040739663, w: 0.9348532}
     speed: 2
-    m_Value: {x: -0.3236863, y: 0.119638756, z: -0.041299816, w: -0.93766093}
+    m_Value: {x: 0.33373848, y: -0.114149176, z: 0.040739164, w: 0.9348417}
   m_Size:
-    m_Target: 27.571417
+    m_Target: 46.937553
     speed: 2
-    m_Value: 27.571417
+    m_Value: 46.937553
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -808,9 +808,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 707
+    y: 612
     width: 1220
-    height: 232
+    height: 327
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 2}
@@ -842,9 +842,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 780
+    y: 685
     width: 1219
-    height: 211
+    height: 306
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -868,7 +868,7 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Packages/Synty/PolygonNatureBiomes/PNB_Core/Prefabs
+    - Assets/Packages/Synty/PolygonApocalypse/Prefabs/Environment
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -876,16 +876,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 95
   m_LastFolders:
-  - Assets/Packages/Synty/PolygonNatureBiomes/PNB_Core/Prefabs
+  - Assets/Packages/Synty/PolygonApocalypse/Prefabs/Environment
   m_LastFoldersGridSize: 95
   m_LastProjectPath: E:\UnityDev\Proj\DorianDeVilleleUrp
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 480}
-    m_SelectedIDs: 0e240100
-    m_LastClickedID: 74766
-    m_ExpandedIDs: ffffffff00000000980401009a0401009c0401009e040100a0040100a2040100a4040100a6040100a8040100aa040100ac040100ae040100b0040100b2040100b4040100b6040100b8040100ba040100bc040100be040100c0040100c2040100c4040100c6040100c8040100ca040100cc040100ce040100d0040100d2040100d4040100d6040100d8040100dc040100de040100e0040100e2040100e4040100e6040100e80401005a050100a41e01009a200100
+    scrollPos: {x: 0, y: 120}
+    m_SelectedIDs: fa280100
+    m_LastClickedID: 76026
+    m_ExpandedIDs: ffffffff000000002e0501003005010034050100380501003a0501003c0501003e05010040050100420501004405010046050100480501004c0501004e05010050050100520501005405010056050100580501005a0501005c0501005e050100600501006405010066050100680501006a0501006c0501006e050100720501007405010076050100780501007a0501007c0501007e0501008005010082050100be050100d2050100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -913,7 +913,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000980401009a0401009c0401009e040100a0040100a2040100a4040100a6040100a8040100aa040100ac040100ae040100b0040100b2040100b4040100b6040100b8040100ba040100bc040100be040100c0040100c2040100c4040100c6040100c8040100ca040100cc040100ce040100d0040100d2040100d4040100d6040100d8040100dc040100de040100e0040100e2040100e4040100e6040100e80401005a050100a41e01009a200100
+    m_ExpandedIDs: ffffffff000000002e0501003005010034050100380501003a0501003c0501003e050100400501004205010044050100460501004c0501004e050100520501005405010056050100580501005a0501005c0501005e050100600501006405010066050100680501006a0501006c0501006e050100720501007405010076050100780501007a0501007c0501008005010082050100be050100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -938,9 +938,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 3e510100
-    m_LastClickedInstanceID: 86334
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 9e210100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -965,7 +965,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 1610}
     m_GridSize: 95
   m_SkipHiddenPackages: 1
   m_DirectoriesAreaWidth: 243.5
@@ -1031,7 +1031,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 6836
+  controlID: 1848
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1051,8 +1051,8 @@ MonoBehaviour:
     y: 0
     width: 341
     height: 532
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -1107,7 +1107,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/House/Template/ScriptedTemplate
+    - Assets/Packages/Synty/PolygonNatureBiomes/PNB_Core/Shaders
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1123,7 +1123,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 1c8b0000
     m_LastClickedID: 35612
-    m_ExpandedIDs: ffffffff00000000980401009a0401009c0401009e040100a0040100a2040100a4040100a6040100a8040100aa040100ac040100ae040100b0040100b2040100b4040100b6040100b8040100ba040100bc040100be040100c0040100c2040100c4040100c6040100c8040100ca040100cc040100ce040100d0040100d2040100d4040100d6040100d8040100dc040100de040100e0040100e2040100e4040100e6040100e80401005a050100a41e01009a200100
+    m_ExpandedIDs: ffffffff000000002e0501003005010034050100380501003a0501003c0501003e050100400501004205010044050100460501004c0501004e050100520501005405010056050100580501005a0501005c0501005e050100600501006405010066050100680501006a0501006c0501006e050100720501007405010076050100780501007a0501007c0501008005010082050100be050100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1148,10 +1148,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 683}
-    m_SelectedIDs: 3e510100
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000980401009a0401009c0401009e040100a0040100a2040100a4040100a6040100a8040100aa040100ac040100ae040100b0040100b2040100b4040100b6040100b8040100ba040100bc040100be040100c0040100c2040100c4040100c6040100c8040100ca040100cc040100ce040100d0040100d2040100d4040100d6040100d8040100dc040100de040100e0040100e2040100e4040100e6040100e80401005a050100a41e01009a200100
+    m_ExpandedIDs: ffffffff000000002e0501003005010034050100380501003a0501003c0501003e050100400501004205010044050100460501004c0501004e050100520501005405010056050100580501005a0501005c0501005e050100600501006405010066050100680501006a0501006c0501006e050100720501007405010076050100780501007a0501007c0501008005010082050100be050100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1176,8 +1176,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 3e510100
-    m_LastClickedInstanceID: 86334
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
@@ -2560,139 +2560,139 @@ MonoBehaviour:
               _instanceId: -15788
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-867224678
             _position: {x: 493.41397, y: 0.0030517578, z: 139.4161}
-            _localRotation: {x: -0, y: 0.7124199, z: -0, w: -0.7017535}
+            _localRotation: {x: 0, y: 0.7124199, z: 0, w: -0.7017535}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -15828
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-795026466
             _position: {x: 493.41473, y: 0.0030517578, z: 137.48915}
-            _localRotation: {x: -0, y: 0.7067918, z: -0, w: -0.7074216}
+            _localRotation: {x: 0, y: 0.7067918, z: 0, w: -0.7074216}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -15846
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1536091968
             _position: {x: 493.90424, y: 0.0030517578, z: 136.99113}
-            _localRotation: {x: -0, y: 1, z: -0, w: -0.0002182364}
+            _localRotation: {x: 0, y: 1, z: 0, w: -0.0002182364}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -15864
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-156220831
             _position: {x: 494.85834, y: 0.0030517578, z: 136.99307}
-            _localRotation: {x: -0, y: 0.9999976, z: -0, w: 0.0022152385}
+            _localRotation: {x: 0, y: 0.9999976, z: 0, w: 0.0022152385}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -15882
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1473767265
             _position: {x: 495.8227, y: 0.0030517578, z: 136.9911}
-            _localRotation: {x: -0, y: 0.99999094, z: -0, w: -0.0042540496}
+            _localRotation: {x: 0, y: 0.99999094, z: 0, w: -0.0042540496}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -15900
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1855144258
             _position: {x: 496.78748, y: 0.0030517578, z: 136.98949}
-            _localRotation: {x: -0, y: 0.9999968, z: -0, w: 0.0025636666}
+            _localRotation: {x: 0, y: 0.9999968, z: 0, w: 0.0025636666}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -15918
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1666590894
             _position: {x: 497.74625, y: 0.0030517578, z: 136.9939}
-            _localRotation: {x: -0, y: 0.9999979, z: -0, w: 0.002040329}
+            _localRotation: {x: 0, y: 0.9999979, z: 0, w: 0.002040329}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -15936
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1249023618
             _position: {x: 498.24045, y: 0.0030517578, z: 137.4819}
-            _localRotation: {x: -0, y: 0.7066801, z: -0, w: 0.70753324}
+            _localRotation: {x: 0, y: 0.7066801, z: 0, w: 0.70753324}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -15954
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1519156791
             _position: {x: 498.23502, y: 0.0030517578, z: 138.43254}
-            _localRotation: {x: -0, y: 0.70353144, z: -0, w: 0.71066415}
+            _localRotation: {x: 0, y: 0.70353144, z: 0, w: 0.71066415}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -15972
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-652572075
             _position: {x: 498.2268, y: 0.0030517578, z: 139.39754}
-            _localRotation: {x: -0, y: 0.70464295, z: -0, w: 0.70956206}
+            _localRotation: {x: 0, y: 0.70464295, z: 0, w: 0.70956206}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -15990
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1390373448
             _position: {x: 498.22574, y: 0.0030517578, z: 140.36241}
-            _localRotation: {x: -0, y: 0.7087929, z: -0, w: 0.7054167}
+            _localRotation: {x: 0, y: 0.7087929, z: 0, w: 0.7054167}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -16008
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1044759913
             _position: {x: 498.23074, y: 0.0030517578, z: 141.3275}
-            _localRotation: {x: -0, y: 0.70908284, z: -0, w: 0.7051252}
+            _localRotation: {x: 0, y: 0.70908284, z: 0, w: 0.7051252}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -16026
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1648614090
             _position: {x: 498.23486, y: 0.0030517578, z: 142.29265}
-            _localRotation: {x: -0, y: 0.7081569, z: -0, w: 0.70605516}
+            _localRotation: {x: 0, y: 0.7081569, z: 0, w: 0.70605516}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -16044
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1523958627
             _position: {x: 498.23648, y: 0.0030517578, z: 143.25783}
-            _localRotation: {x: -0, y: 0.70722973, z: -0, w: 0.7069838}
+            _localRotation: {x: 0, y: 0.70722973, z: 0, w: 0.7069838}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -16062
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1405613607
             _position: {x: 498.23642, y: 0.0030517578, z: 144.22293}
-            _localRotation: {x: -0, y: 0.7069279, z: -0, w: 0.70728564}
+            _localRotation: {x: 0, y: 0.7069279, z: 0, w: 0.70728564}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -16080
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1645726130
             _position: {x: 498.23608, y: 0.0030517578, z: 145.18802}
-            _localRotation: {x: -0, y: 0.7070733, z: -0, w: 0.7071404}
+            _localRotation: {x: 0, y: 0.7070733, z: 0, w: 0.7071404}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -16098
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-2047362255
             _position: {x: 498.24036, y: 0.0030517578, z: 146.15288}
-            _localRotation: {x: -0, y: 0.7102307, z: -0, w: 0.703969}
+            _localRotation: {x: 0, y: 0.7102307, z: 0, w: 0.703969}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -16116
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1983902856
             _position: {x: 498.00662, y: 0.0030517578, z: 146.98451}
-            _localRotation: {x: -0, y: 0.46384847, z: -0, w: 0.8859146}
+            _localRotation: {x: 0, y: 0.46384847, z: 0, w: 0.8859146}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -16134
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-984705557
             _position: {x: 497.27463, y: 0.0030517578, z: 147.33383}
-            _localRotation: {x: -0, y: 0.0029415127, z: -0, w: 0.9999957}
+            _localRotation: {x: 0, y: 0.0029415127, z: 0, w: 0.9999957}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -16152
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1324015017
             _position: {x: 496.3096, y: 0.0030517578, z: 147.33644}
-            _localRotation: {x: -0, y: -0.00022919457, z: -0, w: 1}
+            _localRotation: {x: 0, y: -0.00022919457, z: 0, w: 1}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -16170
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-903294341
             _position: {x: 495.3444, y: 0.0030517578, z: 147.33376}
-            _localRotation: {x: -0, y: -0.0025613063, z: -0, w: 0.9999968}
+            _localRotation: {x: 0, y: -0.0025613063, z: 0, w: 0.9999968}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -16188
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-437963520
             _position: {x: 494.37936, y: 0.0030517578, z: 147.33105}
-            _localRotation: {x: -0, y: -0.0002450418, z: -0, w: 1}
+            _localRotation: {x: 0, y: -0.0002450418, z: 0, w: 1}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -16206
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1344573808
             _position: {x: 493.41434, y: 0.0030517578, z: 147.33235}
-            _localRotation: {x: -0, y: 0.0015825721, z: -0, w: 0.9999988}
+            _localRotation: {x: 0, y: 0.0015825721, z: 0, w: 0.9999988}
             _localScale: {x: 1, y: 1, z: 1}
           _controlPoints:
           - position: {x: 493.4247, y: 0.0030517578, z: 139.89885}
@@ -2855,163 +2855,163 @@ MonoBehaviour:
               _instanceId: -27422
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-710053230
             _position: {x: 513.69794, y: 0.0030517578, z: 145.28181}
-            _localRotation: {x: -0, y: 0.70690554, z: -0, w: 0.707308}
+            _localRotation: {x: 0, y: 0.70690554, z: 0, w: 0.707308}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27440
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1558760189
             _position: {x: 513.6979, y: 0.0030517578, z: 146.24689}
-            _localRotation: {x: -0, y: 0.70728564, z: -0, w: 0.7069279}
+            _localRotation: {x: 0, y: 0.70728564, z: 0, w: 0.7069279}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27458
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-453661430
             _position: {x: 513.7059, y: 0.0030517578, z: 147.21158}
-            _localRotation: {x: -0, y: 0.71276444, z: -0, w: 0.7014035}
+            _localRotation: {x: 0, y: 0.71276444, z: 0, w: 0.7014035}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27476
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-191379370
             _position: {x: 513.70483, y: 0.0030517578, z: 148.1726}
-            _localRotation: {x: -0, y: 0.70059973, z: -0, w: 0.7135545}
+            _localRotation: {x: 0, y: 0.70059973, z: 0, w: 0.7135545}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27494
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-826863758
             _position: {x: 513.2229, y: 0.0030517578, z: 148.66966}
-            _localRotation: {x: -0, y: 0.0014496831, z: -0, w: 0.999999}
+            _localRotation: {x: 0, y: 0.0014496831, z: 0, w: 0.999999}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27512
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1532202692
             _position: {x: 512.2854, y: 0.0030517578, z: 148.67145}
-            _localRotation: {x: -0, y: 0.00047482643, z: -0, w: 0.99999994}
+            _localRotation: {x: 0, y: 0.00047482643, z: 0, w: 0.99999994}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27530
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-763866791
             _position: {x: 511.3209, y: 0.0030517578, z: 148.67351}
-            _localRotation: {x: -0, y: 0.0016682146, z: -0, w: 0.9999987}
+            _localRotation: {x: 0, y: 0.0016682146, z: 0, w: 0.9999987}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27548
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-423914454
             _position: {x: 510.3556, y: 0.0030517578, z: 148.6689}
-            _localRotation: {x: -0, y: -0.006435192, z: -0, w: 0.9999794}
+            _localRotation: {x: 0, y: -0.006435192, z: 0, w: 0.9999794}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27566
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1800414244
             _position: {x: 509.39102, y: 0.0030517578, z: 148.6674}
-            _localRotation: {x: -0, y: 0.0048539266, z: -0, w: 0.99998826}
+            _localRotation: {x: 0, y: 0.0048539266, z: 0, w: 0.99998826}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27584
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-396113860
             _position: {x: 508.42563, y: 0.0030517578, z: 148.66609}
-            _localRotation: {x: -0, y: -0.0061899396, z: -0, w: 0.9999809}
+            _localRotation: {x: 0, y: -0.0061899396, z: 0, w: 0.9999809}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27602
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1945694696
             _position: {x: 507.46054, y: 0.0030517578, z: 148.65393}
-            _localRotation: {x: -0, y: -0.0064112525, z: -0, w: 0.9999795}
+            _localRotation: {x: 0, y: -0.0064112525, z: 0, w: 0.9999795}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27620
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1279775788
             _position: {x: 506.49588, y: 0.0030517578, z: 148.64966}
-            _localRotation: {x: -0, y: 0.001960798, z: -0, w: 0.99999815}
+            _localRotation: {x: 0, y: 0.001960798, z: 0, w: 0.99999815}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27638
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-834253106
             _position: {x: 505.53134, y: 0.0030517578, z: 148.65239}
-            _localRotation: {x: -0, y: 0.00088634825, z: -0, w: 0.99999964}
+            _localRotation: {x: 0, y: 0.00088634825, z: 0, w: 0.99999964}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27656
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1149505691
             _position: {x: 504.56937, y: 0.0030517578, z: 148.65088}
-            _localRotation: {x: -0, y: -0.0024725872, z: -0, w: 0.999997}
+            _localRotation: {x: 0, y: -0.0024725872, z: 0, w: 0.999997}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27674
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-585350256
             _position: {x: 504.0739, y: 0.0030517578, z: 148.17433}
-            _localRotation: {x: -0, y: 0.7089145, z: -0, w: -0.70529443}
+            _localRotation: {x: 0, y: 0.7089145, z: 0, w: -0.70529443}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27692
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1950427209
             _position: {x: 504.0769, y: 0.0030517578, z: 147.23582}
-            _localRotation: {x: -0, y: 0.7075315, z: -0, w: -0.7066819}
+            _localRotation: {x: 0, y: 0.7075315, z: 0, w: -0.7066819}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27710
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1145446872
             _position: {x: 504.07803, y: 0.0030517578, z: 146.2707}
-            _localRotation: {x: -0, y: 0.7075315, z: -0, w: -0.70668185}
+            _localRotation: {x: 0, y: 0.7075315, z: 0, w: -0.70668185}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27728
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-214780302
             _position: {x: 504.07742, y: 0.0030517578, z: 145.30568}
-            _localRotation: {x: -0, y: 0.7062231, z: -0, w: -0.70798945}
+            _localRotation: {x: 0, y: 0.7062231, z: 0, w: -0.70798945}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27746
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1187120847
             _position: {x: 504.07462, y: 0.0030517578, z: 144.34058}
-            _localRotation: {x: -0, y: 0.7059656, z: -0, w: -0.70824623}
+            _localRotation: {x: 0, y: 0.7059656, z: 0, w: -0.70824623}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27764
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-650301103
             _position: {x: 504.07153, y: 0.0030517578, z: 143.37546}
-            _localRotation: {x: -0, y: 0.7059768, z: -0, w: -0.7082351}
+            _localRotation: {x: 0, y: 0.7059768, z: 0, w: -0.7082351}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27782
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1825870581
             _position: {x: 504.06854, y: 0.0030517578, z: 142.41039}
-            _localRotation: {x: -0, y: 0.70604396, z: -0, w: -0.7081681}
+            _localRotation: {x: 0, y: 0.70604396, z: 0, w: -0.7081681}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27800
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1612012059
             _position: {x: 504.06592, y: 0.0030517578, z: 141.44524}
-            _localRotation: {x: -0, y: 0.7062343, z: -0, w: -0.7079783}
+            _localRotation: {x: 0, y: 0.7062343, z: 0, w: -0.7079783}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27818
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1074011268
             _position: {x: 504.06305, y: 0.0030517578, z: 140.48013}
-            _localRotation: {x: -0, y: 0.7058872, z: -0, w: -0.7083244}
+            _localRotation: {x: 0, y: 0.7058872, z: 0, w: -0.7083244}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27836
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-2113332557
             _position: {x: 504.07086, y: 0.0030517578, z: 139.51509}
-            _localRotation: {x: -0, y: 0.7140211, z: -0, w: -0.70012426}
+            _localRotation: {x: 0, y: 0.7140211, z: 0, w: -0.70012426}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27854
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-499261925
             _position: {x: 504.08, y: 0.0030517578, z: 138.59769}
-            _localRotation: {x: -0, y: 0.706822, z: -0, w: -0.7073915}
+            _localRotation: {x: 0, y: 0.706822, z: 0, w: -0.7073915}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27872
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1942646640
             _position: {x: 504.5785, y: 0.0030517578, z: 138.14108}
-            _localRotation: {x: -0, y: 0.99999595, z: -0, w: -0.002871507}
+            _localRotation: {x: 0, y: 0.99999595, z: 0, w: -0.002871507}
             _localScale: {x: 1, y: 1, z: 1}
           - _id:
               _instanceId: -27890
               _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-855755214
             _position: {x: 505.5423, y: 0.0030517578, z: 138.14642}
-            _localRotation: {x: -0, y: 0.9999649, z: -0, w: 0.008379889}
+            _localRotation: {x: 0, y: 0.9999649, z: 0, w: 0.008379889}
             _localScale: {x: 1, y: 1, z: 1}
           _controlPoints:
           - position: {x: 513.68005, y: 0.0030517578, z: 144.79922}
@@ -5681,7 +5681,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e454f7ffe854f7ff0229f8ff0629f8ffe43bf8ffe83bf8ff7e4af8ff824af8ffdc4bffffde4bffffe6faffff72f50000c4f50000d0f5000002f600004cf600009e100100f0100100f8100100081101001c1101005a1101001e3c01002a520100
+      m_ExpandedIDs: da15f5ffdc15f5ff5e89fbff6089fbff2e91ffff3291ffffe6faffff2cf6000034f60000baf60000cef600001809010020090100a6090100ba0901009c130100f2130100f6130100fe1301000e14010064140100ea140100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -5697,7 +5697,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 14}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -5770,7 +5770,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 6871
+  controlID: 1890
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -5790,8 +5790,8 @@ MonoBehaviour:
     y: 0
     width: 359
     height: 621
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -5936,8 +5936,8 @@ MonoBehaviour:
     y: 621
     width: 359
     height: 318
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
@@ -8875,139 +8875,139 @@ MonoBehaviour:
             _instanceId: -15788
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-867224678
           _position: {x: 493.41397, y: 0.0030517578, z: 139.4161}
-          _localRotation: {x: -0, y: 0.7124199, z: -0, w: -0.7017535}
+          _localRotation: {x: 0, y: 0.7124199, z: 0, w: -0.7017535}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -15828
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-795026466
           _position: {x: 493.41473, y: 0.0030517578, z: 137.48915}
-          _localRotation: {x: -0, y: 0.7067918, z: -0, w: -0.7074216}
+          _localRotation: {x: 0, y: 0.7067918, z: 0, w: -0.7074216}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -15846
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1536091968
           _position: {x: 493.90424, y: 0.0030517578, z: 136.99113}
-          _localRotation: {x: -0, y: 1, z: -0, w: -0.0002182364}
+          _localRotation: {x: 0, y: 1, z: 0, w: -0.0002182364}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -15864
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-156220831
           _position: {x: 494.85834, y: 0.0030517578, z: 136.99307}
-          _localRotation: {x: -0, y: 0.9999976, z: -0, w: 0.0022152385}
+          _localRotation: {x: 0, y: 0.9999976, z: 0, w: 0.0022152385}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -15882
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1473767265
           _position: {x: 495.8227, y: 0.0030517578, z: 136.9911}
-          _localRotation: {x: -0, y: 0.99999094, z: -0, w: -0.0042540496}
+          _localRotation: {x: 0, y: 0.99999094, z: 0, w: -0.0042540496}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -15900
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1855144258
           _position: {x: 496.78748, y: 0.0030517578, z: 136.98949}
-          _localRotation: {x: -0, y: 0.9999968, z: -0, w: 0.0025636666}
+          _localRotation: {x: 0, y: 0.9999968, z: 0, w: 0.0025636666}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -15918
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1666590894
           _position: {x: 497.74625, y: 0.0030517578, z: 136.9939}
-          _localRotation: {x: -0, y: 0.9999979, z: -0, w: 0.002040329}
+          _localRotation: {x: 0, y: 0.9999979, z: 0, w: 0.002040329}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -15936
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1249023618
           _position: {x: 498.24045, y: 0.0030517578, z: 137.4819}
-          _localRotation: {x: -0, y: 0.7066801, z: -0, w: 0.70753324}
+          _localRotation: {x: 0, y: 0.7066801, z: 0, w: 0.70753324}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -15954
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1519156791
           _position: {x: 498.23502, y: 0.0030517578, z: 138.43254}
-          _localRotation: {x: -0, y: 0.70353144, z: -0, w: 0.71066415}
+          _localRotation: {x: 0, y: 0.70353144, z: 0, w: 0.71066415}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -15972
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-652572075
           _position: {x: 498.2268, y: 0.0030517578, z: 139.39754}
-          _localRotation: {x: -0, y: 0.70464295, z: -0, w: 0.70956206}
+          _localRotation: {x: 0, y: 0.70464295, z: 0, w: 0.70956206}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -15990
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1390373448
           _position: {x: 498.22574, y: 0.0030517578, z: 140.36241}
-          _localRotation: {x: -0, y: 0.7087929, z: -0, w: 0.7054167}
+          _localRotation: {x: 0, y: 0.7087929, z: 0, w: 0.7054167}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -16008
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1044759913
           _position: {x: 498.23074, y: 0.0030517578, z: 141.3275}
-          _localRotation: {x: -0, y: 0.70908284, z: -0, w: 0.7051252}
+          _localRotation: {x: 0, y: 0.70908284, z: 0, w: 0.7051252}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -16026
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1648614090
           _position: {x: 498.23486, y: 0.0030517578, z: 142.29265}
-          _localRotation: {x: -0, y: 0.7081569, z: -0, w: 0.70605516}
+          _localRotation: {x: 0, y: 0.7081569, z: 0, w: 0.70605516}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -16044
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1523958627
           _position: {x: 498.23648, y: 0.0030517578, z: 143.25783}
-          _localRotation: {x: -0, y: 0.70722973, z: -0, w: 0.7069838}
+          _localRotation: {x: 0, y: 0.70722973, z: 0, w: 0.7069838}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -16062
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1405613607
           _position: {x: 498.23642, y: 0.0030517578, z: 144.22293}
-          _localRotation: {x: -0, y: 0.7069279, z: -0, w: 0.70728564}
+          _localRotation: {x: 0, y: 0.7069279, z: 0, w: 0.70728564}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -16080
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1645726130
           _position: {x: 498.23608, y: 0.0030517578, z: 145.18802}
-          _localRotation: {x: -0, y: 0.7070733, z: -0, w: 0.7071404}
+          _localRotation: {x: 0, y: 0.7070733, z: 0, w: 0.7071404}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -16098
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-2047362255
           _position: {x: 498.24036, y: 0.0030517578, z: 146.15288}
-          _localRotation: {x: -0, y: 0.7102307, z: -0, w: 0.703969}
+          _localRotation: {x: 0, y: 0.7102307, z: 0, w: 0.703969}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -16116
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1983902856
           _position: {x: 498.00662, y: 0.0030517578, z: 146.98451}
-          _localRotation: {x: -0, y: 0.46384847, z: -0, w: 0.8859146}
+          _localRotation: {x: 0, y: 0.46384847, z: 0, w: 0.8859146}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -16134
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-984705557
           _position: {x: 497.27463, y: 0.0030517578, z: 147.33383}
-          _localRotation: {x: -0, y: 0.0029415127, z: -0, w: 0.9999957}
+          _localRotation: {x: 0, y: 0.0029415127, z: 0, w: 0.9999957}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -16152
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1324015017
           _position: {x: 496.3096, y: 0.0030517578, z: 147.33644}
-          _localRotation: {x: -0, y: -0.00022919457, z: -0, w: 1}
+          _localRotation: {x: 0, y: -0.00022919457, z: 0, w: 1}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -16170
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-903294341
           _position: {x: 495.3444, y: 0.0030517578, z: 147.33376}
-          _localRotation: {x: -0, y: -0.0025613063, z: -0, w: 0.9999968}
+          _localRotation: {x: 0, y: -0.0025613063, z: 0, w: 0.9999968}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -16188
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-437963520
           _position: {x: 494.37936, y: 0.0030517578, z: 147.33105}
-          _localRotation: {x: -0, y: -0.0002450418, z: -0, w: 1}
+          _localRotation: {x: 0, y: -0.0002450418, z: 0, w: 1}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -16206
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1344573808
           _position: {x: 493.41434, y: 0.0030517578, z: 147.33235}
-          _localRotation: {x: -0, y: 0.0015825721, z: -0, w: 0.9999988}
+          _localRotation: {x: 0, y: 0.0015825721, z: 0, w: 0.9999988}
           _localScale: {x: 1, y: 1, z: 1}
         _controlPoints:
         - position: {x: 493.4247, y: 0.0030517578, z: 139.89885}
@@ -9170,163 +9170,163 @@ MonoBehaviour:
             _instanceId: -27422
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-710053230
           _position: {x: 513.69794, y: 0.0030517578, z: 145.28181}
-          _localRotation: {x: -0, y: 0.70690554, z: -0, w: 0.707308}
+          _localRotation: {x: 0, y: 0.70690554, z: 0, w: 0.707308}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27440
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1558760189
           _position: {x: 513.6979, y: 0.0030517578, z: 146.24689}
-          _localRotation: {x: -0, y: 0.70728564, z: -0, w: 0.7069279}
+          _localRotation: {x: 0, y: 0.70728564, z: 0, w: 0.7069279}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27458
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-453661430
           _position: {x: 513.7059, y: 0.0030517578, z: 147.21158}
-          _localRotation: {x: -0, y: 0.71276444, z: -0, w: 0.7014035}
+          _localRotation: {x: 0, y: 0.71276444, z: 0, w: 0.7014035}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27476
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-191379370
           _position: {x: 513.70483, y: 0.0030517578, z: 148.1726}
-          _localRotation: {x: -0, y: 0.70059973, z: -0, w: 0.7135545}
+          _localRotation: {x: 0, y: 0.70059973, z: 0, w: 0.7135545}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27494
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-826863758
           _position: {x: 513.2229, y: 0.0030517578, z: 148.66966}
-          _localRotation: {x: -0, y: 0.0014496831, z: -0, w: 0.999999}
+          _localRotation: {x: 0, y: 0.0014496831, z: 0, w: 0.999999}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27512
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1532202692
           _position: {x: 512.2854, y: 0.0030517578, z: 148.67145}
-          _localRotation: {x: -0, y: 0.00047482643, z: -0, w: 0.99999994}
+          _localRotation: {x: 0, y: 0.00047482643, z: 0, w: 0.99999994}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27530
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-763866791
           _position: {x: 511.3209, y: 0.0030517578, z: 148.67351}
-          _localRotation: {x: -0, y: 0.0016682146, z: -0, w: 0.9999987}
+          _localRotation: {x: 0, y: 0.0016682146, z: 0, w: 0.9999987}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27548
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-423914454
           _position: {x: 510.3556, y: 0.0030517578, z: 148.6689}
-          _localRotation: {x: -0, y: -0.006435192, z: -0, w: 0.9999794}
+          _localRotation: {x: 0, y: -0.006435192, z: 0, w: 0.9999794}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27566
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1800414244
           _position: {x: 509.39102, y: 0.0030517578, z: 148.6674}
-          _localRotation: {x: -0, y: 0.0048539266, z: -0, w: 0.99998826}
+          _localRotation: {x: 0, y: 0.0048539266, z: 0, w: 0.99998826}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27584
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-396113860
           _position: {x: 508.42563, y: 0.0030517578, z: 148.66609}
-          _localRotation: {x: -0, y: -0.0061899396, z: -0, w: 0.9999809}
+          _localRotation: {x: 0, y: -0.0061899396, z: 0, w: 0.9999809}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27602
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1945694696
           _position: {x: 507.46054, y: 0.0030517578, z: 148.65393}
-          _localRotation: {x: -0, y: -0.0064112525, z: -0, w: 0.9999795}
+          _localRotation: {x: 0, y: -0.0064112525, z: 0, w: 0.9999795}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27620
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1279775788
           _position: {x: 506.49588, y: 0.0030517578, z: 148.64966}
-          _localRotation: {x: -0, y: 0.001960798, z: -0, w: 0.99999815}
+          _localRotation: {x: 0, y: 0.001960798, z: 0, w: 0.99999815}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27638
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-834253106
           _position: {x: 505.53134, y: 0.0030517578, z: 148.65239}
-          _localRotation: {x: -0, y: 0.00088634825, z: -0, w: 0.99999964}
+          _localRotation: {x: 0, y: 0.00088634825, z: 0, w: 0.99999964}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27656
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1149505691
           _position: {x: 504.56937, y: 0.0030517578, z: 148.65088}
-          _localRotation: {x: -0, y: -0.0024725872, z: -0, w: 0.999997}
+          _localRotation: {x: 0, y: -0.0024725872, z: 0, w: 0.999997}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27674
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-585350256
           _position: {x: 504.0739, y: 0.0030517578, z: 148.17433}
-          _localRotation: {x: -0, y: 0.7089145, z: -0, w: -0.70529443}
+          _localRotation: {x: 0, y: 0.7089145, z: 0, w: -0.70529443}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27692
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1950427209
           _position: {x: 504.0769, y: 0.0030517578, z: 147.23582}
-          _localRotation: {x: -0, y: 0.7075315, z: -0, w: -0.7066819}
+          _localRotation: {x: 0, y: 0.7075315, z: 0, w: -0.7066819}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27710
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1145446872
           _position: {x: 504.07803, y: 0.0030517578, z: 146.2707}
-          _localRotation: {x: -0, y: 0.7075315, z: -0, w: -0.70668185}
+          _localRotation: {x: 0, y: 0.7075315, z: 0, w: -0.70668185}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27728
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-214780302
           _position: {x: 504.07742, y: 0.0030517578, z: 145.30568}
-          _localRotation: {x: -0, y: 0.7062231, z: -0, w: -0.70798945}
+          _localRotation: {x: 0, y: 0.7062231, z: 0, w: -0.70798945}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27746
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1187120847
           _position: {x: 504.07462, y: 0.0030517578, z: 144.34058}
-          _localRotation: {x: -0, y: 0.7059656, z: -0, w: -0.70824623}
+          _localRotation: {x: 0, y: 0.7059656, z: 0, w: -0.70824623}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27764
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-650301103
           _position: {x: 504.07153, y: 0.0030517578, z: 143.37546}
-          _localRotation: {x: -0, y: 0.7059768, z: -0, w: -0.7082351}
+          _localRotation: {x: 0, y: 0.7059768, z: 0, w: -0.7082351}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27782
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1825870581
           _position: {x: 504.06854, y: 0.0030517578, z: 142.41039}
-          _localRotation: {x: -0, y: 0.70604396, z: -0, w: -0.7081681}
+          _localRotation: {x: 0, y: 0.70604396, z: 0, w: -0.7081681}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27800
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1612012059
           _position: {x: 504.06592, y: 0.0030517578, z: 141.44524}
-          _localRotation: {x: -0, y: 0.7062343, z: -0, w: -0.7079783}
+          _localRotation: {x: 0, y: 0.7062343, z: 0, w: -0.7079783}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27818
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1074011268
           _position: {x: 504.06305, y: 0.0030517578, z: 140.48013}
-          _localRotation: {x: -0, y: 0.7058872, z: -0, w: -0.7083244}
+          _localRotation: {x: 0, y: 0.7058872, z: 0, w: -0.7083244}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27836
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-2113332557
           _position: {x: 504.07086, y: 0.0030517578, z: 139.51509}
-          _localRotation: {x: -0, y: 0.7140211, z: -0, w: -0.70012426}
+          _localRotation: {x: 0, y: 0.7140211, z: 0, w: -0.70012426}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27854
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-499261925
           _position: {x: 504.08, y: 0.0030517578, z: 138.59769}
-          _localRotation: {x: -0, y: 0.706822, z: -0, w: -0.7073915}
+          _localRotation: {x: 0, y: 0.706822, z: 0, w: -0.7073915}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27872
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1942646640
           _position: {x: 504.5785, y: 0.0030517578, z: 138.14108}
-          _localRotation: {x: -0, y: 0.99999595, z: -0, w: -0.002871507}
+          _localRotation: {x: 0, y: 0.99999595, z: 0, w: -0.002871507}
           _localScale: {x: 1, y: 1, z: 1}
         - _id:
             _instanceId: -27890
             _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-855755214
           _position: {x: 505.5423, y: 0.0030517578, z: 138.14642}
-          _localRotation: {x: -0, y: 0.9999649, z: -0, w: 0.008379889}
+          _localRotation: {x: 0, y: 0.9999649, z: 0, w: 0.008379889}
           _localScale: {x: 1, y: 1, z: 1}
         _controlPoints:
         - position: {x: 513.68005, y: 0.0030517578, z: 144.79922}
