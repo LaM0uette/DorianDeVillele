@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Core.Scripts.GrabCamera
+namespace Core.Scripts.GrabCamera.Controller
 {
     public class CameraController : MonoBehaviour, ICameraController
     {

@@ -3,7 +3,7 @@ using Core.Scripts.Globals.Managers;
 using Core.Scripts.GrabCamera.InputHandler;
 using UnityEngine;
 
-namespace Core.Scripts.GrabCamera
+namespace Core.Scripts.GrabCamera.Controller
 {
     public class CameraMover : MonoBehaviour
     {
