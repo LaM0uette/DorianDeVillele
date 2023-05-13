@@ -60,7 +60,7 @@ namespace Core.Scripts.GrabCamera.Controller
             _cameraController.CheckCameraPositionLimits();
         }
         
-        private void SetPositionY(float posY) => transform.position = new Vector3(_cameraPosition.x, posY, _cameraPosition.z);
+        private void SetPositionY(float posY) => transform.Translate(0, 0, transform.position.y - posY, Space.Self);
 
         #endregion
 
