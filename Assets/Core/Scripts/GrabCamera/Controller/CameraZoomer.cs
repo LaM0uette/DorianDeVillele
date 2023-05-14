@@ -16,9 +16,6 @@ namespace Core.Scripts.GrabCamera.Controller
         [SerializeField] private float _zoomMin = 10f;
         [SerializeField] private float _zoomMax = 600f;
 
-        // World
-        private Vector3 _cameraPosition;
-
         private void Awake()
         {
             _inputHandler = GetComponent<IInputHandler>();
@@ -45,8 +42,7 @@ namespace Core.Scripts.GrabCamera.Controller
 
         private void HandleZoom(float zoomAmount)
         {
-            _cameraPosition = transform.position;
-            transform.Translate(0, 0, -zoomAmount * _zoomSpeed * Time.deltaTime, Space.Self);
+            transform.Translate(0, 0, -zoomAmount * _zoomSpeed * Mathf.Min(Time.deltaTime, 0.2f), Space.Self);
             CheckAndSetZoomLimits();
         }
 
