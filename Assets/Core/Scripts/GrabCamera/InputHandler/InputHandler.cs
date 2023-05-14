@@ -98,6 +98,7 @@ namespace Core.Scripts.GrabCamera.InputHandler
         private void HandleZoom(InputAction.CallbackContext context)
         {
             var zoomAmount = context.ReadValue<Vector2>().y;
+            zoomAmount = Mathf.Clamp(zoomAmount, -1200, 1200);
             OnZoom?.Invoke(zoomAmount);
         }
 

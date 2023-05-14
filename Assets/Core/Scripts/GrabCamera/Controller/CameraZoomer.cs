@@ -42,7 +42,7 @@ namespace Core.Scripts.GrabCamera.Controller
 
         private void HandleZoom(float zoomAmount)
         {
-            transform.Translate(0, 0, -zoomAmount * _zoomSpeed * Mathf.Min(Time.deltaTime, 0.2f), Space.Self);
+            transform.Translate(0, 0, -zoomAmount * _zoomSpeed * Mathf.Min(Time.deltaTime, 0.005f), Space.Self);
             CheckAndSetZoomLimits();
         }
 
