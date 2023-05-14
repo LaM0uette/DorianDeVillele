@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Palette
   m_RootView: {fileID: 5}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -38,10 +38,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 1913
-    y: 6
+    x: 1931
+    y: 13
     width: 1920
-    height: 1026
+    height: 1020
   m_ShowMode: 0
   m_Title: Console
   m_RootView: {fileID: 4}
@@ -66,9 +66,9 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1920
-    height: 1026
-  m_MinSize: {x: 100, y: 121}
-  m_MaxSize: {x: 4000, y: 4021}
+    height: 1020
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -93,7 +93,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1920
-    height: 1026
+    height: 1020
   m_MinSize: {x: 100, y: 121}
   m_MaxSize: {x: 4000, y: 4021}
   vertical: 0
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 56
+  controlID: 26706
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 57
+  controlID: 26632
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -238,7 +238,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1220
-    height: 707
+    height: 615
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
@@ -263,9 +263,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 707
+    y: 615
     width: 1220
-    height: 232
+    height: 324
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 22}
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 122
+  controlID: 26707
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: BrushProperties
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -319,14 +319,14 @@ MonoBehaviour:
     y: 0
     width: 341
     height: 532
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 24}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 25}
   m_Panes:
   - {fileID: 24}
   - {fileID: 25}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneHierarchyWindow
+  m_Name: PrefabPalette
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -346,14 +346,14 @@ MonoBehaviour:
     y: 532
     width: 341
     height: 407
-  m_MinSize: {x: 202, y: 221}
+  m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 26}
+  m_ActualView: {fileID: 27}
   m_Panes:
   - {fileID: 26}
   - {fileID: 27}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 211
+  controlID: 26818
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -454,10 +454,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1913
-    y: 6
+    x: 1931
+    y: 13
     width: 1920
-    height: 1005
+    height: 999
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -490,9 +490,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 780
+    y: 589
     width: 1219
-    height: 211
+    height: 348
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -511,7 +511,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 338, y: 190}
+  m_TargetSize: {x: 581, y: 327}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -526,10 +526,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -169
-    m_HBaseRangeMax: 169
-    m_VBaseRangeMin: -95
-    m_VBaseRangeMax: 95
+    m_HBaseRangeMin: -290.5
+    m_HBaseRangeMax: 290.5
+    m_VBaseRangeMin: -163.5
+    m_VBaseRangeMax: 163.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -538,7 +538,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -548,9 +548,9 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 1219
-      height: 190
+      height: 327
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 609.5, y: 95}
+    m_Translation: {x: 609.5, y: 163.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -558,12 +558,12 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -609.5
-      y: -95
+      y: -163.5
       width: 1219
-      height: 190
+      height: 327
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1219, y: 211}
+  m_LastWindowPixelSize: {x: 1219, y: 348}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -593,7 +593,7 @@ MonoBehaviour:
     x: 0
     y: 73
     width: 1219
-    height: 686
+    height: 594
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1023,16 +1023,16 @@ MonoBehaviour:
   m_WindowGUID: 475bf292725c59543a9f949ea7dce0b6
   m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
-  m_SceneIsLit: 1
+  m_SceneIsLit: 0
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 481.02847, y: -39.00775, z: 173.51715}
+    m_Target: {x: 398.00323, y: -69.0218, z: 119.99659}
     speed: 2
-    m_Value: {x: 481.02847, y: -39.00775, z: 173.51715}
+    m_Value: {x: 398.00323, y: -69.0218, z: 119.99659}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1060,9 +1060,9 @@ MonoBehaviour:
       m_Size: {x: 1, y: 1}
     yGrid:
       m_Fade:
-        m_Target: 1
+        m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -1074,17 +1074,17 @@ MonoBehaviour:
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
-    m_ShowGrid: 1
+    m_ShowGrid: 0
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.36208755, y: -0.13080414, z: 0.051384084, w: 0.9215034}
+    m_Target: {x: 0.31544814, y: -0.61757684, z: 0.29674178, w: 0.6565678}
     speed: 2
-    m_Value: {x: -0.36208755, y: 0.13080414, z: -0.051384084, w: -0.92150337}
+    m_Value: {x: 0.31677306, y: -0.614602, z: 0.29531252, w: 0.65932524}
   m_Size:
-    m_Target: 52.702244
+    m_Target: 58.131645
     speed: 2
-    m_Value: 52.702244
+    m_Value: 55.62837
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1204,9 +1204,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 780
+    y: 688
     width: 1219
-    height: 211
+    height: 303
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1230,7 +1230,7 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Packages/Synty/PolygonApocalypse/Prefabs/Environment
+    - Assets/Packages/Synty/PolygonFarm/Prefabs/Plants
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1238,16 +1238,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 95
   m_LastFolders:
-  - Assets/Packages/Synty/PolygonApocalypse/Prefabs/Environment
+  - Assets/Packages/Synty/PolygonFarm/Prefabs/Plants
   m_LastFoldersGridSize: 95
   m_LastProjectPath: E:\UnityDev\Proj\DorianDeVilleleUrp
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 161}
-    m_SelectedIDs: 00060100
-    m_LastClickedID: 67072
-    m_ExpandedIDs: 000000005c0501005e05010060050100620501006405010066050100680501006a0501006c0501006e05010070050100720501007405010076050100780501007a0501007c0501007e05010080050100820501008405010086050100880501008a0501008c0501008e05010090050100920501009405010096050100980501009a0501009c0501009e050100a0050100a2050100a4050100a6050100a8050100ec050100020601000406010006060100
+    scrollPos: {x: 0, y: 300}
+    m_SelectedIDs: 82bd0100
+    m_LastClickedID: 114050
+    m_ExpandedIDs: ffffffff0000000050050100520501005405010056050100580501005a0501005c0501005e050100600501006205010066050100680501006a0501006c0501006e05010070050100720501007405010076050100780501007a0501008205010084050100860501008a0501008c0501008e050100920501009405010096050100980501009a0501009c050100d8050100e0050100f6050100fa0501001e060100340601009e08010082f201002ecb02002cdc0200
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1275,7 +1275,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005c0501005e05010060050100620501006405010066050100680501006a0501006c0501006e05010070050100720501007405010076050100780501007a0501007c0501007e05010080050100820501008405010086050100880501008a0501008c0501008e05010090050100920501009405010096050100980501009a0501009c0501009e050100a0050100a2050100a4050100a6050100a8050100
+    m_ExpandedIDs: ffffffff0000000050050100520501005405010056050100580501005a0501005c0501005e050100600501006205010066050100680501006a0501006c0501006e05010070050100720501007405010076050100780501007a050100820501008405010086050100880501008a0501008c0501008e050100920501009405010096050100980501009a0501009c050100d8050100e0050100f6050100fa0501001e0601002c060100340601009e0801002ecb02002cdc0200
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1302,7 +1302,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 9e210100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1327,7 +1327,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 1845}
+    m_ScrollPosition: {x: 0, y: 2493}
     m_GridSize: 95
   m_SkipHiddenPackages: 1
   m_DirectoriesAreaWidth: 243.5
@@ -1416,8 +1416,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/Settings
+    m_Folders: []
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1433,7 +1432,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 1c8b0000
     m_LastClickedID: 35612
-    m_ExpandedIDs: 000000005c0501005e05010060050100620501006405010066050100680501006a0501006c0501006e05010070050100720501007405010076050100780501007a0501007c0501007e05010080050100820501008405010086050100880501008a0501008c0501008e05010090050100920501009405010096050100980501009a0501009c0501009e050100a0050100a2050100a4050100a6050100a8050100
+    m_ExpandedIDs: ffffffff0000000050050100520501005405010056050100580501005a0501005c0501005e050100600501006205010066050100680501006a0501006c0501006e05010070050100720501007405010076050100780501007a050100820501008405010086050100880501008a0501008c0501008e050100920501009405010096050100980501009a0501009c050100d8050100e0050100f6050100fa0501001e0601002c060100340601009e0801002ecb02002cdc0200
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1458,10 +1457,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 4559}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000005c0501005e05010060050100620501006405010066050100680501006a0501006c0501006e05010070050100720501007405010076050100780501007a0501007c0501007e05010080050100820501008405010086050100880501008a0501008c0501008e05010090050100920501009405010096050100980501009a0501009c0501009e050100a0050100a2050100a4050100a6050100a8050100
+    m_ExpandedIDs: ffffffff0000000050050100520501005405010056050100580501005a0501005c0501005e050100600501006205010066050100680501006a0501006c0501006e05010070050100720501007405010076050100780501007a050100820501008405010086050100880501008a0501008c0501008e050100920501009405010096050100980501009a0501009c050100d8050100e0050100f6050100fa0501001a0601001e0601002c060100340601009e0801007cbd010082bd010082f201002ecb02002cdc0200
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1562,7 +1561,7 @@ MonoBehaviour:
     _thumbnailLayer: 7
     _unsavedChangesAction: 0
     _paletteManager:
-      _selectedPaletteIdx: 0
+      _selectedPaletteIdx: 1
       _selectedBrushIdx: -1
       _showBrushName: 0
       _viewList: 0
@@ -3412,6 +3411,331 @@ MonoBehaviour:
               _overwriteBrushProperties: 0
               _brushSettings:
                 _id: 638195168741489704
+                _surfaceDistance: 0
+                _randomSurfaceDistance: 0
+                _randomSurfaceDistanceRange:
+                  _v1: -0.005
+                  _v2: 0.005
+                  _min: -0.005
+                  _max: 0.005
+                _embedInSurface: 0
+                _embedAtPivotHeight: 1
+                _localPositionOffset: {x: 0, y: 0, z: 0}
+                _rotateToTheSurface: 1
+                _eulerOffset: {x: 0, y: 0, z: 0}
+                _addRandomRotation: 0
+                _rotationFactor: 90
+                _rotateInMultiples: 0
+                _randomEulerOffset:
+                  x:
+                    _v1: 0
+                    _v2: 0
+                    _min: 0
+                    _max: 0
+                  y:
+                    _v1: 0
+                    _v2: 0
+                    _min: 0
+                    _max: 0
+                  z:
+                    _v1: 0
+                    _v2: 0
+                    _min: 0
+                    _max: 0
+                _separateScaleAxes: 0
+                _scaleMultiplier: {x: 1, y: 1, z: 1}
+                _randomScaleMultiplier: 0
+                _randomScaleMultiplierRange:
+                  x:
+                    _v1: 1
+                    _v2: 1
+                    _min: 1
+                    _max: 1
+                  y:
+                    _v1: 1
+                    _v2: 1
+                    _min: 1
+                    _max: 1
+                  z:
+                    _v1: 1
+                    _v2: 1
+                    _min: 1
+                    _max: 1
+                _flipX: 0
+                _flipY: 0
+                _thumbnailSettings:
+                  _backgroudColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+                  _lightEuler: {x: 130, y: -165}
+                  _lightColor: {r: 1, g: 1, b: 1, a: 1}
+                  _lightIntensity: 1
+                  _zoom: 1
+                  _targetEuler: {x: 0, y: 125, z: 0}
+                  _targetOffset: {x: 0, y: 0}
+          _state: 3
+          _initialBrushId: 638195062136046841
+          _closed: 0
+        - _id: 638196648885258701
+          _objectPoses:
+          - _id:
+              _instanceId: -52770
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-508711093
+            _position: {x: 481.1084, y: 0.0030517578, z: 120.18995}
+            _localRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -52788
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-853628769
+            _position: {x: 481.1084, y: 0.0030517578, z: 121.15505}
+            _localRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -52806
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1027929325
+            _position: {x: 481.1084, y: 0.0030517578, z: 122.12017}
+            _localRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -52824
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1612797165
+            _position: {x: 481.10886, y: 0.0030517578, z: 123.077675}
+            _localRotation: {x: 0, y: 0.70744747, z: 0, w: 0.70676595}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -52842
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1366277638
+            _position: {x: 481.5716, y: 0.0030517578, z: 123.54206}
+            _localRotation: {x: 0, y: 0.9999695, z: 0, w: 0.007813984}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -52860
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1373359674
+            _position: {x: 482.53375, y: 0.0030517578, z: 123.547295}
+            _localRotation: {x: 0, y: 0.99999726, z: 0, w: -0.0023642697}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -52878
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-421041168
+            _position: {x: 483.4988, y: 0.0030517578, z: 123.54518}
+            _localRotation: {x: 0, y: 1, z: 0, w: 0.0001778597}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -52896
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-465917785
+            _position: {x: 484.464, y: 0.0030517578, z: 123.54619}
+            _localRotation: {x: 0, y: 0.99999964, z: 0, w: 0.0008696159}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -52914
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-881235545
+            _position: {x: 485.4291, y: 0.0030517578, z: 123.54844}
+            _localRotation: {x: 0, y: 0.9999989, z: 0, w: 0.0014625799}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -52932
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-72976987
+            _position: {x: 486.39413, y: 0.0030517578, z: 123.549706}
+            _localRotation: {x: 0, y: 1, z: 0, w: -0.00015413102}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -52950
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-832991022
+            _position: {x: 487.35928, y: 0.0030517578, z: 123.54928}
+            _localRotation: {x: 0, y: 1, z: 0, w: -0.00029249914}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -52968
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-619799467
+            _position: {x: 488.32437, y: 0.0030517578, z: 123.548706}
+            _localRotation: {x: 0, y: 1, z: 0, w: -0.00030438456}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -52986
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-896574458
+            _position: {x: 489.28952, y: 0.0030517578, z: 123.54812}
+            _localRotation: {x: 0, y: 1, z: 0, w: -0.00029646096}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -53004
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1048668520
+            _position: {x: 490.2531, y: 0.0030517578, z: 123.549774}
+            _localRotation: {x: 0, y: 0.999998, z: 0, w: 0.0020182016}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -53022
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-324059729
+            _position: {x: 490.7147, y: 0.0023498535, z: 123.0952}
+            _localRotation: {x: 0, y: 0.70607173, z: 0, w: -0.7081403}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -53040
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-962928297
+            _position: {x: 490.71283, y: 0.0022735596, z: 122.13796}
+            _localRotation: {x: 0, y: 0.7067713, z: 0, w: -0.7074421}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -53058
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-117546869
+            _position: {x: 490.71237, y: 0.0022735596, z: 121.17286}
+            _localRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -53076
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-785413526
+            _position: {x: 490.71237, y: 0.0022735596, z: 120.20774}
+            _localRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -53094
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1958462608
+            _position: {x: 490.71237, y: 0.0022735596, z: 119.24263}
+            _localRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -53112
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-289792999
+            _position: {x: 490.71237, y: 0.0022735596, z: 118.27752}
+            _localRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -53130
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-583100206
+            _position: {x: 490.71237, y: 0.0022735596, z: 117.3124}
+            _localRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -53148
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1367438879
+            _position: {x: 490.71768, y: 0.0009536743, z: 116.3475}
+            _localRotation: {x: 0, y: 0.7109786, z: 0, w: -0.7032137}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -53166
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-2930401
+            _position: {x: 490.2868, y: 0.00091552734, z: 115.88855}
+            _localRotation: {x: 0, y: 0.0054102647, z: 0, w: 0.9999854}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -53184
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1669990310
+            _position: {x: 489.34973, y: 0.0023880005, z: 115.89563}
+            _localRotation: {x: 0, y: 0.0022450364, z: 0, w: 0.99999756}
+            _localScale: {x: 1, y: 1, z: 1}
+          - _id:
+              _instanceId: -53202
+              _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1613914153
+            _position: {x: 488.38446, y: 0.0030517578, z: 115.8954}
+            _localRotation: {x: 0, y: -0.0024781507, z: 0, w: 0.99999696}
+            _localScale: {x: 1, y: 1, z: 1}
+          _controlPoints:
+          - position: {x: 481.0903, y: 0.0030517578, z: 119.70738}
+            type: 1
+            scale: 0.25
+          - position: {x: 481.0903, y: 0.0030517578, z: 122.002945}
+            type: 1
+            scale: 0.25
+          - position: {x: 481.0903, y: 0.0030517578, z: 122.76218}
+            type: 1
+            scale: 0.25
+          - position: {x: 481.0903, y: 0.0030517578, z: 123.1418}
+            type: 1
+            scale: 0.25
+          - position: {x: 481.0903, y: 0.0030517578, z: 123.5524}
+            type: 1
+            scale: 0.25
+          - position: {x: 482.19998, y: 0.0030517578, z: 123.558975}
+            type: 1
+            scale: 0.25
+          - position: {x: 483.30853, y: 0.0030517578, z: 123.56428}
+            type: 1
+            scale: 0.25
+          - position: {x: 484.41754, y: 0.0030517578, z: 123.56284}
+            type: 1
+            scale: 0.25
+          - position: {x: 485.52655, y: 0.0030517578, z: 123.56771}
+            type: 1
+            scale: 0.25
+          - position: {x: 486.63556, y: 0.0030517578, z: 123.56777}
+            type: 1
+            scale: 0.25
+          - position: {x: 489.68527, y: 0.0030517578, z: 123.565926}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.26193, y: 0.0030517578, z: 123.5658}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.55026, y: 0.0030517578, z: 123.56577}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.7526, y: 0.0030517578, z: 123.56576}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.73038, y: 0.0027178733, z: 122.60459}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.7304, y: 0.0025510318, z: 122.1243}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.7304, y: 0.0023841944, z: 121.64403}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.7304, y: 0.0020504673, z: 120.68331}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.7304, y: 0.0017166944, z: 119.72248}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.7304, y: 0.0010490603, z: 117.80054}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.7304, y: 0.0007141477, z: 116.80474}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.7304, y: 0.0005477038, z: 116.30684}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.7304, y: 0.00046457566, z: 116.05789}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.7304, y: 0.0004230228, z: 115.93341}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.7304, y: 0.00038146973, z: 115.80894}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.39267, y: 0.000858574, z: 115.80383}
+            type: 1
+            scale: 0.25
+          - position: {x: 490.0555, y: 0.0013433504, z: 115.87418}
+            type: 1
+            scale: 0.25
+          - position: {x: 487.8434, y: 0.0023117065, z: 115.87464}
+            type: 1
+            scale: 0.25
+          _settings:
+            _paintOnMeshesWithoutCollider: 0
+            _paintOnSelectedOnly: 0
+            _paintOnPalettePrefabs: 0
+            _mode: 0
+            _paralellToTheSurface: 0
+            _projectionDirection: {x: 0, y: -1, z: 0}
+            _objectsOrientedAlongTheLine: 1
+            _axisOrientedAlongTheLine: 0
+            _spacingType: 0
+            _gapSize: -0.054887693
+            _spacing: 1.72
+            _paintTool:
+              _parentGlobalId: 
+              _autoCreateParent: 1
+              _setSurfaceAsParent: 0
+              _createSubparentPerPalette: 1
+              _createSubparentPerTool: 1
+              _createSubparentPerBrush: 0
+              _createSubparentPerPrefab: 1
+              _overwritePrefabLayer: 0
+              _layer: 0
+              _overwriteBrushProperties: 0
+              _brushSettings:
+                _id: 638196663968453718
                 _surfaceDistance: 0
                 _randomSurfaceDistance: 0
                 _randomSurfaceDistanceRange:
@@ -5911,7 +6235,7 @@ MonoBehaviour:
           z: 1
         _lockedGrid: 0
         _step: {x: 1, y: 1, z: 1}
-        _origin: {x: 0, y: 0.0030517578, z: 0}
+        _origin: {x: 0, y: 0.0030517578, z: 115.87464}
         _rotation: {x: 0, y: 0, z: 0, w: 1}
         _showPositionHandle: 1
         _showRotationHandle: 0
@@ -5961,10 +6285,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 147}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b6faffff
+      m_ExpandedIDs: 6c39fcff8439fcff0c71fcff0e71fcffe89dfcffb49efcffc69efcffc89efcff600dfdff9429fdff102afdfffa8ffdffc6a6fdff46a7fdff48a7fdff7ed9fdff82d9fdff7e56feff8056feffa419ffff8e88ffff9688ffff28bdffffeabdffffe4c7ffffeec7ffffced4ffffd2d4ffffe6faffffccf500003af6000046f60000d0f60000e4f6000050970100549701005c970100ca9701005498010068980100fa440200a04502005e460200724602007c460200365e0200c45e0200dc5e02001c5f02009a5f0200ae5f0200687d0200f87d0200147e02002c7e02008e7e0200ca7e02004c7f0200607f0200e8fd020036fe020098fe0200a4fe0200541b0300c81b0300d41b0300
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -5980,7 +6304,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 10}
+        m_ClientGUIView: {fileID: 14}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -6023,7 +6347,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   _paletteManager:
-    _selectedPaletteIdx: 0
+    _selectedPaletteIdx: 1
     _selectedBrushIdx: -1
     _showBrushName: 0
     _viewList: 0
@@ -9621,6 +9945,331 @@ MonoBehaviour:
             _overwriteBrushProperties: 0
             _brushSettings:
               _id: 638195168741489704
+              _surfaceDistance: 0
+              _randomSurfaceDistance: 0
+              _randomSurfaceDistanceRange:
+                _v1: -0.005
+                _v2: 0.005
+                _min: -0.005
+                _max: 0.005
+              _embedInSurface: 0
+              _embedAtPivotHeight: 1
+              _localPositionOffset: {x: 0, y: 0, z: 0}
+              _rotateToTheSurface: 1
+              _eulerOffset: {x: 0, y: 0, z: 0}
+              _addRandomRotation: 0
+              _rotationFactor: 90
+              _rotateInMultiples: 0
+              _randomEulerOffset:
+                x:
+                  _v1: 0
+                  _v2: 0
+                  _min: 0
+                  _max: 0
+                y:
+                  _v1: 0
+                  _v2: 0
+                  _min: 0
+                  _max: 0
+                z:
+                  _v1: 0
+                  _v2: 0
+                  _min: 0
+                  _max: 0
+              _separateScaleAxes: 0
+              _scaleMultiplier: {x: 1, y: 1, z: 1}
+              _randomScaleMultiplier: 0
+              _randomScaleMultiplierRange:
+                x:
+                  _v1: 1
+                  _v2: 1
+                  _min: 1
+                  _max: 1
+                y:
+                  _v1: 1
+                  _v2: 1
+                  _min: 1
+                  _max: 1
+                z:
+                  _v1: 1
+                  _v2: 1
+                  _min: 1
+                  _max: 1
+              _flipX: 0
+              _flipY: 0
+              _thumbnailSettings:
+                _backgroudColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+                _lightEuler: {x: 130, y: -165}
+                _lightColor: {r: 1, g: 1, b: 1, a: 1}
+                _lightIntensity: 1
+                _zoom: 1
+                _targetEuler: {x: 0, y: 125, z: 0}
+                _targetOffset: {x: 0, y: 0}
+        _state: 3
+        _initialBrushId: 638195062136046841
+        _closed: 0
+      - _id: 638196648885258701
+        _objectPoses:
+        - _id:
+            _instanceId: -52770
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-508711093
+          _position: {x: 481.1084, y: 0.0030517578, z: 120.18995}
+          _localRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -52788
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-853628769
+          _position: {x: 481.1084, y: 0.0030517578, z: 121.15505}
+          _localRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -52806
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1027929325
+          _position: {x: 481.1084, y: 0.0030517578, z: 122.12017}
+          _localRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -52824
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1612797165
+          _position: {x: 481.10886, y: 0.0030517578, z: 123.077675}
+          _localRotation: {x: 0, y: 0.70744747, z: 0, w: 0.70676595}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -52842
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1366277638
+          _position: {x: 481.5716, y: 0.0030517578, z: 123.54206}
+          _localRotation: {x: 0, y: 0.9999695, z: 0, w: 0.007813984}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -52860
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1373359674
+          _position: {x: 482.53375, y: 0.0030517578, z: 123.547295}
+          _localRotation: {x: 0, y: 0.99999726, z: 0, w: -0.0023642697}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -52878
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-421041168
+          _position: {x: 483.4988, y: 0.0030517578, z: 123.54518}
+          _localRotation: {x: 0, y: 1, z: 0, w: 0.0001778597}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -52896
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-465917785
+          _position: {x: 484.464, y: 0.0030517578, z: 123.54619}
+          _localRotation: {x: 0, y: 0.99999964, z: 0, w: 0.0008696159}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -52914
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-881235545
+          _position: {x: 485.4291, y: 0.0030517578, z: 123.54844}
+          _localRotation: {x: 0, y: 0.9999989, z: 0, w: 0.0014625799}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -52932
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-72976987
+          _position: {x: 486.39413, y: 0.0030517578, z: 123.549706}
+          _localRotation: {x: 0, y: 1, z: 0, w: -0.00015413102}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -52950
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-832991022
+          _position: {x: 487.35928, y: 0.0030517578, z: 123.54928}
+          _localRotation: {x: 0, y: 1, z: 0, w: -0.00029249914}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -52968
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-619799467
+          _position: {x: 488.32437, y: 0.0030517578, z: 123.548706}
+          _localRotation: {x: 0, y: 1, z: 0, w: -0.00030438456}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -52986
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-896574458
+          _position: {x: 489.28952, y: 0.0030517578, z: 123.54812}
+          _localRotation: {x: 0, y: 1, z: 0, w: -0.00029646096}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -53004
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1048668520
+          _position: {x: 490.2531, y: 0.0030517578, z: 123.549774}
+          _localRotation: {x: 0, y: 0.999998, z: 0, w: 0.0020182016}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -53022
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-324059729
+          _position: {x: 490.7147, y: 0.0023498535, z: 123.0952}
+          _localRotation: {x: 0, y: 0.70607173, z: 0, w: -0.7081403}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -53040
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-962928297
+          _position: {x: 490.71283, y: 0.0022735596, z: 122.13796}
+          _localRotation: {x: 0, y: 0.7067713, z: 0, w: -0.7074421}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -53058
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-117546869
+          _position: {x: 490.71237, y: 0.0022735596, z: 121.17286}
+          _localRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -53076
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-785413526
+          _position: {x: 490.71237, y: 0.0022735596, z: 120.20774}
+          _localRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -53094
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1958462608
+          _position: {x: 490.71237, y: 0.0022735596, z: 119.24263}
+          _localRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -53112
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-289792999
+          _position: {x: 490.71237, y: 0.0022735596, z: 118.27752}
+          _localRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -53130
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-583100206
+          _position: {x: 490.71237, y: 0.0022735596, z: 117.3124}
+          _localRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -53148
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1367438879
+          _position: {x: 490.71768, y: 0.0009536743, z: 116.3475}
+          _localRotation: {x: 0, y: 0.7109786, z: 0, w: -0.7032137}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -53166
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-2930401
+          _position: {x: 490.2868, y: 0.00091552734, z: 115.88855}
+          _localRotation: {x: 0, y: 0.0054102647, z: 0, w: 0.9999854}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -53184
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1669990310
+          _position: {x: 489.34973, y: 0.0023880005, z: 115.89563}
+          _localRotation: {x: 0, y: 0.0022450364, z: 0, w: 0.99999756}
+          _localScale: {x: 1, y: 1, z: 1}
+        - _id:
+            _instanceId: -53202
+            _globalObjId: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-3579364427546891699-1613914153
+          _position: {x: 488.38446, y: 0.0030517578, z: 115.8954}
+          _localRotation: {x: 0, y: -0.0024781507, z: 0, w: 0.99999696}
+          _localScale: {x: 1, y: 1, z: 1}
+        _controlPoints:
+        - position: {x: 481.0903, y: 0.0030517578, z: 119.70738}
+          type: 1
+          scale: 0.25
+        - position: {x: 481.0903, y: 0.0030517578, z: 122.002945}
+          type: 1
+          scale: 0.25
+        - position: {x: 481.0903, y: 0.0030517578, z: 122.76218}
+          type: 1
+          scale: 0.25
+        - position: {x: 481.0903, y: 0.0030517578, z: 123.1418}
+          type: 1
+          scale: 0.25
+        - position: {x: 481.0903, y: 0.0030517578, z: 123.5524}
+          type: 1
+          scale: 0.25
+        - position: {x: 482.19998, y: 0.0030517578, z: 123.558975}
+          type: 1
+          scale: 0.25
+        - position: {x: 483.30853, y: 0.0030517578, z: 123.56428}
+          type: 1
+          scale: 0.25
+        - position: {x: 484.41754, y: 0.0030517578, z: 123.56284}
+          type: 1
+          scale: 0.25
+        - position: {x: 485.52655, y: 0.0030517578, z: 123.56771}
+          type: 1
+          scale: 0.25
+        - position: {x: 486.63556, y: 0.0030517578, z: 123.56777}
+          type: 1
+          scale: 0.25
+        - position: {x: 489.68527, y: 0.0030517578, z: 123.565926}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.26193, y: 0.0030517578, z: 123.5658}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.55026, y: 0.0030517578, z: 123.56577}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.7526, y: 0.0030517578, z: 123.56576}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.73038, y: 0.0027178733, z: 122.60459}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.7304, y: 0.0025510318, z: 122.1243}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.7304, y: 0.0023841944, z: 121.64403}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.7304, y: 0.0020504673, z: 120.68331}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.7304, y: 0.0017166944, z: 119.72248}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.7304, y: 0.0010490603, z: 117.80054}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.7304, y: 0.0007141477, z: 116.80474}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.7304, y: 0.0005477038, z: 116.30684}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.7304, y: 0.00046457566, z: 116.05789}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.7304, y: 0.0004230228, z: 115.93341}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.7304, y: 0.00038146973, z: 115.80894}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.39267, y: 0.000858574, z: 115.80383}
+          type: 1
+          scale: 0.25
+        - position: {x: 490.0555, y: 0.0013433504, z: 115.87418}
+          type: 1
+          scale: 0.25
+        - position: {x: 487.8434, y: 0.0023117065, z: 115.87464}
+          type: 1
+          scale: 0.25
+        _settings:
+          _paintOnMeshesWithoutCollider: 0
+          _paintOnSelectedOnly: 0
+          _paintOnPalettePrefabs: 0
+          _mode: 0
+          _paralellToTheSurface: 0
+          _projectionDirection: {x: 0, y: -1, z: 0}
+          _objectsOrientedAlongTheLine: 1
+          _axisOrientedAlongTheLine: 0
+          _spacingType: 0
+          _gapSize: -0.054887693
+          _spacing: 1.72
+          _paintTool:
+            _parentGlobalId: 
+            _autoCreateParent: 1
+            _setSurfaceAsParent: 0
+            _createSubparentPerPalette: 1
+            _createSubparentPerTool: 1
+            _createSubparentPerBrush: 0
+            _createSubparentPerPrefab: 1
+            _overwritePrefabLayer: 0
+            _layer: 0
+            _overwriteBrushProperties: 0
+            _brushSettings:
+              _id: 638196663968453718
               _surfaceDistance: 0
               _randomSurfaceDistance: 0
               _randomSurfaceDistanceRange:
